@@ -1,1 +1,0 @@
-window.location.replace("http://201.148.104.122/webmail/");
