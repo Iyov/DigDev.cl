@@ -58,8 +58,8 @@ body {
 }
 
 .digdev-logo {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary);
 }
 
 .client-logo {
@@ -73,12 +73,24 @@ h1 {
     font-weight: 600;
 }
 
+.date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .date {
-    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--white);
+    color: var(--primary);
     font-style: italic;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    text-align: right;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
 }
 
 /* Navigation */
@@ -355,22 +367,21 @@ li {
     }
 }
 
-.Link a {
+.Link a, .Link a:visited {
     text-decoration: none;
     color: var(--primary);
     font-weight: 500;
     transition: color 0.3s;
 }
-
 .Link a:hover {
     color: #2563eb;
 }
 
-.digdev-logo a{
+.digdev-logo a, .digdev-logo a:visited, .contact-info a, .contact-info a:visited {
     text-decoration: none;
-    color: var(--white);
+    color: var(--primary);
     transition: color 0.3s;
 }
-.digdev-logo a:hover {
+.digdev-logo a:hover, .contact-info a:hover {
     color: #2563eb;
 }
