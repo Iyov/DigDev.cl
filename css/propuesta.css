@@ -50,7 +50,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.digdev-logo, .centinela-logo {
+.digdev-logo, .client-logo {
     font-weight: 700;
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
@@ -62,7 +62,7 @@ body {
     color: var(--white);
 }
 
-.centinela-logo {
+.client-logo {
     background-color: var(--secondary);
     color: var(--dark);
 }
