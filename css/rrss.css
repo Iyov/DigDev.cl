@@ -131,6 +131,15 @@ body {
     gap: 10px;
 }
 
+.logo a, .logo a:visited {
+    color: var(--white-light);
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: var(--primary);
+}
+
 .tagline {
     font-size: 16px;
     opacity: 0.9;
@@ -275,6 +284,16 @@ body {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: first baseline;
+        justify-content: left;
+        gap: 10px;
     }
 
     .header-controls {
