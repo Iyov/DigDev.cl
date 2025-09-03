@@ -355,6 +355,14 @@ footer {
     color: var(--secondary);
 }
 
+/*Agregado*/
+.contact-methods{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
 /* Animaciones */
 @keyframes fadeIn {
     from {
@@ -465,6 +473,14 @@ footer {
     .hero p {
         font-size: 1rem;
     }
+
+    /*Agregado*/
+    .contact-methods{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
 }
 
 /* Estilos para la sección activa */
@@ -481,6 +497,7 @@ section {
     }
 }
 
+/*Agregado*/
 .logo:hover {
     color: var(--primary-dark-dark);
 }
