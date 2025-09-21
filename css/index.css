@@ -624,3 +624,7 @@ main {
 .footer-section a:hover {
     text-decoration: underline;
 }
+.faq-phase{
+    font-weight: bold;
+    color: var(--primary);
+}
