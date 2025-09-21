@@ -222,7 +222,12 @@
             <div class="container">
                 <h2 class="section-title" data-key="contact.title">¿Listo para comenzar?</h2>
                 <p data-key="contact.subtitle">Contáctanos y convirtamos tu idea en una solución digital efectiva. Estamos aquí para ayudarte en cada paso del proceso.</p>
-                <a href="mailto:contacto@digdev.cl" class="btn">contacto@digdev.cl</a>
+                <div class="contact-methods">
+                    <p><a href="mailto:contacto@digdev.cl" class="btn" aria-label="Email" target="_blank">contacto@digdev.cl</a></p>
+                    <p><a href="https://wa.me/56999896880" class="btn" aria-label="WhatsApp" target="_blank">WhatsApp</a></p>
+                    <p><a href="https://www.linkedin.com/in/digdevsolutions/" class="btn" aria-label="LinkedIn" target="_blank">LinkedIn</a></p>
+                    <p><a href="post.html" class="btn" aria-label="Post">Post</a></p>
+                </div>
             </div>
         </section>
     </main>
@@ -237,16 +242,16 @@
                 </div>
                 <div class="footer-section">
                     <h3 data-key="footer.contact">Contacto</h3>
-                    <p>contacto@digdev.cl</p>
-                    <p>+56 9 8765 4321</p>
+                    <p><a href="mailto:contacto@digdev.cl" target="_blank">contacto@digdev.cl</a></p>
+                    <p><a href="tel:+56999896880" target="_blank">+569 9989 6880</a></p>
                 </div>
                 <div class="footer-section">
                     <h3 data-key="footer.follow">Síguenos</h3>
                     <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/digdevsolutions/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/digdevsolutions/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/DigDevSolutions/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/digdevsolutions/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -255,6 +260,37 @@
             </div>
         </div>
     </footer>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DigDev - Digital Developers",
+      "url": "https://digdev.cl",
+      "logo": "https://digdev.cl/img/DigDev_logo.png",
+      "description": "DigDev desarrolla sistemas innovadores que resuelven problemas reales. Somos tu partner tecnológico para impulsar tu negocio en la era digital.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Las Acacias 390",
+        "addressLocality": "Villa Alemana",
+        "addressCountry": "CL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56-9-99896880",
+        "contactType": "customer service",
+        "email": "contacto@digdev.cl",
+        "availableLanguage": ["Spanish", "English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/digdevsolutions",
+        "https://www.twitter.com/DigDevSolutions",
+        "https://www.instagram.com/digdevsolutions",
+        "https://www.linkedin.com/company/digdevsolutions"
+      ]
+    }
+    </script>
 
     <script src="js/ds.js"></script>
 </body>
