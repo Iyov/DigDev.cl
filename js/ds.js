@@ -160,7 +160,7 @@ function changeLanguage(lang) {
     
     // Actualizar botón de idioma
     const langToggle = document.getElementById('langToggle');
-    langToggle.innerHTML = `<i class="fas fa-globe"></i>&#160;${lang.toUpperCase()}`;
+    langToggle.innerHTML = `<i class="fas fa-globe"></i> ${lang.toUpperCase()}`;
     
     // Guardar preferencia
     localStorage.setItem('preferredLanguage', lang);
