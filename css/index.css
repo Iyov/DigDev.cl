@@ -583,7 +583,9 @@ footer {
         width: 45px;
         height: 45px;
     }
+}
 
+@media (max-width: 880px) {
     /*Agregado*/
     .contact-methods{
         display: flex;
