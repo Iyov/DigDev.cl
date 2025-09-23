@@ -1,0 +1,27 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DigDev - Digital Developers",
+    "url": "https://digdev.cl",
+    "logo": "https://digdev.cl/img/DigDev_logo.png",
+    "description": "DigDev desarrolla sistemas innovadores que resuelven problemas reales. Somos tu partner tecnológico para impulsar tu negocio en la era digital.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Las Acacias 390",
+        "addressLocality": "Villa Alemana",
+        "addressCountry": "CL"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56-9-99896880",
+        "contactType": "customer service",
+        "email": "contacto@digdev.cl",
+        "availableLanguage": ["Spanish", "English"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/digdevsolutions/",
+        "https://www.twitter.com/DigDevSolutions/",
+        "https://www.instagram.com/digdevsolutions/",
+        "https://www.linkedin.com/in/digdevsolutions/"
+    ]
+}
