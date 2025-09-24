@@ -23,5 +23,11 @@
         "https://www.twitter.com/DigDevSolutions/",
         "https://www.instagram.com/digdevsolutions/",
         "https://www.linkedin.com/in/digdevsolutions/"
+    ],
+    "knowsAbout": [
+        "Desarrollo de Software",
+        "Análisis de Datos",
+        "Business Intelligence",
+        "Marketing Digital"
     ]
 }
