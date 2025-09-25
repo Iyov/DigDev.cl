@@ -15,7 +15,7 @@
         "@type": "ContactPoint",
         "telephone": "+56-9-99896880",
         "contactType": "customer service",
-        "email": "contacto@digdev.cl",
+        "email": "colivares@digdev.cl",
         "availableLanguage": ["Spanish", "English"]
     },
     "sameAs": [
@@ -28,6 +28,9 @@
         "Desarrollo de Software",
         "Análisis de Datos",
         "Business Intelligence",
-        "Marketing Digital"
+        "Marketing Digital",
+        "Software para la Minería",
+        "Transformación Digital",
+        "Desarrollo Web"
     ]
 }
