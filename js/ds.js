@@ -3,11 +3,12 @@ const translations = {
     'es': {
         'nav.home': 'Inicio',
         'nav.services': 'Servicios',
+        'nav.mining': 'Software para Minería',
         'nav.about': 'Nosotros',
         'nav.faq': 'FAQ',
         'nav.contact': 'Contacto',
         'hero.title': 'Transformamos ideas en soluciones digitales',
-        'hero.subtitle': 'En DigDev desarrollamos sistemas innovadores que resuelven problemas reales. Somos tu partner tecnológico para impulsar tu negocio en la era digital.',
+        'hero.subtitle': 'En DigDev desarrollamos sistemas innovadores que resuelven problemas reales. Especialistas en desarrollo de software para la minería con 10 años de experiencia.',
         'hero.button': 'Comenzar proyecto',
         'services.title': 'Nuestros Servicios',
         'services.web.title': 'Desarrollo Web',
@@ -16,8 +17,17 @@ const translations = {
         'services.mobile.description': 'Desarrollamos apps nativas e híbridas para iOS y Android con interfaces intuitivas y atractivas.',
         'services.custom.title': 'Soluciones Personalizadas',
         'services.custom.description': 'Sistemas a medida que se adaptan a tus procesos específicos y necesidades únicas.',
+        'mining.title': 'Desarrollo de Software para la Minería',
+        'mining.text1': 'Con más de 10 años de experiencia especializada en el rubro minero chileno, hemos desarrollado soluciones tecnológicas que optimizan procesos, aumentan la eficiencia y reducen costos operativos.',
+        'mining.text2': 'Nuestro equipo comprende los desafíos específicos de la industria minera y ha trabajado con algunas de las principales empresas del sector, desarrollando sistemas que se adaptan a las exigentes condiciones operativas.',
+        'mining.feature1.title': 'Sistemas de Gestión Minera',
+        'mining.feature1.desc': 'Desarrollo de software especializado para control de producción, inventarios y mantenimiento.',
+        'mining.feature2.title': 'Monitoreo en Tiempo Real',
+        'mining.feature2.desc': 'Sistemas de seguimiento y control de operaciones mineras con reporting automatizado.',
+        'mining.feature3.title': 'Integración de Datos',
+        'mining.feature3.desc': 'Soluciones ETL para consolidar información de múltiples fuentes operativas.',
         'about.title': '¿Quiénes Somos?',
-        'about.text1': 'DigDev (Digital Developers) es una joven empresa de TI apasionada por crear soluciones tecnológicas que marcan la diferencia. Nuestro equipo está compuesto por desarrolladores talentosos y creativos que aman los desafíos.',
+        'about.text1': 'DigDev (Digital Developers) es una empresa de TI con especialización en el sector minero, conformada por profesionales con más de 10 años de experiencia en el rubro.',
         'about.text2': 'Creemos que la tecnología debe servir para resolver problemas reales y mejorar la vida de las personas. Nos especializamos en entender las necesidades específicas de cada cliente y traducirlas en sistemas eficientes y escalables.',
         'about.text3': 'Nuestra misión es impulsar la transformación digital de negocios y organizaciones a través de desarrollo de software de calidad, interfaces intuitivas y experiencias digitales memorables.',
         'faq.title': 'Preguntas Frecuentes',
@@ -75,11 +85,12 @@ const translations = {
     'en': {
         'nav.home': 'Home',
         'nav.services': 'Services',
+        'nav.mining': 'Mining Software',
         'nav.about': 'About Us',
         'nav.faq': 'FAQ',
         'nav.contact': 'Contact',
         'hero.title': 'We transform ideas into digital solutions',
-        'hero.subtitle': 'At DigDev we develop innovative systems that solve real problems. We are your technology partner to boost your business in the digital age.',
+        'hero.subtitle': 'At DigDev we develop innovative systems that solve real problems. Specialists in mining software development with 10 years of experience.',
         'hero.button': 'Start project',
         'services.title': 'Our Services',
         'services.web.title': 'Web Development',
@@ -88,8 +99,17 @@ const translations = {
         'services.mobile.description': 'We develop native and hybrid apps for iOS and Android with intuitive and attractive interfaces.',
         'services.custom.title': 'Custom Solutions',
         'services.custom.description': 'Tailor-made systems that adapt to your specific processes and unique needs.',
+        'mining.title': 'Mining Software Development',
+        'mining.text1': 'With over 10 years of specialized experience in the Chilean mining sector, we have developed technological solutions that optimize processes, increase efficiency and reduce operational costs.',
+        'mining.text2': 'Our team understands the specific challenges of the mining industry and has worked with some of the main companies in the sector, developing systems that adapt to demanding operational conditions.',
+        'mining.feature1.title': 'Mining Management Systems',
+        'mining.feature1.desc': 'Development of specialized software for production control, inventories and maintenance.',
+        'mining.feature2.title': 'Real-time Monitoring',
+        'mining.feature2.desc': 'Mining operations tracking and control systems with automated reporting.',
+        'mining.feature3.title': 'Data Integration',
+        'mining.feature3.desc': 'ETL solutions to consolidate information from multiple operational sources.',
         'about.title': 'Who We Are?',
-        'about.text1': 'DigDev (Digital Developers) is a young IT company passionate about creating technological solutions that make a difference. Our team is made up of talented and creative developers who love challenges.',
+        'about.text1': 'DigDev (Digital Developers) is an IT company specialized in the mining sector, made up of professionals with more than 10 years of experience in the field.',
         'about.text2': 'We believe that technology should serve to solve real problems and improve people\'s lives. We specialize in understanding the specific needs of each client and translating them into efficient and scalable systems.',
         'about.text3': 'Our mission is to drive the digital transformation of businesses and organizations through quality software development, intuitive interfaces and memorable digital experiences.',
         'faq.title': 'Frequently Asked Questions',
@@ -160,7 +180,7 @@ function changeLanguage(lang) {
     
     // Actualizar botón de idioma
     const langToggle = document.getElementById('langToggle');
-    langToggle.innerHTML = `<i class="fas fa-globe"></i> ${lang.toUpperCase()}`;
+    langToggle.innerHTML = `<i class="fas fa-globe"></i>&#160;${lang.toUpperCase()}`;
     
     // Guardar preferencia
     localStorage.setItem('preferredLanguage', lang);
