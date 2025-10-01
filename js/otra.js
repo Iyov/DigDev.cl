@@ -122,7 +122,7 @@ const texts = {
         "footer-description": "Soluciones digitales especializadas para la industria minera y otros sectores en Chile.",
         "footer-links-title": "Enlaces Rápidos",
         "footer-contact-title": "Contacto",
-        "copyright-text": "© 2023 DigDev Solutions. Todos los derechos reservados."
+        "copyright-text": "© 2025 DigDev Solutions. Todos los derechos reservados."
     },
     en: {
         // Navigation
@@ -246,7 +246,7 @@ const texts = {
         "footer-description": "Specialized digital solutions for the mining industry and other sectors in Chile.",
         "footer-links-title": "Quick Links",
         "footer-contact-title": "Contact",
-        "copyright-text": "© 2023 DigDev Solutions. All rights reserved."
+        "copyright-text": "© 2025 DigDev Solutions. All rights reserved."
     }
 };
 
