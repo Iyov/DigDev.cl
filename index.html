@@ -15,18 +15,18 @@
     <meta property="og:url" content="https://digdev.cl/">
     <meta property="og:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería">
     <meta property="og:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio.">
-    <meta property="og:image" content="https://digdev.cl/images/og-image.jpg">
+    <meta property="og:image" content="https://digdev.cl/img/DigDev_logo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://digdev.cl/">
     <meta property="twitter:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería">
     <meta property="twitter:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio.">
-    <meta property="twitter:image" content="https://digdev.cl/images/twitter-image.jpg">
+    <meta property="twitter:image" content="https://digdev.cl/img/DigDev_logo.png">
     
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/font-awesome_6.4.0_all.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/index.css?v=2025-09-25" type="text/css" />
+    <link rel="stylesheet" href="css/index.css?v=2025-10-01" type="text/css" />
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -51,10 +51,13 @@
         "availableLanguage": ["Spanish", "English"]
     },
     "sameAs": [
-        "https://www.facebook.com/digdevsolutions/",
-        "https://www.twitter.com/DigDevSolutions/",
+        "https://www.linkedin.com/in/digdevsolutions/",
         "https://www.instagram.com/digdevsolutions/",
-        "https://www.linkedin.com/in/digdevsolutions/"
+        "https://www.facebook.com/digdevsolutions/",
+        "https://www.threads.net/@digdevsolutions/",
+        "https://www.tiktok.com/@digdevsolutions/",
+        "https://www.youtube.com/@digdevsolutions/",
+        "https://x.com/DigDevSolutions/"
     ],
     "knowsAbout": [
         "Desarrollo de Software",
@@ -77,6 +80,12 @@
     <!-- Back to top button -->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/56951089856" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip" data-key="whatsapp.tooltip">Comunícate con nosotros</div>
     </a>
 
     <!-- Header -->
@@ -102,10 +111,11 @@
                 </div>
                 
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio" class="active" data-key="nav.home">Inicio</a></li>
-                    <li><a href="#servicios" data-key="nav.services">Servicios</a></li>
-                    <li><a href="#mineria" data-key="nav.mining">Software para Minería</a></li>
+                    <li><a href="#servicios" class="active" data-key="nav.services">Servicios</a></li>
+                    <li><a href="#mineria" data-key="nav.mining">Minería</a></li>
                     <li><a href="#nosotros" data-key="nav.about">Nosotros</a></li>
+                    <li><a href="#testimonios" data-key="nav.testimonials">Testimonios</a></li>
+                    <li><a href="#blog" data-key="nav.blog">Blog</a></li>
                     <li><a href="#faq" data-key="nav.faq">FAQ</a></li>
                     <li><a href="#contacto" data-key="nav.contact">Contacto</a></li>
                 </ul>
@@ -197,7 +207,67 @@
                         <p data-key="about.text3">Nuestra misión es impulsar la transformación digital de negocios y organizaciones a través de desarrollo de software de calidad, interfaces intuitivas y experiencias digitales memorables.</p>
                     </div>
                     <div class="about-image">
-                        <img src="img/DigDev_logo.png" alt="DigDev Logo">
+                        <img src="img/DigDev_logo.png" alt="DigDev Logo" aria-label="DigDev Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Testimonios -->
+        <section class="testimonials" id="testimonios">
+            <div class="container">
+                <h2 class="section-title" data-key="testimonials.title">Testimonios</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Carlos Rodríguez" class="testimonial-image">
+                        <p class="testimonial-text" data-key="testimonials.testimonial1.text">"El equipo de DigDev transformó completamente nuestros procesos mineros. Su software personalizado nos permitió aumentar la eficiencia en un 40%. ¡Increíble trabajo!"</p>
+                        <p class="testimonial-author" data-key="testimonials.testimonial1.author">Carlos Rodríguez</p>
+                        <p class="testimonial-role" data-key="testimonials.testimonial1.role">Operaciones, Minera Andina</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="María González" class="testimonial-image">
+                        <p class="testimonial-text" data-key="testimonials.testimonial2.text">"Trabajar con DigDev fue una experiencia excepcional. Su aplicación móvil para reportes en terreno ha revolucionado nuestra forma de trabajar. ¡Altamente recomendados!"</p>
+                        <p class="testimonial-author" data-key="testimonials.testimonial2.author">María González</p>
+                        <p class="testimonial-role" data-key="testimonials.testimonial2.role">Jefa de Proyectos, Codelco</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Roberto Silva" class="testimonial-image">
+                        <p class="testimonial-text" data-key="testimonials.testimonial3.text">"La plataforma web desarrollada por DigDev superó todas nuestras expectativas. Su atención al detalle y comprensión de nuestras necesidades fue impresionante."</p>
+                        <p class="testimonial-author" data-key="testimonials.testimonial3.author">Roberto Silva</p>
+                        <p class="testimonial-role" data-key="testimonials.testimonial3.role">TI, Antofagasta Minerals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Blog -->
+        <section class="blog" id="blog">
+            <div class="container">
+                <h2 class="section-title" data-key="blog.title">Blog</h2>
+                <div class="blog-grid">
+                    <div class="blog-card" data-blog="1">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Transformación Digital en Minería" class="blog-image">
+                        <div class="blog-content">
+                            <h3 class="blog-title" data-key="blog.post1.title">Transformación Digital en la Industria Minera</h3>
+                            <p class="blog-excerpt" data-key="blog.post1.excerpt">Descubre cómo la tecnología está revolucionando los procesos mineros y aumentando la eficiencia operacional.</p>
+                            <span class="blog-read-more" data-key="blog.readmore">Leer más <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-blog="2">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Desarrollo de Software Personalizado" class="blog-image">
+                        <div class="blog-content">
+                            <h3 class="blog-title" data-key="blog.post2.title">Ventajas del Desarrollo de Software Personalizado</h3>
+                            <p class="blog-excerpt" data-key="blog.post2.excerpt">¿Por qué elegir soluciones a medida en lugar de software genérico? Te contamos las ventajas competitivas.</p>
+                            <span class="blog-read-more" data-key="blog.readmore">Leer más <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="blog-card" data-blog="3">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tendencias Tecnológicas 2024" class="blog-image">
+                        <div class="blog-content">
+                            <h3 class="blog-title" data-key="blog.post3.title">Tendencias Tecnológicas que Marcarán el 2024</h3>
+                            <p class="blog-excerpt" data-key="blog.post3.excerpt">Exploramos las tecnologías emergentes que están transformando el panorama digital empresarial.</p>
+                            <span class="blog-read-more" data-key="blog.readmore">Leer más <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -292,14 +362,54 @@
         <!-- Contacto -->
         <section class="contact" id="contacto">
             <div class="container">
-                <h2 class="section-title" data-key="contact.title">¿Listo para comenzar?</h2>
+                <h2 class="section-title" data-key="contact.title">Contacto</h2>
                 <p data-key="contact.subtitle">Contáctanos y convirtamos tu idea en una solución digital efectiva. Estamos aquí para ayudarte en cada paso del proceso.</p>
-                <div class="contact-methods">
-                    <p><a href="mailto:colivares@digdev.cl" class="btn" aria-label="Email" target="_blank" rel="noopener noreferrer">colivares@digdev.cl</a></p>
-                    <p><a href="https://wa.me/56999896880" class="btn" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                    <p><a href="https://www.linkedin.com/in/digdevsolutions/" class="btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                    <p><a href="post.html" class="btn" aria-label="Post">Post</a></p>
-                    <p><a href="Propuesta.html" class="btn" aria-label="Propuesta de Trabajo">Propuesta</a></p>
+                
+                <div class="contact-links">
+                    <a href="tel:+56999896880" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        <span>+56999896880</span>
+                    </a>
+                    <a href="mailto:colivares@digdev.cl" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>colivares@digdev.cl</span>
+                    </a>
+                    <a href="https://wa.me/56951089856" target="_blank" class="contact-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.threads.net/@digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-check"></i>
+                        <span>Threads</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://www.youtube.com/@digdevsolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://x.com/DigDevSolutions/" target="_blank" class="contact-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter (X)</span>
+                    </a>
+                    <a href="https://digdev.cl" target="_blank" class="contact-link">
+                        <i class="fas fa-globe"></i>
+                        <span>Sitio Web</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -327,11 +437,11 @@
                         <a href="https://www.instagram.com/digdevsolutions/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://x.com/DigDevSolutions/" target="_blank" aria-label="Twitter" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
                         <a href="https://www.facebook.com/digdevsolutions/" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
                             <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/DigDevSolutions/" target="_blank" aria-label="Twitter" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -342,6 +452,52 @@
         </div>
     </footer>
 
-    <script src="js/index.js?v=2025-09-25"></script>
+    <!-- Blog Modals -->
+    <div class="blog-modal" id="blogModal1">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close">&times;</button>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Transformación Digital en Minería" class="blog-modal-image">
+            <div class="blog-modal-body">
+                <h2 class="blog-modal-title" data-key="blog.post1.title">Transformación Digital en la Industria Minera</h2>
+                <div class="blog-modal-text">
+                    <p data-key="blog.post1.content1">La industria minera está experimentando una revolución tecnológica sin precedentes. En DigDev, hemos sido testigos de primera mano cómo la implementación de soluciones digitales personalizadas puede transformar completamente las operaciones mineras.</p>
+                    <p data-key="blog.post1.content2">Nuestro equipo ha desarrollado sistemas que permiten el monitoreo en tiempo real de operaciones, la automatización de procesos críticos y la integración de datos desde múltiples fuentes. Esto ha resultado en aumentos de eficiencia de hasta el 40% para nuestros clientes.</p>
+                    <p data-key="blog.post1.content3">La clave del éxito radica en comprender las necesidades específicas del sector minero y desarrollar soluciones que se adapten a las condiciones operativas únicas de cada faena. Con más de 10 años de experiencia en el rubro, hemos perfeccionado nuestra metodología para entregar resultados tangibles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-modal" id="blogModal2">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close">&times;</button>
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desarrollo de Software Personalizado" class="blog-modal-image">
+            <div class="blog-modal-body">
+                <h2 class="blog-modal-title" data-key="blog.post2.title">Ventajas del Desarrollo de Software Personalizado</h2>
+                <div class="blog-modal-text">
+                    <p data-key="blog.post2.content1">En un mundo donde el software genérico parece ser la solución más accesible, muchas empresas se preguntan por qué invertir en desarrollo personalizado. La respuesta es simple: el software a medida se adapta perfectamente a tus procesos específicos, mientras que el software genérico fuerza a tu empresa a adaptarse a él.</p>
+                    <p data-key="blog.post2.content2">En DigDev, creemos que cada negocio es único. Nuestro enfoque personalizado nos permite crear soluciones que se integran perfectamente con tus operaciones existentes, escalan según tus necesidades y te brindan una ventaja competitiva real.</p>
+                    <p data-key="blog.post2.content3">Las principales ventajas incluyen mayor eficiencia operacional, mejor experiencia de usuario, integración perfecta con sistemas existentes, y la capacidad de evolucionar junto con tu negocio. Nuestros clientes han experimentado retornos de inversión significativos al optar por soluciones personalizadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-modal" id="blogModal3">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close">&times;</button>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tendencias Tecnológicas 2024" class="blog-modal-image">
+            <div class="blog-modal-body">
+                <h2 class="blog-modal-title" data-key="blog.post3.title">Tendencias Tecnológicas que Marcarán el 2024</h2>
+                <div class="blog-modal-text">
+                    <p data-key="blog.post3.content1">El panorama tecnológico evoluciona a un ritmo acelerado, y 2024 promete traer innovaciones que transformarán la forma en que las empresas operan. En DigDev, estamos constantemente investigando y adoptando estas tendencias para ofrecer soluciones de vanguardia a nuestros clientes.</p>
+                    <p data-key="blog.post3.content2">Entre las tendencias más destacadas se encuentran la inteligencia artificial aplicada a procesos empresariales, el edge computing para procesamiento de datos en tiempo real, y las plataformas low-code que aceleran el desarrollo de aplicaciones. También vemos un crecimiento significativo en soluciones de ciberseguridad avanzada y tecnologías de realidad aumentada para entrenamiento y mantenimiento.</p>
+                    <p data-key="blog.post3.content3">Nuestro equipo está preparado para integrar estas tecnologías emergentes en soluciones personalizadas que impulsen la transformación digital de tu empresa. Mantenerse a la vanguardia tecnológica no es solo una ventaja competitiva, sino una necesidad en el panorama empresarial actual.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js?v=2025-10-01"></script>
 </body>
 </html>

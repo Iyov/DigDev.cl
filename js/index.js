@@ -1,10 +1,11 @@
 // Sistema de traducción
 const translations = {
     'es': {
-        'nav.home': 'Inicio',
         'nav.services': 'Servicios',
-        'nav.mining': 'Software para Minería',
+        'nav.mining': 'Minería',
         'nav.about': 'Nosotros',
+        'nav.testimonials': 'Testimonios',
+        'nav.blog': 'Blog',
         'nav.faq': 'FAQ',
         'nav.contact': 'Contacto',
         'hero.title': 'Transformamos ideas en soluciones digitales',
@@ -30,6 +31,33 @@ const translations = {
         'about.text1': 'DigDev (Digital Developers) es una empresa de TI con especialización en el sector minero, conformada por profesionales con más de 10 años de experiencia en el rubro.',
         'about.text2': 'Creemos que la tecnología debe servir para resolver problemas reales y mejorar la vida de las personas. Nos especializamos en entender las necesidades específicas de cada cliente y traducirlas en sistemas eficientes y escalables.',
         'about.text3': 'Nuestra misión es impulsar la transformación digital de negocios y organizaciones a través de desarrollo de software de calidad, interfaces intuitivas y experiencias digitales memorables.',
+        'testimonials.title': 'Testimonios',
+        'testimonials.testimonial1.text': '"El equipo de DigDev transformó completamente nuestros procesos mineros. Su software personalizado nos permitió aumentar la eficiencia en un 40%. ¡Increíble trabajo!"',
+        'testimonials.testimonial1.author': 'Carlos Rodríguez',
+        'testimonials.testimonial1.role': 'Operaciones, Minera Andina',
+        'testimonials.testimonial2.text': '"Trabajar con DigDev fue una experiencia excepcional. Su aplicación móvil para reportes en terreno ha revolucionado nuestra forma de trabajar. ¡Altamente recomendados!"',
+        'testimonials.testimonial2.author': 'María González',
+        'testimonials.testimonial2.role': 'Jefa de Proyectos, Codelco',
+        'testimonials.testimonial3.text': '"La plataforma web desarrollada por DigDev superó todas nuestras expectativas. Su atención al detalle y comprensión de nuestras necesidades fue impresionante."',
+        'testimonials.testimonial3.author': 'Roberto Silva',
+        'testimonials.testimonial3.role': 'TI, Antofagasta Minerals',
+        'blog.title': 'Blog',
+        'blog.readmore': 'Leer más',
+        'blog.post1.title': 'Transformación Digital en la Industria Minera',
+        'blog.post1.excerpt': 'Descubre cómo la tecnología está revolucionando los procesos mineros y aumentando la eficiencia operacional.',
+        'blog.post1.content1': 'La industria minera está experimentando una revolución tecnológica sin precedentes. En DigDev, hemos sido testigos de primera mano cómo la implementación de soluciones digitales personalizadas puede transformar completamente las operaciones mineras.',
+        'blog.post1.content2': 'Nuestro equipo ha desarrollado sistemas que permiten el monitoreo en tiempo real de operaciones, la automatización de procesos críticos y la integración de datos desde múltiples fuentes. Esto ha resultado en aumentos de eficiencia de hasta el 40% para nuestros clientes.',
+        'blog.post1.content3': 'La clave del éxito radica en comprender las necesidades específicas del sector minero y desarrollar soluciones que se adapten a las condiciones operativas únicas de cada faena. Con más de 10 años de experiencia en el rubro, hemos perfeccionado nuestra metodología para entregar resultados tangibles.',
+        'blog.post2.title': 'Ventajas del Desarrollo de Software Personalizado',
+        'blog.post2.excerpt': '¿Por qué elegir soluciones a medida en lugar de software genérico? Te contamos las ventajas competitivas.',
+        'blog.post2.content1': 'En un mundo donde el software genérico parece ser la solución más accesible, muchas empresas se preguntan por qué invertir en desarrollo personalizado. La respuesta es simple: el software a medida se adapta perfectamente a tus procesos específicos, mientras que el software genérico fuerza a tu empresa a adaptarse a él.',
+        'blog.post2.content2': 'En DigDev, creemos que cada negocio es único. Nuestro enfoque personalizado nos permite crear soluciones que se integran perfectamente con tus operaciones existentes, escalan según tus necesidades y te brindan una ventaja competitiva real.',
+        'blog.post2.content3': 'Las principales ventajas incluyen mayor eficiencia operacional, mejor experiencia de usuario, integración perfecta con sistemas existentes, y la capacidad de evolucionar junto con tu negocio. Nuestros clientes han experimentado retornos de inversión significativos al optar por soluciones personalizadas.',
+        'blog.post3.title': 'Tendencias Tecnológicas que Marcarán el 2024',
+        'blog.post3.excerpt': 'Exploramos las tecnologías emergentes que están transformando el panorama digital empresarial.',
+        'blog.post3.content1': 'El panorama tecnológico evoluciona a un ritmo acelerado, y 2024 promete traer innovaciones que transformarán la forma en que las empresas operan. En DigDev, estamos constantemente investigando y adoptando estas tendencias para ofrecer soluciones de vanguardia a nuestros clientes.',
+        'blog.post3.content2': 'Entre las tendencias más destacadas se encuentran la inteligencia artificial aplicada a procesos empresariales, el edge computing para procesamiento de datos en tiempo real, y las plataformas low-code que aceleran el desarrollo de aplicaciones. También vemos un crecimiento significativo en soluciones de ciberseguridad avanzada y tecnologías de realidad aumentada para entrenamiento y mantenimiento.',
+        'blog.post3.content3': 'Nuestro equipo está preparado para integrar estas tecnologías emergentes en soluciones personalizadas que impulsen la transformación digital de tu empresa. Mantenerse a la vanguardia tecnológica no es solo una ventaja competitiva, sino una necesidad en el panorama empresarial actual.',
         'faq.title': 'Preguntas Frecuentes',
         'faq.q1.text': '¿Qué tipos de proyectos desarrollan?',
         'faq.a1.1': 'Desarrollamos una amplia variedad de proyectos digitales, incluyendo:',
@@ -75,7 +103,7 @@ const translations = {
         'faq.a5.10': '5. Lanzamiento & Mantenimiento:',
         'faq.a5.11': 'Publicamos y damos soporte continuo.',
         'faq.a5.12': 'Mantenemos comunicación constante durante todo el proceso con entregas regulares.',
-        'contact.title': '¿Listo para comenzar?',
+        'contact.title': 'Contacto',
         'contact.subtitle': 'Contáctanos y convirtamos tu idea en una solución digital efectiva. Estamos aquí para ayudarte en cada paso del proceso.',
         'footer.tagline': 'Digital Developers - Transformando ideas en soluciones',
         'footer.contact': 'Contacto',
@@ -83,10 +111,11 @@ const translations = {
         'footer.rights': 'Todos los derechos reservados'
     },
     'en': {
-        'nav.home': 'Home',
         'nav.services': 'Services',
-        'nav.mining': 'Mining Software',
+        'nav.mining': 'Mining',
         'nav.about': 'About Us',
+        'nav.testimonials': 'Testimonials',
+        'nav.blog': 'Blog',
         'nav.faq': 'FAQ',
         'nav.contact': 'Contact',
         'hero.title': 'We transform ideas into digital solutions',
@@ -112,6 +141,33 @@ const translations = {
         'about.text1': 'DigDev (Digital Developers) is an IT company specialized in the mining sector, made up of professionals with more than 10 years of experience in the field.',
         'about.text2': 'We believe that technology should serve to solve real problems and improve people\'s lives. We specialize in understanding the specific needs of each client and translating them into efficient and scalable systems.',
         'about.text3': 'Our mission is to drive the digital transformation of businesses and organizations through quality software development, intuitive interfaces and memorable digital experiences.',
+        'testimonials.title': 'Testimonials',
+        'testimonials.testimonial1.text': '"The DigDev team completely transformed our mining processes. Their custom software allowed us to increase efficiency by 40%. Amazing work!"',
+        'testimonials.testimonial1.author': 'Carlos Rodríguez',
+        'testimonials.testimonial1.role': 'Operations, Minera Andina',
+        'testimonials.testimonial2.text': '"Working with DigDev was an exceptional experience. Their mobile app for field reports has revolutionized our way of working. Highly recommended!"',
+        'testimonials.testimonial2.author': 'María González',
+        'testimonials.testimonial2.role': 'Project Manager, Codelco',
+        'testimonials.testimonial3.text': '"The web platform developed by DigDev exceeded all our expectations. Their attention to detail and understanding of our needs was impressive."',
+        'testimonials.testimonial3.author': 'Roberto Silva',
+        'testimonials.testimonial3.role': 'IT, Antofagasta Minerals',
+        'blog.title': 'Blog',
+        'blog.readmore': 'Read more',
+        'blog.post1.title': 'Digital Transformation in the Mining Industry',
+        'blog.post1.excerpt': 'Discover how technology is revolutionizing mining processes and increasing operational efficiency.',
+        'blog.post1.content1': 'The mining industry is experiencing an unprecedented technological revolution. At DigDev, we have witnessed firsthand how the implementation of customized digital solutions can completely transform mining operations.',
+        'blog.post1.content2': 'Our team has developed systems that allow real-time monitoring of operations, automation of critical processes, and integration of data from multiple sources. This has resulted in efficiency increases of up to 40% for our clients.',
+        'blog.post1.content3': 'The key to success lies in understanding the specific needs of the mining sector and developing solutions that adapt to the unique operational conditions of each site. With more than 10 years of experience in the field, we have perfected our methodology to deliver tangible results.',
+        'blog.post2.title': 'Advantages of Custom Software Development',
+        'blog.post2.excerpt': 'Why choose custom solutions instead of generic software? We tell you the competitive advantages.',
+        'blog.post2.content1': 'In a world where generic software seems to be the most accessible solution, many companies wonder why invest in custom development. The answer is simple: custom software adapts perfectly to your specific processes, while generic software forces your company to adapt to it.',
+        'blog.post2.content2': 'At DigDev, we believe every business is unique. Our personalized approach allows us to create solutions that integrate seamlessly with your existing operations, scale according to your needs, and give you a real competitive advantage.',
+        'blog.post2.content3': 'The main advantages include greater operational efficiency, better user experience, seamless integration with existing systems, and the ability to evolve along with your business. Our clients have experienced significant returns on investment when opting for custom solutions.',
+        'blog.post3.title': 'Technological Trends That Will Mark 2024',
+        'blog.post3.excerpt': 'We explore emerging technologies that are transforming the business digital landscape.',
+        'blog.post3.content1': 'The technological landscape evolves at an accelerated pace, and 2024 promises to bring innovations that will transform the way companies operate. At DigDev, we are constantly researching and adopting these trends to offer cutting-edge solutions to our clients.',
+        'blog.post3.content2': 'Among the most prominent trends are artificial intelligence applied to business processes, edge computing for real-time data processing, and low-code platforms that accelerate application development. We also see significant growth in advanced cybersecurity solutions and augmented reality technologies for training and maintenance.',
+        'blog.post3.content3': 'Our team is prepared to integrate these emerging technologies into customized solutions that drive the digital transformation of your company. Staying at the technological forefront is not only a competitive advantage, but a necessity in today\'s business landscape.',
         'faq.title': 'Frequently Asked Questions',
         'faq.q1.text': 'What types of projects do you develop?',
         'faq.a1.1': 'We develop a wide variety of digital projects, including:',
@@ -157,7 +213,7 @@ const translations = {
         'faq.a5.10': '5. Launch & Maintenance:',
         'faq.a5.11': 'We publish and provide continuous support.',
         'faq.a5.12': 'We maintain constant communication throughout the process with regular deliveries.',
-        'contact.title': 'Ready to get started?',
+        'contact.title': 'Contact',
         'contact.subtitle': 'Contact us and let\'s turn your idea into an effective digital solution. We are here to help you every step of the way.',
         'footer.tagline': 'Digital Developers - Transforming ideas into solutions',
         'footer.contact': 'Contact',
@@ -274,6 +330,54 @@ document.getElementById('langToggle').addEventListener('click', () => {
     changeLanguage(currentLang === 'es' ? 'en' : 'es');
 });
 
+// Funcionalidad para Blog Modals
+function initBlogModals() {
+    const blogCards = document.querySelectorAll('.blog-card');
+    const blogModals = document.querySelectorAll('.blog-modal');
+    const closeButtons = document.querySelectorAll('.blog-modal-close');
+    
+    // Abrir modal al hacer clic en tarjeta de blog
+    blogCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const blogId = card.getAttribute('data-blog');
+            const modal = document.getElementById(`blogModal${blogId}`);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Cerrar modal al hacer clic en botón de cerrar
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.blog-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Cerrar modal al hacer clic fuera del contenido
+    blogModals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            blogModals.forEach(modal => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
+}
+
 // Cargar preferencias guardadas
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
@@ -298,6 +402,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inicializar funcionalidad del logo
     initLogoFunctionality();
+    
+    // Inicializar modales de blog
+    initBlogModals();
 });
 
 // Funcionalidad para FAQ
@@ -374,6 +481,6 @@ function initLogoFunctionality() {
         document.querySelectorAll('.nav-links a').forEach(item => {
             item.classList.remove('active');
         });
-        document.querySelector('.nav-links a[href="#inicio"]').classList.add('active');
+        document.querySelector('.nav-links a[href="#servicios"]').classList.add('active');
     });
 }

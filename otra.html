@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigDev - Digital Developers | Desarrollo de Software para la Minería y Soluciones Tecnológicas</title>
+    <meta name="description" content="DigDev desarrolla sistemas innovadores para la minería con 10 años de experiencia. Somos tu partner tecnológico para impulsar tu negocio en la era digital.">
+    <meta name="keywords" content="digdev, desarrollo web, aplicaciones móviles, soluciones digitales, desarrollo software, chile, TI, desarrollo software minería, software minero, tecnología minería Chile">
+    <meta name="author" content="DigDev Solutions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://digdev.cl">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://digdev.cl/">
+    <meta property="og:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería">
+    <meta property="og:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio.">
+    <meta property="og:image" content="https://digdev.cl/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://digdev.cl/">
+    <meta property="twitter:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería">
+    <meta property="twitter:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio.">
+    <meta property="twitter:image" content="https://digdev.cl/images/twitter-image.jpg">
+    
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/font-awesome_6.4.0_all.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/otra.css" type="text/css" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DigDev - Digital Developers",
+    "url": "https://digdev.cl",
+    "logo": "https://digdev.cl/img/DigDev_logo.png",
+    "description": "DigDev desarrolla sistemas innovadores para la minería con 10 años de experiencia. Somos tu partner tecnológico para impulsar tu negocio en la era digital.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Las Acacias 390",
+        "addressLocality": "Villa Alemana",
+        "addressCountry": "CL"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56-9-99896880",
+        "contactType": "customer service",
+        "email": "colivares@digdev.cl",
+        "availableLanguage": ["Spanish", "English"]
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/digdevsolutions/",
+        "https://www.instagram.com/digdevsolutions/",
+        "https://www.facebook.com/digdevsolutions/",
+        "https://www.threads.net/@digdevsolutions/",
+        "https://www.tiktok.com/@digdevsolutions/",
+        "https://www.youtube.com/@digdevsolutions/",
+        "https://x.com/DigDevSolutions/"
+    ],
+    "knowsAbout": [
+        "Desarrollo de Software",
+        "Análisis de Datos",
+        "Business Intelligence",
+        "Marketing Digital",
+        "Software para la Minería",
+        "Transformación Digital",
+        "Desarrollo Web"
+    ]
+}
+    </script>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo" id="logo">
+                    <span class="logo-text">
+                        <i class="fas fa-code"></i> DigDev
+                    </span>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#services" id="nav-services">Servicios</a></li>
+                    <li><a href="#mining" id="nav-mining">Minería</a></li>
+                    <li><a href="#about" id="nav-about">Quiénes Somos</a></li>
+                    <li><a href="#testimonials" id="nav-testimonials">Testimonios</a></li>
+                    <li><a href="#blog" id="nav-blog">Blog</a></li>
+                    <li><a href="#faq" id="nav-faq">FAQ</a></li>
+                    <li><a href="#contact" id="nav-contact">Contacto</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="language-toggle" id="languageToggle">
+                        <i class="fas fa-globe"></i>&#160;ES
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">Soluciones Digitales para la Industria Minera</h1>
+            <p id="hero-description">Desarrollamos software especializado, aplicaciones móviles y soluciones web para optimizar procesos en la minería chilena y otros sectores.</p>
+            <a href="#contact" class="btn" id="hero-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="services-title">Nuestros Servicios</h2>
+                <p id="services-description">Ofrecemos soluciones tecnológicas integrales para impulsar tu negocio</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 id="service-1-title">Desarrollo Web</h3>
+                    <p id="service-1-description">Creación de sitios web modernos, responsivos y optimizados para SEO que impulsan tu presencia digital.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 id="service-2-title">Aplicaciones Móviles</h3>
+                    <p id="service-2-description">Desarrollo de apps nativas e híbridas para iOS y Android, diseñadas para mejorar la productividad.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 id="service-3-title">Soluciones Personalizadas</h3>
+                    <p id="service-3-description">Software a medida que se adapta a tus procesos específicos, optimizando operaciones y reduciendo costos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mining Software Section -->
+    <section id="mining">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="mining-title">Software para la Minería</h2>
+                <p id="mining-description">Soluciones especializadas para los desafíos únicos de la industria minera</p>
+            </div>
+            
+            <div class="mining-grid">
+                <div class="mining-card">
+                    <h3 id="mining-1-title">Sistemas de Gestión Minera</h3>
+                    <p id="mining-1-description">Plataformas integrales para la gestión de operaciones mineras, desde la planificación hasta la ejecución y control.</p>
+                </div>
+                
+                <div class="mining-card">
+                    <h3 id="mining-2-title">Monitoreo en Tiempo Real</h3>
+                    <p id="mining-2-description">Sistemas de seguimiento y control que permiten supervisar operaciones mineras en tiempo real para una toma de decisiones más eficiente.</p>
+                </div>
+                
+                <div class="mining-card">
+                    <h3 id="mining-3-title">Integración de Datos</h3>
+                    <p id="mining-3-description">Soluciones que unifican datos de múltiples fuentes para proporcionar una visión completa de las operaciones mineras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">Quiénes Somos</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p id="about-description-1">DigDev Solutions es una empresa chilena especializada en el desarrollo de soluciones digitales para la industria minera y otros sectores. Con años de experiencia en el mercado, nos hemos posicionado como referentes en la creación de software especializado que optimiza procesos y mejora la eficiencia operacional.</p>
+                    <p id="about-description-2">Nuestro equipo está compuesto por profesionales altamente capacitados en diversas áreas de la tecnología, lo que nos permite ofrecer soluciones integrales y personalizadas que se adaptan a las necesidades específicas de cada cliente.</p>
+                    <p id="about-description-3">En DigDev Solutions, creemos en la innovación constante y en el poder transformador de la tecnología para impulsar el crecimiento de las empresas en Chile y más allá.</p>
+                </div>
+                
+                <div class="about-image">
+                    <!-- Logo placeholder - replace with actual logo -->
+                    <div class="logo-placeholder" style="width: 500px; height: 500px; background-color: var(--secondary-color); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">
+                        <img src="img/DigDev_logo.png" alt="DigDev Logo" aria-label="DigDev Logo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="testimonials-title">Testimonios</h2>
+                <p id="testimonials-description">Lo que nuestros clientes dicen sobre nuestros servicios</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p id="testimonial-1">"DigDev Solutions transformó completamente nuestros procesos operativos. Su software de gestión minera nos ha permitido optimizar recursos y aumentar nuestra productividad en un 30%."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMzQ5OGRiIi8+Cjx0ZXh0IHg9IjMwIiB5PSIzNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCI+Q008L3RleHQ+Cjwvc3ZnPgo=" alt="Carlos Méndez">
+                        <div class="author-info">
+                            <h4 id="testimonial-author-1">Carlos Méndez</h4>
+                            <p id="testimonial-position-1">Gerente de Operaciones, Minera Andina</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p id="testimonial-2">"La aplicación móvil desarrollada por DigDev ha revolucionado la forma en que nuestro equipo reporta incidentes en terreno. Es intuitiva, rápida y ha reducido nuestros tiempos de respuesta significativamente."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZjc0YzNjIi8+Cjx0ZXh0IHg9IjMwIiB5PSIzNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCI+QVI8L3RleHQ+Cjwvc3ZnPgo=" alt="Ana Rodríguez">
+                        <div class="author-info">
+                            <h4 id="testimonial-author-2">Ana Rodríguez</h4>
+                            <p id="testimonial-position-2">Supervisora de Seguridad, Minera del Norte</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p id="testimonial-3">"Trabajar con DigDev ha sido una experiencia excepcional. Su equipo entendió perfectamente nuestras necesidades y desarrolló una solución personalizada que ha superado todas nuestras expectativas."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZmY2NjAwIi8+Cjx0ZXh0IHg9IjMwIiB5PSIzNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCI+UlM8L3RleHQ+Cjwvc3ZnPgo=" alt="Roberto Silva">
+                        <div class="author-info">
+                            <h4 id="testimonial-author-3">Roberto Silva</h4>
+                            <p id="testimonial-position-3">Director de TI, Corporación Minera Central</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="blog-title">Blog</h2>
+                <p id="blog-description">Artículos destacados sobre nuestras soluciones y la industria</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card" data-blog="1">
+                    <div class="blog-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzQ5OGRiIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5UcmFuc2Zvcm1hY2nDs24gRGlnaXRhbCBNaW5lcsOtYTwvdGV4dD4KPC9zdmc+Cg==');"></div>
+                    <div class="blog-content">
+                        <h3 id="blog-1-title">La Transformación Digital en la Minería Chilena</h3>
+                        <p id="blog-1-preview">Exploramos cómo la tecnología está revolucionando la industria minera en Chile y las oportunidades que presenta.</p>
+                        <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-blog="2">
+                    <div class="blog-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMmMzZTUwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5Nb25pdG9yZW8gZW4gVGllbXBvIFJlYWw8L3RleHQ+Cjwvc3ZnPgo=');"></div>
+                    <div class="blog-content">
+                        <h3 id="blog-2-title">Ventajas del Monitoreo en Tiempo Real para Operaciones Mineras</h3>
+                        <p id="blog-2-preview">Descubre cómo nuestros sistemas de monitoreo pueden mejorar la eficiencia y seguridad en tus operaciones.</p>
+                        <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-blog="3">
+                    <div class="blog-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZTc0YzNjIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5BcGxpY2FjaW9uZXMgTcOzdmlsZXM8L3RleHQ+Cjwvc3ZnPgo=');"></div>
+                    <div class="blog-content">
+                        <h3 id="blog-3-title">Desarrollo de Aplicaciones Móviles para la Industria</h3>
+                        <p id="blog-3-preview">Conoce nuestro proceso para crear apps móviles que resuelven problemas específicos del sector minero.</p>
+                        <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="faq-title">Preguntas Frecuentes</h2>
+                <p id="faq-description">Respuestas a las consultas más comunes sobre nuestros servicios</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 id="faq-1-question">¿Qué tipos de empresas pueden beneficiarse de sus servicios?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p id="faq-1-answer">Nuestras soluciones están diseñadas principalmente para la industria minera, pero también trabajamos con empresas de diversos sectores que requieran desarrollo de software personalizado, aplicaciones móviles o sitios web. Hemos desarrollado proyectos para retail, logística, educación y servicios financieros, entre otros.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 id="faq-2-question">¿Cuál es el tiempo promedio de desarrollo de un proyecto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p id="faq-2-answer">El tiempo de desarrollo varía según la complejidad y alcance del proyecto. Para un sitio web corporativo básico, podemos entregar en 2-4 semanas. Proyectos de software más complejos pueden tomar de 3 a 6 meses. Siempre proporcionamos un cronograma detallado después de analizar los requerimientos específicos.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 id="faq-3-question">¿Ofrecen soporte y mantenimiento después del lanzamiento?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p id="faq-3-answer">Sí, ofrecemos planes de soporte y mantenimiento continuo para todas nuestras soluciones. Esto incluye actualizaciones de seguridad, corrección de errores, mejoras funcionales y asistencia técnica. Los planes pueden ser mensuales o anuales, según las necesidades del cliente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 id="faq-4-question">¿Trabajan con tecnologías específicas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p id="faq-4-answer">Utilizamos una variedad de tecnologías modernas según los requerimientos del proyecto. Para desarrollo web trabajamos con HTML5, CSS3, JavaScript, React, Angular y Vue.js. Para backend utilizamos Node.js, Python, PHP y .NET. En aplicaciones móviles, desarrollamos tanto nativas (Swift, Kotlin) como híbridas (React Native, Flutter).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 id="faq-5-question">¿Cómo es el proceso de trabajo con DigDev Solutions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p id="faq-5-answer">Nuestro proceso incluye: 1) Consulta inicial para entender tus necesidades, 2) Análisis y propuesta detallada, 3) Diseño de la solución, 4) Desarrollo iterativo con revisiones periódicas, 5) Pruebas exhaustivas, 6) Implementación y lanzamiento, 7) Soporte continuo. Mantenemos una comunicación constante durante todo el proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="contact-title">Contacto</h2>
+                <p id="contact-description">Ponte en contacto con nosotros para discutir tu proyecto</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 id="contact-phone-title">Teléfono</h3>
+                    <a href="tel:+56999896880">+569 9989 6880</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 id="contact-email-title">Email</h3>
+                    <a href="mailto:colivares@digdev.cl">colivares@digdev.cl</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 id="contact-whatsapp-title">WhatsApp</h3>
+                    <a href="https://wa.me/56951089856" target="_blank">+569 5108 9856</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 id="contact-linkedin-title">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/digdevsolutions/" target="_blank">digdevsolutions</a>
+                </div>
+            </div>
+            
+            <div class="contact-grid" style="margin-top: 20px;">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 id="contact-instagram-title">Instagram</h3>
+                    <a href="https://www.instagram.com/digdevsolutions/" target="_blank">@digdevsolutions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3 id="contact-facebook-title">Facebook</h3>
+                    <a href="https://www.facebook.com/digdevsolutions/" target="_blank">digdevsolutions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-threads"></i>
+                    </div>
+                    <h3 id="contact-threads-title">Threads</h3>
+                    <a href="https://www.threads.net/@digdevsolutions/" target="_blank">@digdevsolutions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 id="contact-tiktok-title">TikTok</h3>
+                    <a href="https://www.tiktok.com/@digdevsolutions/" target="_blank">@digdevsolutions</a>
+                </div>
+            </div>
+            
+            <div class="contact-grid" style="margin-top: 20px;">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 id="contact-youtube-title">YouTube</h3>
+                    <a href="https://www.youtube.com/@digdevsolutions/" target="_blank">@digdevsolutions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3 id="contact-twitter-title">Twitter (X)</h3>
+                    <a href="https://x.com/DigDevSolutions/" target="_blank">@DigDevSolutions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 id="contact-website-title">Sitio Web</h3>
+                    <a href="https://digdev.cl" target="_blank">https://digdev.cl</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DigDev Solutions</h3>
+                    <p id="footer-description">Soluciones digitales especializadas para la industria minera y otros sectores en Chile.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/digdevsolutions/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/digdevsolutions/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/digdevsolutions/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/DigDevSolutions/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="footer-links-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services" id="footer-services">Servicios</a></li>
+                        <li><a href="#mining" id="footer-mining">Minería</a></li>
+                        <li><a href="#about" id="footer-about">Quiénes Somos</a></li>
+                        <li><a href="#testimonials" id="footer-testimonials">Testimonios</a></li>
+                        <li><a href="#blog" id="footer-blog">Blog</a></li>
+                        <li><a href="#faq" id="footer-faq">FAQ</a></li>
+                        <li><a href="#contact" id="footer-contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 id="footer-contact-title">Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+56999896880"><i class="fas fa-phone"></i> +569 9989 6880</a></li>
+                        <li><a href="mailto:colivares@digdev.cl"><i class="fas fa-envelope"></i> colivares@digdev.cl</a></li>
+                        <li><a href="https://digdev.cl" target="_blank"><i class="fas fa-globe"></i> https://digdev.cl</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p id="copyright-text">&copy; 2023 DigDev Solutions. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/56951089856?text=Hola,%20me%20interesan%20sus%20servicios%20de%20desarrollo%20web%20y%20software" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Blog Modals -->
+    <div class="blog-modal" id="blogModal1">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMzQ5OGRiIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5UcmFuc2Zvcm1hY2nDs24gRGlnaXRhbCBNaW5lcsOtYTwvdGV4dD4KPC9zdmc+Cg==');"></div>
+            <div class="modal-body">
+                <h2 id="blog-modal-1-title">La Transformación Digital en la Minería Chilena</h2>
+                <p id="blog-modal-1-p1">La industria minera en Chile está experimentando una revolución tecnológica sin precedentes. La transformación digital ha llegado para optimizar procesos, mejorar la seguridad y aumentar la eficiencia en todas las etapas de la operación minera.</p>
+                <p id="blog-modal-1-p2">En DigDev Solutions, hemos desarrollado soluciones específicas para este sector, incluyendo sistemas de gestión integral, plataformas de monitoreo en tiempo real y aplicaciones móviles especializadas. Estas herramientas permiten a las empresas mineras tomar decisiones basadas en datos precisos y actualizados.</p>
+                <p id="blog-modal-1-p3">La adopción de tecnologías como IoT, inteligencia artificial y análisis de big data está transformando la forma en que se planifican y ejecutan las operaciones mineras. Nuestro equipo de expertos trabaja constantemente para integrar estas tecnologías en soluciones prácticas y accesibles para la industria.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-modal" id="blogModal2">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMmMzZTUwIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5Nb25pdG9yZW8gZW4gVGllbXBvIFJlYWw8L3RleHQ+Cjwvc3ZnPgo=');"></div>
+            <div class="modal-body">
+                <h2 id="blog-modal-2-title">Ventajas del Monitoreo en Tiempo Real para Operaciones Mineras</h2>
+                <p id="blog-modal-2-p1">El monitoreo en tiempo real se ha convertido en una herramienta esencial para las operaciones mineras modernas. Permite supervisar constantemente diversos aspectos de la producción, desde el estado de la maquinaria hasta las condiciones ambientales y de seguridad.</p>
+                <p id="blog-modal-2-p2">Nuestros sistemas de monitoreo ofrecen ventajas significativas, incluyendo la detección temprana de problemas, la optimización del uso de recursos y la mejora en la toma de decisiones. Los datos recopilados se presentan en dashboards intuitivos que facilitan su interpretación y aplicación.</p>
+                <p id="blog-modal-2-p3">Además, estas soluciones contribuyen a crear entornos de trabajo más seguros al alertar sobre condiciones peligrosas y permitir una respuesta rápida ante emergencias. La implementación de sistemas de monitoreo representa una inversión que se recupera rápidamente a través de la mejora en la eficiencia operacional.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-modal" id="blogModal3">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDgwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZTc0YzNjIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5BcGxpY2FjaW9uZXMgTcOzdmlsZXM8L3RleHQ+Cjwvc3ZnPgo=');"></div>
+            <div class="modal-body">
+                <h2 id="blog-modal-3-title">Desarrollo de Aplicaciones Móviles para la Industria</h2>
+                <p id="blog-modal-3-p1">Las aplicaciones móviles han revolucionado la forma en que se realizan las operaciones en la industria minera. Desde el reporte de incidentes hasta la gestión de inventarios, estas herramientas permiten a los trabajadores realizar sus tareas de manera más eficiente, incluso en ubicaciones remotas.</p>
+                <p id="blog-modal-3-p2">En DigDev Solutions, desarrollamos aplicaciones móviles nativas e híbridas adaptadas a las necesidades específicas del sector minero. Nuestro proceso incluye un análisis detallado de los requerimientos, diseño de interfaces intuitivas y desarrollo con las mejores prácticas de seguridad y rendimiento.</p>
+                <p id="blog-modal-3-p3">Las aplicaciones que creamos pueden funcionar sin conexión a internet en áreas con cobertura limitada, sincronizando los datos cuando se restablece la conectividad. Esta característica es especialmente valiosa en yacimientos mineros donde la conectividad puede ser intermitente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/otra.js"></script>
+</body>
+</html>
