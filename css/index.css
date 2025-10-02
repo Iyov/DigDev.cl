@@ -116,22 +116,22 @@ body {
     left: 30px;
     background-color: #25D366;
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 15px 20px;
+    border-radius: 50px;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     z-index: 1000;
-    font-size: 1.8rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    background-color: #128C7E;
 }
 
 .whatsapp-tooltip {
@@ -685,7 +685,7 @@ header {
 
 .contact-links {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
@@ -702,7 +702,7 @@ header {
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 1.1rem;
     font-weight: 500;
 }
@@ -710,12 +710,12 @@ header {
 .contact-link:hover {
     background-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact-link i {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     width: 30px;
     text-align: center;
 }
@@ -794,6 +794,10 @@ footer {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .whatsapp-text {
+        display: inline;
+    }
 }
 
 @media (min-width: 768px) {
@@ -851,7 +855,7 @@ footer {
 
 @media (min-width: 992px) {
     .contact-links {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -908,9 +912,15 @@ footer {
     .whatsapp-float {
         bottom: 20px;
         left: 20px;
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
+        padding: 12px 15px;
+    }
+    
+    .whatsapp-text {
+        display: none;
+    }
+    
+    .contact-links {
+        grid-template-columns: 1fr;
     }
 }
 
