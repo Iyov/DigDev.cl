@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DigDev Solutions - Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia. Soluciones personalizadas, responsivas y multilenguaje." />
+  <meta name="keywords" content="software minero, desarrollo web, aplicaciones móviles, soluciones personalizadas, minería, tecnología" />
+  <meta name="author" content="DigDev Solutions" />
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DigDev Solutions",
+    "url": "https://digdevsolutions.com",
+    "logo": "https://digdevsolutions.com/logo.png",
+    "description": "Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Chile"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "customer service",
+      "email": "info@digdevsolutions.com",
+      "availableLanguage": ["es", "en"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/digdev-solutions",
+      "https://www.facebook.com/digdevsolutions",
+      "https://twitter.com/digdevsolutions"
+    ]
+  }
+  </script>
+  
+  <title>DigDev Solutions - Software para la Industria Minera</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/presentacion.css" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1193d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <!-- Progress Bar -->
+  <div id="progressBar" class="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-300"></div>
+  
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-6 right-20 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 invisible">
+    <i class="fas fa-arrow-up text-xl"></i>
+  </button>
+  
+  <!-- WhatsApp Button -->
+  <a id="whatsappButton" href="https://wa.me/15559876543" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group">
+    <i class="fab fa-whatsapp text-2xl"></i>
+    <span class="whatsapp-tooltip">Comunícate con nosotros</span>
+  </a>
+
+  <div class="flex min-h-screen w-full flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex items-center gap-3">
+          <a href="#Inicio" id="logoLink" class="flex items-center gap-2">
+            <i class="fas fa-code text-primary text-2xl"></i>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="header.company-name">DigDev Solutions</h2>
+          </a>
+        </div>
+        
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#Servicios" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.services">Servicios</a>
+          <a href="#Mineria" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.mining">Minería</a>
+          <a href="#Nosotros" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.about">Nosotros</a>
+          <a href="#Clientes" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.clients">Clientes</a>
+          <a href="#Blog" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.blog">Blog</a>
+          <a href="#FAQ" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.faq">FAQ</a>
+          <a href="#Contacto" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.contact">Contacto</a>
+        </nav>
+        
+        <div class="flex items-center gap-4">
+          <!-- Language Selector -->
+          <div class="relative group">
+            <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <i class="fa-solid fa-globe text-xl"></i>
+            </button>
+            <div id="languageDropdown" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden group-hover:block">
+              <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="es">
+                <i class="fas fa-check text-primary hidden language-check" id="check-es"></i>
+                <span>Español</span>
+              </button>
+              <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="en">
+                <i class="fas fa-check text-primary hidden language-check" id="check-en"></i>
+                <span>English</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Theme Toggle -->
+          <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+            <i class="fa-solid fa-moon text-xl" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section id="Inicio" class="bg-hero bg-cover bg-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-40 text-center text-white">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" data-lang="hero.title">Impulsando la Innovación en la Minería</h1>
+          <p class="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-gray-300" data-lang="hero.description">
+            DigDev Solutions: Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia. 
+            Ofrecemos soluciones personalizadas, responsivas y multilenguaje, con soporte para modo claro y oscuro.
+          </p>
+          <div class="mt-8">
+            <a href="#Contacto" class="inline-block bg-primary text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-primary/90 transition-transform transform hover:scale-105" data-lang="hero.cta">Conoce Nuestras Soluciones</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-16 sm:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white" data-lang="features.title">Nuestras Características Destacadas</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400" data-lang="features.description">
+              En DigDev Solutions, nos enfocamos en ofrecer
+              soluciones de software que cumplen con los más altos estándares de calidad y funcionalidad.
+            </p>
+          </div>
+          <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Feature 1 -->
+            <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+              <i class="fa-solid fa-laptop-code text-primary text-4xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="features.responsive-title">Diseño Responsivo</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="features.responsive-desc">
+                Nuestras aplicaciones se adaptan a cualquier dispositivo, garantizando una experiencia de usuario óptima.
+              </p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+              <i class="fa-solid fa-language text-primary text-4xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="features.multilanguage-title">Soporte Multilenguaje</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="features.multilanguage-desc">
+                Facilitamos la comunicación y el acceso a la información para usuarios de todo el mundo.
+              </p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+              <i class="fa-solid fa-circle-half-stroke text-primary text-4xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="features.theme-title">Modo Claro/Oscuro</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="features.theme-desc">
+                Permite a los usuarios elegir la apariencia que mejor se adapte a sus preferencias.
+              </p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+              <i class="fa-solid fa-award text-primary text-4xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="features.experience-title">+10 Años de Experiencia</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="features.experience-desc">
+                Una década desarrollando soluciones innovadoras y eficientes para la industria minera.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Cases Section -->
+      <section id="Exito" class="bg-gray-100 dark:bg-gray-900/50 py-16 sm:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-12" data-lang="success.title">
+            Casos de Éxito
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Success Case 1 -->
+            <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="w-full h-48 bg-cover bg-center bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-chart-line text-6xl text-primary"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case1-title">Optimización de Procesos</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case1-desc">
+                  Aumento del 15% en la eficiencia operativa en una importante mina de cobre.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Success Case 2 -->
+            <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="w-full h-48 bg-cover bg-center bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-truck-monster text-6xl text-primary"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case2-title">Gestión de Flota</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case2-desc">
+                  Reducción del 20% en costos de mantenimiento y mejora en la disponibilidad de equipos.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Success Case 3 -->
+            <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="w-full h-48 bg-cover bg-center bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-database text-6xl text-primary"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case3-title">Análisis de Datos</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case3-desc">
+                  Identificación de cuellos de botella y mejoras significativas en la producción.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="Servicios" class="py-12 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl" data-lang="services.title">
+              Nuestros Servicios
+            </h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400" data-lang="services.description">
+              Soluciones de software innovadoras, especializadas en el sector minero para potenciar la eficiencia y seguridad.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Service 1 -->
+            <div class="flex flex-col rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/20 p-6 shadow-sm transition-all hover:shadow-lg dark:hover:bg-gray-800/40">
+              <div class="icon-container mb-4 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+                <i class="fas fa-code text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="services.webdev-title">Desarrollo Web</h3>
+              <p class="mt-2 flex-grow text-gray-600 dark:text-gray-400" data-lang="services.webdev-desc">
+                Creamos sitios web atractivos y funcionales, optimizados para la industria minera, con un enfoque en la
+                experiencia del usuario y la accesibilidad.
+              </p>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="flex flex-col rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/20 p-6 shadow-sm transition-all hover:shadow-lg dark:hover:bg-gray-800/40">
+              <div class="icon-container mb-4 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+                <i class="fas fa-mobile-alt text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="services.mobile-title">Aplicaciones Móviles</h3>
+              <p class="mt-2 flex-grow text-gray-600 dark:text-gray-400" data-lang="services.mobile-desc">
+                Desarrollamos aplicaciones móviles robustas y seguras para iOS y Android, diseñadas para mejorar la
+                eficiencia y comunicación en el sector minero.
+              </p>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="flex flex-col rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/20 p-6 shadow-sm transition-all hover:shadow-lg dark:hover:bg-gray-800/40">
+              <div class="icon-container mb-4 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+                <i class="fas fa-cogs text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="services.custom-title">Soluciones Personalizadas</h3>
+              <p class="mt-2 flex-grow text-gray-600 dark:text-gray-400" data-lang="services.custom-desc">
+                Ofrecemos software a medida adaptado a las necesidades de cada cliente, desde sistemas de gestión hasta
+                herramientas de análisis de datos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mining Solutions Section -->
+      <section id="Mineria" class="relative bg-cover bg-center bg-gray-800 dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40 text-center text-white">
+          <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight" data-lang="mining.title">Soluciones de Software para la Industria Minera</h1>
+            <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto" data-lang="mining.description">
+              En DigDev Solutions, transformamos la operación minera con tecnología de punta. 
+              Desde sistemas de gestión hasta monitoreo en tiempo real, integramos datos para optimizar cada proceso.
+            </p>
+            <div class="mt-10">
+              <button class="px-8 py-3 text-base font-bold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors" data-lang="mining.cta">
+                <span>Conozca Nuestras Soluciones</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Key Solutions Section -->
+      <section id="Soluciones" class="py-16 sm:py-24 lg:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white" data-lang="solutions.title">Nuestras Soluciones Clave</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400" data-lang="solutions.description">
+              Impulsamos la eficiencia y seguridad en la minería a través de soluciones innovadoras.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Solution 1 -->
+            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white/50 dark:bg-background-dark/50 p-6 text-center items-center backdrop-blur-sm">
+              <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/20 text-primary mb-4">
+                <i class="fa-solid fa-gears text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="solutions.management-title">Sistemas de Gestión Minera</h3>
+              <p class="text-gray-600 dark:text-gray-400" data-lang="solutions.management-desc">
+                Optimice la planificación y control de sus operaciones con sistemas que se adaptan a sus necesidades.
+              </p>
+            </div>
+            
+            <!-- Solution 2 -->
+            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white/50 dark:bg-background-dark/50 p-6 text-center items-center backdrop-blur-sm">
+              <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/20 text-primary mb-4">
+                <i class="fa-solid fa-chart-line text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="solutions.monitoring-title">Monitoreo en Tiempo Real</h3>
+              <p class="text-gray-600 dark:text-gray-400" data-lang="solutions.monitoring-desc">
+                Supervise cada aspecto de su operación en tiempo real, mejorando la toma de decisiones y la seguridad.
+              </p>
+            </div>
+            
+            <!-- Solution 3 -->
+            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white/50 dark:bg-background-dark/50 p-6 text-center items-center backdrop-blur-sm">
+              <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/20 text-primary mb-4">
+                <i class="fa-solid fa-database text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="solutions.integration-title">Integración de Datos</h3>
+              <p class="text-gray-600 dark:text-gray-400" data-lang="solutions.integration-desc">
+                Unifique sus datos para obtener una visión completa y accionable de su negocio minero.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-primary/10 dark:bg-primary/20 py-16 sm:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white" data-lang="cta.title">Trabajemos Juntos</h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400" data-lang="cta.description">
+            Si buscas un socio tecnológico con experiencia en la industria minera, estamos listos para ayudarte a alcanzar tus objetivos.
+          </p>
+          <div class="mt-8">
+            <a href="#Contacto" class="inline-block bg-primary text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-primary/90 transition-transform transform hover:scale-105" data-lang="cta.button">Contáctanos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="Nosotros" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl mx-auto text-center">
+            <div class="flex justify-center mb-8">
+              <div class="w-32 h-32 md:w-64 md:h-64 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+                <i class="fas fa-code text-4xl md:text-8xl"></i>
+              </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white" data-lang="about.title">
+              Quiénes Somos
+            </h1>
+            <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-lang="about.description">
+              En DigDev Solutions, nos dedicamos a transformar la industria minera a través de soluciones de software innovadoras y personalizadas.
+            </p>
+          </div>
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <!-- Mission -->
+            <div class="p-8 rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white mx-auto">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-gray-900 dark:text-white" data-lang="about.mission-title">Misión</h3>
+              <p class="mt-2 text-base text-gray-600 dark:text-gray-400" data-lang="about.mission-desc">
+                Impulsar la eficiencia operativa, mejorar la seguridad y optimizar la toma de decisiones en cada etapa del proceso minero.
+              </p>
+            </div>
+            
+            <!-- Vision -->
+            <div class="p-8 rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white mx-auto">
+                <i class="fas fa-trending-up"></i>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-gray-900 dark:text-white" data-lang="about.vision-title">Visión</h3>
+              <p class="mt-2 text-base text-gray-600 dark:text-gray-400" data-lang="about.vision-desc">
+                Un futuro donde la tecnología y la minería convergen para crear operaciones más inteligentes y sostenibles.
+              </p>
+            </div>
+            
+            <!-- Values -->
+            <div class="p-8 rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white mx-auto">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-gray-900 dark:text-white" data-lang="about.values-title">Valores</h3>
+              <p class="mt-2 text-base text-gray-600 dark:text-gray-400" data-lang="about.values-desc">
+                Integridad, innovación, colaboración y compromiso con la excelencia, guiando cada proyecto que emprendemos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="Clientes" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white" data-lang="testimonials.title">Lo que dicen nuestros clientes</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400" data-lang="testimonials.description">
+              Historias de éxito de líderes en la industria minera.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
+              <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-user text-4xl text-primary"></i>
+              </div>
+              <div class="flex text-primary mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 text-base leading-relaxed" data-lang="testimonials.testimonial1">
+                "DigDev Solutions transformó nuestra eficiencia operativa. 
+                Su experiencia en procesos mineros es inigualable, lo que generó ahorros significativos y una mayor productividad."
+              </p>
+              <div class="mt-auto">
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">Sarah Chen</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">CEO, MiningTech</p>
+              </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
+              <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-user text-4xl text-primary"></i>
+              </div>
+              <div class="flex text-primary mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 text-base leading-relaxed" data-lang="testimonials.testimonial2">
+                "El software personalizado de DigDev ha revolucionado nuestro análisis de datos. 
+                Ahora tenemos información en tiempo real que impulsa una mejor toma de decisiones y optimiza la gestión de recursos."
+              </p>
+              <div class="mt-auto">
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">David Ramirez</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Gerente de Operaciones, GeoMine Inc.</p>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
+              <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-user text-4xl text-primary"></i>
+              </div>
+              <div class="flex text-primary mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 text-base leading-relaxed" data-lang="testimonials.testimonial3">
+                "Trabajar con DigDev Solutions cambió las reglas del juego. 
+                Su enfoque personalizado y su profundo conocimiento de nuestros desafíos dieron como resultado una solución que se adapta perfectamente a nuestras necesidades."
+              </p>
+              <div class="mt-auto">
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">Emily Carter</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Jefa de Innovación, ResourceCo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="Blog" class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl" data-lang="blog.title">Nuestro Blog</h2>
+            <p class="mt-4 text-lg text-gray-500 dark:text-gray-400" data-lang="blog.description">
+              Explorando la vanguardia tecnológica en la minería.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-8 lg:grid-cols-3">
+            <!-- Blog Post 1 -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800/20 cursor-pointer blog-post" data-blog="1">
+              <div class="flex-shrink-0 h-48 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-cogs text-6xl text-primary"></i>
+              </div>
+              <div class="flex-1 p-6 flex flex-col justify-between">
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-primary">
+                    <a class="hover:underline" href="#">
+                      <i class="fas fa-cogs mr-2"></i><span data-lang="blog.automation-category">Automatización</span>
+                    </a>
+                  </p>
+                  <a class="block mt-2" href="#">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white" data-lang="blog.automation-title">
+                      Innovaciones en la automatización de procesos mineros
+                    </p>
+                    <p class="mt-3 text-base text-gray-500 dark:text-gray-400" data-lang="blog.automation-desc">
+                      Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras. 
+                      Exploramos casos de éxito y las últimas tendencias.
+                    </p>
+                  </a>
+                </div>
+                <div class="mt-6">
+                  <button class="blog-read-more inline-block bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/80 transition-colors" data-blog="1" data-lang="blog.read-more">
+                    Ver en detalle
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800/20 cursor-pointer blog-post" data-blog="2">
+              <div class="flex-shrink-0 h-48 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-truck-fast text-6xl text-primary"></i>
+              </div>
+              <div class="flex-1 p-6 flex flex-col justify-between">
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-primary">
+                    <a class="hover:underline" href="#">
+                      <i class="fas fa-truck-fast mr-2"></i><span data-lang="blog.logistics-category">Logística</span>
+                    </a>
+                  </p>
+                  <a class="block mt-2" href="#">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white" data-lang="blog.logistics-title">
+                      Optimización de la cadena de suministro en la industria minera
+                    </p>
+                    <p class="mt-3 text-base text-gray-500 dark:text-gray-400" data-lang="blog.logistics-desc">
+                      Analizamos estrategias para mejorar la eficiencia y reducir costos en la cadena de suministro minera, 
+                      desde la extracción hasta la entrega del producto final.
+                    </p>
+                  </a>
+                </div>
+                <div class="mt-6">
+                  <button class="blog-read-more inline-block bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/80 transition-colors" data-blog="2" data-lang="blog.read-more">
+                    Ver en detalle
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800/20 cursor-pointer blog-post" data-blog="3">
+              <div class="flex-shrink-0 h-48 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                <i class="fas fa-rocket text-6xl text-primary"></i>
+              </div>
+              <div class="flex-1 p-6 flex flex-col justify-between">
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-primary">
+                    <a class="hover:underline" href="#">
+                      <i class="fas fa-rocket mr-2"></i><span data-lang="blog.innovation-category">Innovación</span>
+                    </a>
+                  </p>
+                  <a class="block mt-2" href="#">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white" data-lang="blog.innovation-title">
+                      El futuro de la minería: tecnologías emergentes y su impacto
+                    </p>
+                    <p class="mt-3 text-base text-gray-500 dark:text-gray-400" data-lang="blog.innovation-desc">
+                      Un vistazo a las tecnologías que están redefiniendo la industria minera, 
+                      incluyendo inteligencia artificial, blockchain y sensores avanzados.
+                    </p>
+                  </a>
+                </div>
+                <div class="mt-6">
+                  <button class="blog-read-more inline-block bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/80 transition-colors" data-blog="3" data-lang="blog.read-more">
+                    Ver en detalle
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="FAQ" class="min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-4xl">
+          <div class="text-center mb-8 lg:mb-12">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white" data-lang="faq.title">Preguntas Frecuentes</h1>
+            <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-gray-400" data-lang="faq.description">
+              Encuentra respuestas a las consultas más comunes sobre nuestros servicios.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <details class="faq-item group rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800" open="">
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white" data-lang="faq.question1">
+                  ¿Qué tipo de soluciones de software ofrece DigDev Solutions?
+                </h3>
+                <div class="flex-shrink-0 ml-4">
+                  <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+                </div>
+              </summary>
+              <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 dark:text-gray-400" data-lang="faq.answer1">
+                <p>
+                  DigDev Solutions se especializa en desarrollar soluciones de software personalizadas para la industria minera. 
+                  Nuestras ofertas incluyen sistemas de automatización de procesos, plataformas de análisis de datos, 
+                  software de monitoreo de equipos y aplicaciones de gestión de seguridad. 
+                  Aprovechamos tecnologías de vanguardia para abordar desafíos específicos y mejorar la eficiencia operativa.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="faq-item group rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white" data-lang="faq.question2">
+                  ¿Cómo garantiza DigDev Solutions la seguridad de su software?
+                </h3>
+                <div class="flex-shrink-0 ml-4">
+                  <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+                </div>
+              </summary>
+              <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 dark:text-gray-400" data-lang="faq.answer2">
+                <p>
+                  La seguridad es una prioridad máxima. Implementamos prácticas de codificación segura, 
+                  realizamos auditorías de seguridad periódicas y utilizamos cifrado de datos robusto. 
+                  Nuestras soluciones cumplen con los estándares de seguridad de la industria para proteger 
+                  los datos críticos de nuestros clientes contra amenazas cibernéticas.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="faq-item group rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white" data-lang="faq.question3">
+                  ¿Puede DigDev Solutions integrar su software con sistemas existentes?
+                </h3>
+                <div class="flex-shrink-0 ml-4">
+                  <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+                </div>
+              </summary>
+              <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 dark:text-gray-400" data-lang="faq.answer3">
+                <p>
+                  Sí, una de nuestras fortalezas es la capacidad de integrar nuestras soluciones de software 
+                  sin problemas con los sistemas y la infraestructura de TI existentes de nuestros clientes. 
+                  Diseñamos nuestras aplicaciones con API flexibles para garantizar una interoperabilidad 
+                  fluida y minimizar las interrupciones durante la implementación.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="faq-item group rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white" data-lang="faq.question4">
+                  ¿Cuál es el cronograma de desarrollo típico para un proyecto de software?
+                </h3>
+                <div class="flex-shrink-0 ml-4">
+                  <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+                </div>
+              </summary>
+              <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 dark:text-gray-400" data-lang="faq.answer4">
+                <p>
+                  El cronograma varía según la complejidad y el alcance del proyecto. Después de una consulta 
+                  inicial, proporcionamos una hoja de ruta detallada del proyecto con hitos y plazos claros. 
+                  Nuestro enfoque de desarrollo ágil nos permite entregar valor de manera incremental y 
+                  adaptarnos a los requisitos cambiantes de manera eficiente.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 5 -->
+            <details class="faq-item group rounded-lg bg-background-light dark:bg-background-dark/50 shadow-sm border border-gray-200 dark:border-gray-800">
+              <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer list-none">
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white" data-lang="faq.question5">
+                  ¿DigDev Solutions ofrece soporte y mantenimiento post-lanzamiento?
+                </h3>
+                <div class="flex-shrink-0 ml-4">
+                  <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+                </div>
+              </summary>
+              <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-600 dark:text-gray-400" data-lang="faq.answer5">
+                <p>
+                  Absolutamente. Ofrecemos paquetes integrales de soporte y mantenimiento para garantizar que 
+                  nuestras soluciones de software sigan funcionando de manera óptima. Nuestros servicios 
+                  incluyen actualizaciones periódicas, corrección de errores, soporte técnico y mejoras de 
+                  funciones para satisfacer las necesidades cambiantes de su negocio.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <div class="mt-8 lg:mt-12 text-center">
+            <p class="text-gray-600 dark:text-gray-400" data-lang="faq.contact-text">¿No encuentras lo que buscas?</p>
+            <a href="#Contacto" class="inline-block mt-2 font-semibold text-primary hover:text-primary/80 transition-colors" data-lang="faq.contact-link">Contáctanos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="Contacto" class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4" data-lang="contact.title">
+              Ponte en Contacto
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-lang="contact.description">
+              Estamos aquí para ayudarte. Contáctanos a través de cualquiera de los siguientes canales.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Phone -->
+            <a href="tel:+15551234567"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fas fa-phone text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.phone-title">Teléfono</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">+1-555-123-4567</p>
+            </a>
+            
+            <!-- Email -->
+            <a href="mailto:info@digdevsolutions.com"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fas fa-envelope text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.email-title">Email</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">info@digdevsolutions.com</p>
+            </a>
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/15559876543"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-whatsapp text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.whatsapp-title">WhatsApp</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">+1-555-987-6543</p>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="#"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-linkedin text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.linkedin-title">LinkedIn</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">DigDev Solutions</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+        <p data-lang="footer.copyright">© 2025 DigDev Solutions. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Blog Modal -->
+  <div id="blogModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 id="blogModalTitle" class="text-2xl font-bold text-gray-900 dark:text-white"></h3>
+          <button id="closeBlogModal" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div id="blogModalContent" class="prose dark:prose-invert max-w-none">
+          <!-- Content will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/presentacion.js"></script>
+</body>
+</html>

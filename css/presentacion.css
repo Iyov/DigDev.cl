@@ -1,0 +1,117 @@
+/* Custom CSS for DigDev Solutions */
+
+/* Hero Background */
+.bg-hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuykW39RUZzBSx6IAlj7lbWDiTzLevp-zc0F0KlLpcMKmJK7P09J-bF9kZfoF873bjMroC6oU5URMZfhZKJGw3Q7fuDSENZVF8dv-0ypMkleHZIqshx-VzdfxALbB71RhzmCx4sBQxambGMWBneKAETMzSRAHXn_s4vIbL-_tBWjTZe6YcvmbpneHqT-Zx01LSl8YVNO4ahilvERAzRxNH5m38XWkk8PrWNhm6YWyrtPJdZZVl79SbfqKfIrF56vH6cGboVeKo28k");
+}
+
+/* Icon Container */
+.icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FAQ Styling */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:focus {
+  outline: none;
+}
+
+/* WhatsApp Tooltip */
+#whatsappButton {
+  position: relative;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#whatsappButton:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Language Dropdown */
+#languageDropdown {
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Back to Top Button Animation */
+#backToTop {
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+  transform: translateY(-3px);
+}
+
+/* Blog Modal Styling */
+#blogModal {
+  transition: opacity 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bg-hero {
+    background-position: center;
+  }
+  
+  #whatsappButton .whatsapp-tooltip {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* Dark mode adjustments for images */
+@media (prefers-color-scheme: dark) {
+  .bg-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuykW39RUZzBSx6IAlj7lbWDiTzLevp-zc0F0KlLpcMKmJK7P09J-bF9kZfoF873bjMroC6oU5URMZfhZKJGw3Q7fuDSENZVF8dv-0ypMkleHZIqshx-VzdfxALbB71RhzmCx4sBQxambGMWBneKAETMzSRAHXn_s4vIbL-_tBWjTZe6YcvmbpneHqT-Zx01LSl8YVNO4ahilvERAzRxNH5m38XWkk8PrWNhm6YWyrtPJdZZVl79SbfqKfIrF56vH6cGboVeKo28k");
+  }
+}
+
+/* Loading animation for page transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus {
+  outline: 2px solid #1193d4;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  #backToTop, #whatsappButton, #progressBar {
+    display: none !important;
+  }
+}
