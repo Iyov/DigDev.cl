@@ -4,7 +4,7 @@
 const translations = {
   es: {
     // Header
-    "header.company-name": "DigDev Solutions",
+    "header.company-name": "DigDev",
     "header.services": "Servicios",
     "header.mining": "Minería",
     "header.about": "Nosotros",
@@ -129,7 +129,7 @@ const translations = {
   },
   en: {
     // Header
-    "header.company-name": "DigDev Solutions",
+    "header.company-name": "DigDev",
     "header.services": "Services",
     "header.mining": "Mining",
     "header.about": "About Us",

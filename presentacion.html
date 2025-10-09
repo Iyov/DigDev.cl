@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html class="dark" lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DigDev Solutions - Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia. Soluciones personalizadas, responsivas y multilenguaje." />
-  <meta name="keywords" content="software minero, desarrollo web, aplicaciones móviles, soluciones personalizadas, minería, tecnología" />
-  <meta name="author" content="DigDev Solutions" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigDev - Digital Developers | Desarrollo de Software para la Minería y Soluciones Tecnológicas</title>
+    <meta name="description" content="DigDev desarrolla sistemas innovadores para la minería con 10 años de experiencia. Somos tu partner tecnológico para impulsar tu negocio en la era digital." />
+    <meta name="keywords" content="digdev, desarrollo web, aplicaciones móviles, soluciones digitales, desarrollo software, chile, TI, desarrollo software minería, software minero, tecnología minería Chile" />
+    <meta name="author" content="DigDev Solutions" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://digdev.cl" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://digdev.cl/" />
+    <meta property="og:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería" />
+    <meta property="og:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio." />
+    <meta property="og:image" content="https://digdev.cl/img/DigDev_logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://digdev.cl/" />
+    <meta property="twitter:title" content="DigDev - Digital Developers | Desarrollo de Software para la Minería" />
+    <meta property="twitter:description" content="Desarrollamos sistemas innovadores para la minería con 10 años de experiencia. Tu partner tecnológico para impulsar tu negocio." />
+    <meta property="twitter:image" content="https://digdev.cl/img/DigDev_logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" />
+    <link rel="stylesheet" href="css/font-awesome_6.4.0_all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/presentacion.css" />
+
   <!-- Schema.org markup for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DigDev Solutions",
+    "name": "DigDev Solutions - Digital Developers",
     "url": "https://digdev.cl",
     "logo": "https://digdev.cl/img/DigDev_logo.png",
-    "description": "Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia.",
+    "description": "DigDev desarrolla sistemas innovadores para la minería con 10 años de experiencia. Somos tu partner tecnológico para impulsar tu negocio en la era digital.",
     "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Chile"
+        "@type": "PostalAddress",
+        "streetAddress": "Las Acacias 390",
+        "addressLocality": "Villa Alemana",
+        "addressCountry": "CL"
     },
     "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+56999896880",
-      "contactType": "customer service",
-      "email": "colivares@digdev.cl",
-      "availableLanguage": ["es", "en"]
+        "@type": "ContactPoint",
+        "telephone": "+56-9-99896880",
+        "contactType": "customer service",
+        "email": "colivares@digdev.cl",
+        "availableLanguage": ["Spanish", "English"]
     },
     "sameAs": [
-      "https://www.linkedin.com/in/digdevsolutions/",
-      "https://www.facebook.com/digdevsolutions/",
-      "https://x.com/DigDevSolutions/",
-      "https://www.instagram.com/digdevsolutions/",
-      "https://www.threads.net/@digdevsolutions/",
-      "https://www.tiktok.com/@digdevsolutions/",
-      "https://www.youtube.com/@digdevsolutions/"
+        "https://www.linkedin.com/in/digdevsolutions/",
+        "https://www.instagram.com/digdevsolutions/",
+        "https://www.facebook.com/digdevsolutions/",
+        "https://www.threads.net/@digdevsolutions/",
+        "https://www.tiktok.com/@digdevsolutions/",
+        "https://www.youtube.com/@digdevsolutions/",
+        "https://x.com/DigDevSolutions/"
+    ],
+    "knowsAbout": [
+        "Desarrollo de Software",
+        "Análisis de Datos",
+        "Business Intelligence",
+        "Marketing Digital",
+        "Software para la Minería",
+        "Transformación Digital",
+        "Desarrollo Web"
     ]
   }
   </script>
-  
-  <title>DigDev Solutions - Software para la Industria Minera</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
-  
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/presentacion.css" />
   
   <script>
     tailwind.config = {
@@ -100,7 +126,7 @@
         <div class="flex items-center gap-3">
           <a href="#Inicio" id="logoLink" class="flex items-center gap-2">
             <i class="fas fa-code text-primary text-2xl"></i>
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="header.company-name">DigDev Solutions</h2>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white" data-lang="header.company-name">DigDev</h2>
           </a>
         </div>
         
@@ -433,7 +459,7 @@
           <div class="max-w-4xl mx-auto text-center">
             <div class="flex justify-center mb-8">
               <div class="w-32 h-32 md:w-64 md:h-64 flex items-center justify-center rounded-full bg-primary/20 text-primary">
-                <i class="fas fa-code text-4xl md:text-8xl"></i>
+                <img src="img/DigDev_logo.png" alt="DigDev Logo" aria-label="DigDev Logo" />
               </div>
             </div>
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white" data-lang="about.title">
