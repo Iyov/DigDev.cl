@@ -13,8 +13,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "DigDev Solutions",
-    "url": "https://digdevsolutions.com",
-    "logo": "https://digdevsolutions.com/logo.png",
+    "url": "https://digdev.cl",
+    "logo": "https://digdev.cl/img/DigDev_logo.png",
     "description": "Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia.",
     "address": {
       "@type": "PostalAddress",
@@ -22,15 +22,19 @@
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
+      "telephone": "+56999896880",
       "contactType": "customer service",
-      "email": "info@digdevsolutions.com",
+      "email": "colivares@digdev.cl",
       "availableLanguage": ["es", "en"]
     },
     "sameAs": [
-      "https://www.linkedin.com/company/digdev-solutions",
-      "https://www.facebook.com/digdevsolutions",
-      "https://twitter.com/digdevsolutions"
+      "https://www.linkedin.com/in/digdevsolutions/",
+      "https://www.facebook.com/digdevsolutions/",
+      "https://x.com/DigDevSolutions/",
+      "https://www.instagram.com/digdevsolutions/",
+      "https://www.threads.net/@digdevsolutions/",
+      "https://www.tiktok.com/@digdevsolutions/",
+      "https://www.youtube.com/@digdevsolutions/"
     ]
   }
   </script>
@@ -84,7 +88,7 @@
   </button>
   
   <!-- WhatsApp Button -->
-  <a id="whatsappButton" href="https://wa.me/15559876543" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group">
+  <a id="whatsappButton" href="https://wa.me/56999896880" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group">
     <i class="fab fa-whatsapp text-2xl"></i>
     <span class="whatsapp-tooltip">Comunícate con nosotros</span>
   </a>
@@ -100,7 +104,13 @@
           </a>
         </div>
         
-        <nav class="hidden md:flex items-center gap-6">
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuButton" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+        
+        <!-- Desktop Navigation -->
+        <nav id="desktopNav" class="hidden md:flex items-center gap-6">
           <a href="#Servicios" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.services">Servicios</a>
           <a href="#Mineria" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.mining">Minería</a>
           <a href="#Nosotros" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.about">Nosotros</a>
@@ -110,7 +120,7 @@
           <a href="#Contacto" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.contact">Contacto</a>
         </nav>
         
-        <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-4">
           <!-- Language Selector -->
           <div class="relative group">
             <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
@@ -132,6 +142,45 @@
           <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
             <i class="fa-solid fa-moon text-xl" id="themeIcon"></i>
           </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobileNav" class="md:hidden bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 hidden">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex flex-col space-y-4">
+            <a href="#Servicios" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.services">Servicios</a>
+            <a href="#Mineria" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.mining">Minería</a>
+            <a href="#Nosotros" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.about">Nosotros</a>
+            <a href="#Clientes" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.clients">Clientes</a>
+            <a href="#Blog" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.blog">Blog</a>
+            <a href="#FAQ" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.faq">FAQ</a>
+            <a href="#Contacto" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.contact">Contacto</a>
+            
+            <div class="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+              <!-- Language Selector Mobile -->
+              <div class="relative">
+                <button id="languageToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                  <i class="fa-solid fa-globe text-xl"></i>
+                </button>
+                <div id="languageDropdownMobile" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden">
+                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="es">
+                    <i class="fas fa-check text-primary hidden language-check-mobile" id="check-es-mobile"></i>
+                    <span>Español</span>
+                  </button>
+                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="en">
+                    <i class="fas fa-check text-primary hidden language-check-mobile" id="check-en-mobile"></i>
+                    <span>English</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Theme Toggle Mobile -->
+              <button id="themeToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                <i class="fa-solid fa-moon text-xl" id="themeIconMobile"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -744,29 +793,29 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- Phone -->
-            <a href="tel:+15551234567"
+            <a href="tel:+56999896880"
               class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
               <div
                 class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <i class="fas fa-phone text-2xl"></i>
               </div>
               <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.phone-title">Teléfono</h2>
-              <p class="text-sm text-gray-600 dark:text-gray-400">+1-555-123-4567</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">+569 9989 6880</p>
             </a>
             
             <!-- Email -->
-            <a href="mailto:info@digdevsolutions.com"
+            <a href="mailto:colivares@digdev.cl"
               class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
               <div
                 class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <i class="fas fa-envelope text-2xl"></i>
               </div>
               <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.email-title">Email</h2>
-              <p class="text-sm text-gray-600 dark:text-gray-400">info@digdevsolutions.com</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">colivares@digdev.cl</p>
             </a>
             
             <!-- WhatsApp -->
-            <a href="https://wa.me/15559876543"
+            <a href="https://wa.me/56999896880"
               class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
               target="_blank">
               <div
@@ -774,18 +823,103 @@
                 <i class="fab fa-whatsapp text-2xl"></i>
               </div>
               <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.whatsapp-title">WhatsApp</h2>
-              <p class="text-sm text-gray-600 dark:text-gray-400">+1-555-987-6543</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">+569 9989 6880</p>
             </a>
             
             <!-- LinkedIn -->
-            <a href="#"
-              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group">
+            <a href="https://www.linkedin.com/in/digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
               <div
                 class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <i class="fab fa-linkedin text-2xl"></i>
               </div>
               <h2 class="text-base font-bold text-gray-900 dark:text-white" data-lang="contact.linkedin-title">LinkedIn</h2>
               <p class="text-sm text-gray-600 dark:text-gray-400">DigDev Solutions</p>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-instagram text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">Instagram</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@digdevsolutions</p>
+            </a>
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-facebook text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">Facebook</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">DigDev Solutions</p>
+            </a>
+            
+            <!-- Threads -->
+            <a href="https://www.threads.net/@digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-threads text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">Threads</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@digdevsolutions</p>
+            </a>
+            
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-tiktok text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">TikTok</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@digdevsolutions</p>
+            </a>
+            
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@digdevsolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-youtube text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">YouTube</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">DigDev Solutions</p>
+            </a>
+            
+            <!-- Twitter (X) -->
+            <a href="https://x.com/DigDevSolutions/"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fab fa-x-twitter text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">Twitter (X)</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">@DigDevSolutions</p>
+            </a>
+            
+            <!-- Sitio Web -->
+            <a href="https://digdev.cl"
+              class="flex flex-col items-center justify-center text-center p-6 bg-background-light dark:bg-background-dark/50 rounded-lg shadow-md hover:shadow-xl hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 group"
+              target="_blank">
+              <div
+                class="icon-container bg-primary/20 text-primary rounded-full mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <i class="fas fa-globe text-2xl"></i>
+              </div>
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">Sitio Web</h2>
+              <p class="text-sm text-gray-600 dark:text-gray-400">digdev.cl</p>
             </a>
           </div>
         </div>
