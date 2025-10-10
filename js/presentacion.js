@@ -261,6 +261,8 @@ const blogContent = {
       title: "Innovaciones en la automatización de procesos mineros",
       content: `
         <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg" alt="Automatización minera" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">La automatización está revolucionando la industria minera, permitiendo operaciones más eficientes, seguras y rentables. En este artículo, exploramos las últimas innovaciones en automatización de procesos mineros y cómo están transformando el sector.</p>
           
           <h3 class="text-xl font-bold mb-3">Tecnologías Clave en Automatización Minera</h3>
@@ -296,6 +298,8 @@ const blogContent = {
       title: "Innovations in Mining Process Automation",
       content: `
         <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg" alt="Mining automation" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">Automation is revolutionizing the mining industry, enabling more efficient, safe, and profitable operations. In this article, we explore the latest innovations in mining process automation and how they are transforming the sector.</p>
           
           <h3 class="text-xl font-bold mb-3">Key Technologies in Mining Automation</h3>
@@ -333,6 +337,8 @@ const blogContent = {
       title: "Optimización de la cadena de suministro en la industria minera",
       content: `
         <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4" alt="Cadena de suministro minera" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">La cadena de suministro en la industria minera enfrenta desafíos únicos debido a la naturaleza remota de las operaciones, la volatilidad de los precios de los commodities y las complejidades logísticas. En este artículo, analizamos estrategias efectivas para optimizar la cadena de suministro minera.</p>
           
           <h3 class="text-xl font-bold mb-3">Desafíos en la Cadena de Suministro Minera</h3>
@@ -370,6 +376,8 @@ const blogContent = {
       title: "Supply Chain Optimization in the Mining Industry",
       content: `
         <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4" alt="Mining supply chain" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">The supply chain in the mining industry faces unique challenges due to the remote nature of operations, commodity price volatility, and logistical complexities. In this article, we analyze effective strategies for optimizing the mining supply chain.</p>
           
           <h3 class="text-xl font-bold mb-3">Challenges in the Mining Supply Chain</h3>
@@ -409,6 +417,8 @@ const blogContent = {
       title: "El futuro de la minería: tecnologías emergentes y su impacto",
       content: `
         <div class="mb-6">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Futuro de la minería" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">La industria minera se encuentra en la cúspide de una transformación tecnológica sin precedentes. Las tecnologías emergentes están redefiniendo cómo operan las minas, desde la exploración hasta el cierre. En este artículo, exploramos las tecnologías que darán forma al futuro de la minería.</p>
           
           <h3 class="text-xl font-bold mb-3">Inteligencia Artificial y Aprendizaje Automático</h3>
@@ -453,6 +463,8 @@ const blogContent = {
       title: "The Future of Mining: Emerging Technologies and Their Impact",
       content: `
         <div class="mb-6">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Future of mining" class="w-full h-64 object-cover rounded-lg mb-6">
+          
           <p class="mb-4">The mining industry is on the cusp of an unprecedented technological transformation. Emerging technologies are redefining how mines operate, from exploration to closure. In this article, we explore the technologies that will shape the future of mining.</p>
           
           <h3 class="text-xl font-bold mb-3">Artificial Intelligence and Machine Learning</h3>

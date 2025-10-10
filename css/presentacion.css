@@ -97,6 +97,25 @@ html {
   transition: all 0.3s ease;
 }
 
+/* Image hover effects */
+.testimonial-image, .blog-image {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-image:hover, .blog-image:hover {
+  transform: scale(1.05);
+}
+
+/* Mission, Vision, Values icons styling */
+.mvv-icon {
+  transition: all 0.3s ease;
+}
+
+.mvv-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(17, 147, 212, 0.3);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .bg-hero {
@@ -133,6 +152,12 @@ html {
   #Contacto .grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  
+  /* Mission, Vision, Values responsive */
+  .mvv-icon {
+    height: 3rem;
+    width: 3rem;
   }
 }
 
@@ -226,4 +251,22 @@ a:focus, button:focus {
   .xl\:grid-cols-4 {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* Image optimization */
+.testimonial-image, .blog-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Success cases images */
+.success-case-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, .icon-container, .mvv-icon {
+  transition: all 0.3s ease;
 }
