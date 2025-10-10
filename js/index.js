@@ -1,486 +1,794 @@
-// Sistema de traducción
+// DigDev Solutions - JavaScript functionality
+
+// Language data
 const translations = {
-    'es': {
-        'nav.services': 'Servicios',
-        'nav.mining': 'Minería',
-        'nav.about': 'Nosotros',
-        'nav.testimonials': 'Testimonios',
-        'nav.blog': 'Blog',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contacto',
-        'hero.title': 'Transformamos ideas en soluciones digitales',
-        'hero.subtitle': 'En DigDev desarrollamos sistemas innovadores que resuelven problemas reales. Especialistas en desarrollo de software para la minería con 10 años de experiencia.',
-        'hero.button': 'Comenzar proyecto',
-        'services.title': 'Nuestros Servicios',
-        'services.web.title': 'Desarrollo Web',
-        'services.web.description': 'Creación de sitios web modernos, responsivos y optimizados para convertir visitantes en clientes.',
-        'services.mobile.title': 'Aplicaciones Móviles',
-        'services.mobile.description': 'Desarrollamos apps nativas e híbridas para iOS y Android con interfaces intuitivas y atractivas.',
-        'services.custom.title': 'Soluciones Personalizadas',
-        'services.custom.description': 'Sistemas a medida que se adaptan a tus procesos específicos y necesidades únicas.',
-        'mining.title': 'Desarrollo de Software para la Minería',
-        'mining.text1': 'Con más de 10 años de experiencia especializada en el rubro minero chileno, hemos desarrollado soluciones tecnológicas que optimizan procesos, aumentan la eficiencia y reducen costos operativos.',
-        'mining.text2': 'Nuestro equipo comprende los desafíos específicos de la industria minera y ha trabajado con algunas de las principales empresas del sector, desarrollando sistemas que se adaptan a las exigentes condiciones operativas.',
-        'mining.feature1.title': 'Sistemas de Gestión Minera',
-        'mining.feature1.desc': 'Desarrollo de software especializado para control de producción, inventarios y mantenimiento.',
-        'mining.feature2.title': 'Monitoreo en Tiempo Real',
-        'mining.feature2.desc': 'Sistemas de seguimiento y control de operaciones mineras con reporting automatizado.',
-        'mining.feature3.title': 'Integración de Datos',
-        'mining.feature3.desc': 'Soluciones ETL para consolidar información de múltiples fuentes operativas.',
-        'about.title': '¿Quiénes Somos?',
-        'about.text1': 'DigDev (Digital Developers) es una empresa de TI con especialización en el sector minero, conformada por profesionales con más de 10 años de experiencia en el rubro.',
-        'about.text2': 'Creemos que la tecnología debe servir para resolver problemas reales y mejorar la vida de las personas. Nos especializamos en entender las necesidades específicas de cada cliente y traducirlas en sistemas eficientes y escalables.',
-        'about.text3': 'Nuestra misión es impulsar la transformación digital de negocios y organizaciones a través de desarrollo de software de calidad, interfaces intuitivas y experiencias digitales memorables.',
-        'testimonials.title': 'Testimonios',
-        'testimonials.testimonial1.text': '"El equipo de DigDev transformó completamente nuestros procesos mineros. Su software personalizado nos permitió aumentar la eficiencia en un 40%. ¡Increíble trabajo!"',
-        'testimonials.testimonial1.author': 'Carlos Rodríguez',
-        'testimonials.testimonial1.role': 'Operaciones, Minera Andina',
-        'testimonials.testimonial2.text': '"Trabajar con DigDev fue una experiencia excepcional. Su aplicación móvil para reportes en terreno ha revolucionado nuestra forma de trabajar. ¡Altamente recomendados!"',
-        'testimonials.testimonial2.author': 'María González',
-        'testimonials.testimonial2.role': 'Jefa de Proyectos, Codelco',
-        'testimonials.testimonial3.text': '"La plataforma web desarrollada por DigDev superó todas nuestras expectativas. Su atención al detalle y comprensión de nuestras necesidades fue impresionante."',
-        'testimonials.testimonial3.author': 'Roberto Silva',
-        'testimonials.testimonial3.role': 'TI, Minera San Pedro',
-        'blog.title': 'Blog',
-        'blog.readmore': 'Leer más',
-        'blog.post1.title': 'Transformación Digital en la Industria Minera',
-        'blog.post1.excerpt': 'Descubre cómo la tecnología está revolucionando los procesos mineros y aumentando la eficiencia operacional.',
-        'blog.post1.content1': 'La industria minera está experimentando una revolución tecnológica sin precedentes. En DigDev, hemos sido testigos de primera mano cómo la implementación de soluciones digitales personalizadas puede transformar completamente las operaciones mineras.',
-        'blog.post1.content2': 'Nuestro equipo ha desarrollado sistemas que permiten el monitoreo en tiempo real de operaciones, la automatización de procesos críticos y la integración de datos desde múltiples fuentes. Esto ha resultado en aumentos de eficiencia de hasta el 40% para nuestros clientes.',
-        'blog.post1.content3': 'La clave del éxito radica en comprender las necesidades específicas del sector minero y desarrollar soluciones que se adapten a las condiciones operativas únicas de cada faena. Con más de 10 años de experiencia en el rubro, hemos perfeccionado nuestra metodología para entregar resultados tangibles.',
-        'blog.post2.title': 'Ventajas del Desarrollo de Software Personalizado',
-        'blog.post2.excerpt': '¿Por qué elegir soluciones a medida en lugar de software genérico? Te contamos las ventajas competitivas.',
-        'blog.post2.content1': 'En un mundo donde el software genérico parece ser la solución más accesible, muchas empresas se preguntan por qué invertir en desarrollo personalizado. La respuesta es simple: el software a medida se adapta perfectamente a tus procesos específicos, mientras que el software genérico fuerza a tu empresa a adaptarse a él.',
-        'blog.post2.content2': 'En DigDev, creemos que cada negocio es único. Nuestro enfoque personalizado nos permite crear soluciones que se integran perfectamente con tus operaciones existentes, escalan según tus necesidades y te brindan una ventaja competitiva real.',
-        'blog.post2.content3': 'Las principales ventajas incluyen mayor eficiencia operacional, mejor experiencia de usuario, integración perfecta con sistemas existentes, y la capacidad de evolucionar junto con tu negocio. Nuestros clientes han experimentado retornos de inversión significativos al optar por soluciones personalizadas.',
-        'blog.post3.title': 'Tendencias Tecnológicas que Marcarán el 2025',
-        'blog.post3.excerpt': 'Exploramos las tecnologías emergentes que están transformando el panorama digital empresarial.',
-        'blog.post3.content1': 'El panorama tecnológico evoluciona a un ritmo acelerado, y 2025 promete traer innovaciones que transformarán la forma en que las empresas operan. En DigDev, estamos constantemente investigando y adoptando estas tendencias para ofrecer soluciones de vanguardia a nuestros clientes.',
-        'blog.post3.content2': 'Entre las tendencias más destacadas se encuentran la inteligencia artificial aplicada a procesos empresariales, el edge computing para procesamiento de datos en tiempo real, y las plataformas low-code que aceleran el desarrollo de aplicaciones. También vemos un crecimiento significativo en soluciones de ciberseguridad avanzada y tecnologías de realidad aumentada para entrenamiento y mantenimiento.',
-        'blog.post3.content3': 'Nuestro equipo está preparado para integrar estas tecnologías emergentes en soluciones personalizadas que impulsen la transformación digital de tu empresa. Mantenerse a la vanguardia tecnológica no es solo una ventaja competitiva, sino una necesidad en el panorama empresarial actual.',
-        'faq.title': 'Preguntas Frecuentes',
-        'faq.q1.text': '¿Qué tipos de proyectos desarrollan?',
-        'faq.a1.1': 'Desarrollamos una amplia variedad de proyectos digitales, incluyendo:',
-        'faq.a1.2': '- Sitios web corporativos y landing pages',
-        'faq.a1.3': '- Aplicaciones web progresivas (PWA)',
-        'faq.a1.4': '- Aplicaciones móviles nativas e híbridas',
-        'faq.a1.5': '- Sistemas de gestión empresarial (ERP, CRM)',
-        'faq.a1.6': '- Plataformas de comercio electrónico',
-        'faq.a1.7': '- Soluciones personalizadas según necesidades específicas',
-        'faq.q2.text': '¿Cuál es el tiempo promedio de desarrollo?',
-        'faq.a2.1': 'El tiempo de desarrollo varía según la complejidad del proyecto:',
-        'faq.a2.2': '- Landing page básica: 1-2 semanas',
-        'faq.a2.3': '- Sitio web corporativo: 3-6 semanas',
-        'faq.a2.4': '- Aplicación web: 4-12 semanas',
-        'faq.a2.5': '- Aplicación móvil: 6-16 semanas',
-        'faq.a2.6': '- Sistemas complejos: 12+ semanas',
-        'faq.a2.7': 'Trabajamos con metodologías ágiles, entregando versiones funcionales desde las primeras semanas.',
-        'faq.q3.text': '¿Ofrecen mantenimiento después del desarrollo?',
-        'faq.a3.1': 'Sí, ofrecemos planes de mantenimiento post-desarrollo que incluyen:',
-        'faq.a3.2': '- Actualizaciones de seguridad',
-        'faq.a3.3': '- Soporte técnico prioritario',
-        'faq.a3.4': '- Mejoras y nuevas funcionalidades',
-        'faq.a3.5': '- Monitoreo del rendimiento',
-        'faq.a3.6': '- Backup regular de información',
-        'faq.a3.7': 'Nuestros clientes pueden elegir entre planes mensuales, trimestrales o anuales según sus necesidades.',
-        'faq.q4.text': '¿Trabajan con empresas internacionales?',
-        'faq.a4.1': 'Sí, trabajamos con clientes de diferentes partes del mundo. Nuestro equipo está preparado para:',
-        'faq.a4.2': '- Comunicación en español e inglés',
-        'faq.a4.3': '- Adaptación a diferentes zonas horarias',
-        'faq.a4.4': '- Conocimiento de regulaciones internacionales',
-        'faq.a4.5': '- Experiencia en proyectos multiculturales',
-        'faq.a4.6': 'Utilizamos herramientas de colaboración remota que nos permiten trabajar eficientemente sin importar la ubicación geográfica.',
-        'faq.q5.text': '¿Cómo es el proceso de trabajo?',
-        'faq.a5.1': 'Nuestro proceso se divide en 5 fases principales:',
-        'faq.a5.2': '1. Descubrimiento:',
-        'faq.a5.3': 'Entendemos tus necesidades y objetivos.',
-        'faq.a5.4': '2. Planificación:',
-        'faq.a5.5': 'Creamos un plan detallado con cronograma y presupuesto.',
-        'faq.a5.6': '3. Diseño:',
-        'faq.a5.7': 'Desarrollamos prototipos y diseños de interfaces.',
-        'faq.a5.8': '4. Desarrollo:',
-        'faq.a5.9': 'Implementamos la solución con metodologías ágiles.',
-        'faq.a5.10': '5. Lanzamiento & Mantenimiento:',
-        'faq.a5.11': 'Publicamos y damos soporte continuo.',
-        'faq.a5.12': 'Mantenemos comunicación constante durante todo el proceso con entregas regulares.',
-        'contact.title': 'Contacto',
-        'contact.subtitle': 'Contáctanos y convirtamos tu idea en una solución digital efectiva. Estamos aquí para ayudarte en cada paso del proceso.',
-        'footer.tagline': 'Digital Developers - Transformando ideas en soluciones',
-        'footer.contact': 'Contacto',
-        'footer.follow': 'Síguenos',
-        'footer.rights': 'Todos los derechos reservados'
-    },
-    'en': {
-        'nav.services': 'Services',
-        'nav.mining': 'Mining',
-        'nav.about': 'About Us',
-        'nav.testimonials': 'Testimonials',
-        'nav.blog': 'Blog',
-        'nav.faq': 'FAQ',
-        'nav.contact': 'Contact',
-        'hero.title': 'We transform ideas into digital solutions',
-        'hero.subtitle': 'At DigDev we develop innovative systems that solve real problems. Specialists in mining software development with 10 years of experience.',
-        'hero.button': 'Start project',
-        'services.title': 'Our Services',
-        'services.web.title': 'Web Development',
-        'services.web.description': 'Creation of modern, responsive and optimized websites to convert visitors into customers.',
-        'services.mobile.title': 'Mobile Applications',
-        'services.mobile.description': 'We develop native and hybrid apps for iOS and Android with intuitive and attractive interfaces.',
-        'services.custom.title': 'Custom Solutions',
-        'services.custom.description': 'Tailor-made systems that adapt to your specific processes and unique needs.',
-        'mining.title': 'Mining Software Development',
-        'mining.text1': 'With over 10 years of specialized experience in the Chilean mining sector, we have developed technological solutions that optimize processes, increase efficiency and reduce operational costs.',
-        'mining.text2': 'Our team understands the specific challenges of the mining industry and has worked with some of the main companies in the sector, developing systems that adapt to demanding operational conditions.',
-        'mining.feature1.title': 'Mining Management Systems',
-        'mining.feature1.desc': 'Development of specialized software for production control, inventories and maintenance.',
-        'mining.feature2.title': 'Real-time Monitoring',
-        'mining.feature2.desc': 'Mining operations tracking and control systems with automated reporting.',
-        'mining.feature3.title': 'Data Integration',
-        'mining.feature3.desc': 'ETL solutions to consolidate information from multiple operational sources.',
-        'about.title': 'Who We Are?',
-        'about.text1': 'DigDev (Digital Developers) is an IT company specialized in the mining sector, made up of professionals with more than 10 years of experience in the field.',
-        'about.text2': 'We believe that technology should serve to solve real problems and improve people\'s lives. We specialize in understanding the specific needs of each client and translating them into efficient and scalable systems.',
-        'about.text3': 'Our mission is to drive the digital transformation of businesses and organizations through quality software development, intuitive interfaces and memorable digital experiences.',
-        'testimonials.title': 'Testimonials',
-        'testimonials.testimonial1.text': '"The DigDev team completely transformed our mining processes. Their custom software allowed us to increase efficiency by 40%. Amazing work!"',
-        'testimonials.testimonial1.author': 'Carlos Rodríguez',
-        'testimonials.testimonial1.role': 'Operations, Minera Andina',
-        'testimonials.testimonial2.text': '"Working with DigDev was an exceptional experience. Their mobile app for field reports has revolutionized our way of working. Highly recommended!"',
-        'testimonials.testimonial2.author': 'María González',
-        'testimonials.testimonial2.role': 'Project Manager, Codelco',
-        'testimonials.testimonial3.text': '"The web platform developed by DigDev exceeded all our expectations. Their attention to detail and understanding of our needs was impressive."',
-        'testimonials.testimonial3.author': 'Roberto Silva',
-        'testimonials.testimonial3.role': 'IT, Minera San Pedro',
-        'blog.title': 'Blog',
-        'blog.readmore': 'Read more',
-        'blog.post1.title': 'Digital Transformation in the Mining Industry',
-        'blog.post1.excerpt': 'Discover how technology is revolutionizing mining processes and increasing operational efficiency.',
-        'blog.post1.content1': 'The mining industry is experiencing an unprecedented technological revolution. At DigDev, we have witnessed firsthand how the implementation of customized digital solutions can completely transform mining operations.',
-        'blog.post1.content2': 'Our team has developed systems that allow real-time monitoring of operations, automation of critical processes, and integration of data from multiple sources. This has resulted in efficiency increases of up to 40% for our clients.',
-        'blog.post1.content3': 'The key to success lies in understanding the specific needs of the mining sector and developing solutions that adapt to the unique operational conditions of each site. With more than 10 years of experience in the field, we have perfected our methodology to deliver tangible results.',
-        'blog.post2.title': 'Advantages of Custom Software Development',
-        'blog.post2.excerpt': 'Why choose custom solutions instead of generic software? We tell you the competitive advantages.',
-        'blog.post2.content1': 'In a world where generic software seems to be the most accessible solution, many companies wonder why invest in custom development. The answer is simple: custom software adapts perfectly to your specific processes, while generic software forces your company to adapt to it.',
-        'blog.post2.content2': 'At DigDev, we believe every business is unique. Our personalized approach allows us to create solutions that integrate seamlessly with your existing operations, scale according to your needs, and give you a real competitive advantage.',
-        'blog.post2.content3': 'The main advantages include greater operational efficiency, better user experience, seamless integration with existing systems, and the ability to evolve along with your business. Our clients have experienced significant returns on investment when opting for custom solutions.',
-        'blog.post3.title': 'Technological Trends That Will Mark 2025',
-        'blog.post3.excerpt': 'We explore emerging technologies that are transforming the business digital landscape.',
-        'blog.post3.content1': 'The technological landscape evolves at an accelerated pace, and 2025 promises to bring innovations that will transform the way companies operate. At DigDev, we are constantly researching and adopting these trends to offer cutting-edge solutions to our clients.',
-        'blog.post3.content2': 'Among the most prominent trends are artificial intelligence applied to business processes, edge computing for real-time data processing, and low-code platforms that accelerate application development. We also see significant growth in advanced cybersecurity solutions and augmented reality technologies for training and maintenance.',
-        'blog.post3.content3': 'Our team is prepared to integrate these emerging technologies into customized solutions that drive the digital transformation of your company. Staying at the technological forefront is not only a competitive advantage, but a necessity in today\'s business landscape.',
-        'faq.title': 'Frequently Asked Questions',
-        'faq.q1.text': 'What types of projects do you develop?',
-        'faq.a1.1': 'We develop a wide variety of digital projects, including:',
-        'faq.a1.2': '- Corporate websites and landing pages',
-        'faq.a1.3': '- Progressive web applications (PWA)',
-        'faq.a1.4': '- Native and hybrid mobile applications',
-        'faq.a1.5': '- Business management systems (ERP, CRM)',
-        'faq.a1.6': '- E-commerce platforms',
-        'faq.a1.7': '- Custom solutions according to specific needs',
-        'faq.q2.text': 'What is the average development time?',
-        'faq.a2.1': 'Development time varies depending on the complexity of the project:',
-        'faq.a2.2': '- Basic landing page: 1-2 weeks',
-        'faq.a2.3': '- Corporate website: 3-6 weeks',
-        'faq.a2.4': '- Web application: 4-12 weeks',
-        'faq.a2.5': '- Mobile application: 6-16 weeks',
-        'faq.a2.6': '- Complex systems: 12+ weeks',
-        'faq.a2.7': 'We work with agile methodologies, delivering functional versions from the first weeks.',
-        'faq.q3.text': 'Do you offer maintenance after development?',
-        'faq.a3.1': 'Yes, we offer post-development maintenance plans that include:',
-        'faq.a3.2': '- Security updates',
-        'faq.a3.3': '- Priority technical support',
-        'faq.a3.4': '- Improvements and new features',
-        'faq.a3.5': '- Performance monitoring',
-        'faq.a3.6': '- Regular information backup',
-        'faq.a3.7': 'Our clients can choose between monthly, quarterly or annual plans according to their needs.',
-        'faq.q4.text': 'Do you work with international companies?',
-        'faq.a4.1': 'Yes, we work with clients from different parts of the world. Our team is prepared for:',
-        'faq.a4.2': '- Communication in Spanish and English',
-        'faq.a4.3': '- Adaptation to different time zones',
-        'faq.a4.4': '- Knowledge of international regulations',
-        'faq.a4.5': '- Experience in multicultural projects',
-        'faq.a4.6': 'We use remote collaboration tools that allow us to work efficiently regardless of geographic location.',
-        'faq.q5.text': 'How is the work process?',
-        'faq.a5.1': 'Our process is divided into 5 main phases:',
-        'faq.a5.2': '1. Discovery:',
-        'faq.a5.3': 'We understand your needs and objectives.',
-        'faq.a5.4': '2. Planning:',
-        'faq.a5.5': 'We create a detailed plan with schedule and budget.',
-        'faq.a5.6': '3. Design:',
-        'faq.a5.7': 'We develop prototypes and interface designs.',
-        'faq.a5.8': '4. Development:',
-        'faq.a5.9': 'We implement the solution with agile methodologies.',
-        'faq.a5.10': '5. Launch & Maintenance:',
-        'faq.a5.11': 'We publish and provide continuous support.',
-        'faq.a5.12': 'We maintain constant communication throughout the process with regular deliveries.',
-        'contact.title': 'Contact',
-        'contact.subtitle': 'Contact us and let\'s turn your idea into an effective digital solution. We are here to help you every step of the way.',
-        'footer.tagline': 'Digital Developers - Transforming ideas into solutions',
-        'footer.contact': 'Contact',
-        'footer.follow': 'Follow Us',
-        'footer.rights': 'All rights reserved'
-    }
+  es: {
+    // Header
+    "header.company-name": "DigDev",
+    "header.services": "Servicios",
+    "header.mining": "Minería",
+    "header.about": "Nosotros",
+    "header.clients": "Clientes",
+    "header.blog": "Blog",
+    "header.faq": "FAQ",
+    "header.contact": "Contacto",
+    
+    // Hero
+    "hero.title": "Impulsando la Innovación en la Minería",
+    "hero.description": "DigDev Solutions: Líderes en desarrollo de software para la industria minera con más de 10 años de experiencia. Ofrecemos soluciones personalizadas, responsivas y multilenguaje, con soporte para modo claro y oscuro.",
+    "hero.cta": "Conoce Nuestras Soluciones",
+    
+    // Features
+    "features.title": "Nuestras Características Destacadas",
+    "features.description": "En DigDev Solutions, nos enfocamos en ofrecer soluciones de software que cumplen con los más altos estándares de calidad y funcionalidad.",
+    "features.responsive-title": "Diseño Responsivo",
+    "features.responsive-desc": "Nuestras aplicaciones se adaptan a cualquier dispositivo, garantizando una experiencia de usuario óptima.",
+    "features.multilanguage-title": "Soporte Multilenguaje",
+    "features.multilanguage-desc": "Facilitamos la comunicación y el acceso a la información para usuarios de todo el mundo.",
+    "features.theme-title": "Modo Claro/Oscuro",
+    "features.theme-desc": "Permite a los usuarios elegir la apariencia que mejor se adapte a sus preferencias.",
+    "features.experience-title": "+10 Años de Experiencia",
+    "features.experience-desc": "Una década desarrollando soluciones innovadoras y eficientes para la industria minera.",
+    
+    // Success Cases
+    "success.title": "Casos de Éxito",
+    "success.case1-title": "Optimización de Procesos",
+    "success.case1-desc": "Aumento del 15% en la eficiencia operativa en una importante mina de cobre.",
+    "success.case2-title": "Gestión de Flota",
+    "success.case2-desc": "Reducción del 20% en costos de mantenimiento y mejora en la disponibilidad de equipos.",
+    "success.case3-title": "Análisis de Datos",
+    "success.case3-desc": "Identificación de cuellos de botella y mejoras significativas en la producción.",
+    
+    // Services
+    "services.title": "Nuestros Servicios",
+    "services.description": "Soluciones de software innovadoras, especializadas en el sector minero para potenciar la eficiencia y seguridad.",
+    "services.webdev-title": "Desarrollo Web",
+    "services.webdev-desc": "Creamos sitios web atractivos y funcionales, optimizados para la industria minera, con un enfoque en la experiencia del usuario y la accesibilidad.",
+    "services.mobile-title": "Aplicaciones Móviles",
+    "services.mobile-desc": "Desarrollamos aplicaciones móviles robustas y seguras para iOS y Android, diseñadas para mejorar la eficiencia y comunicación en el sector minero.",
+    "services.custom-title": "Soluciones Personalizadas",
+    "services.custom-desc": "Ofrecemos software a medida adaptado a las necesidades de cada cliente, desde sistemas de gestión hasta herramientas de análisis de datos.",
+    
+    // Mining
+    "mining.title": "Soluciones de Software para la Industria Minera",
+    "mining.description": "En DigDev Solutions, transformamos la operación minera con tecnología de punta. Desde sistemas de gestión hasta monitoreo en tiempo real, integramos datos para optimizar cada proceso.",
+    "mining.cta": "Conozca Nuestras Soluciones",
+    
+    // Solutions
+    "solutions.title": "Nuestras Soluciones Clave",
+    "solutions.description": "Impulsamos la eficiencia y seguridad en la minería a través de soluciones innovadoras.",
+    "solutions.management-title": "Sistemas de Gestión Minera",
+    "solutions.management-desc": "Optimice la planificación y control de sus operaciones con sistemas que se adaptan a sus necesidades.",
+    "solutions.monitoring-title": "Monitoreo en Tiempo Real",
+    "solutions.monitoring-desc": "Supervise cada aspecto de su operación en tiempo real, mejorando la toma de decisiones y la seguridad.",
+    "solutions.integration-title": "Integración de Datos",
+    "solutions.integration-desc": "Unifique sus datos para obtener una visión completa y accionable de su negocio minero.",
+    
+    // CTA
+    "cta.title": "Trabajemos Juntos",
+    "cta.description": "Si buscas un socio tecnológico con experiencia en la industria minera, estamos listos para ayudarte a alcanzar tus objetivos.",
+    "cta.button": "Contáctanos",
+    
+    // About
+    "about.title": "Quiénes Somos",
+    "about.description": "En DigDev Solutions, nos dedicamos a transformar la industria minera a través de soluciones de software innovadoras y personalizadas.",
+    "about.mission-title": "Misión",
+    "about.mission-desc": "Impulsar la eficiencia operativa, mejorar la seguridad y optimizar la toma de decisiones en cada etapa del proceso minero.",
+    "about.vision-title": "Visión",
+    "about.vision-desc": "Un futuro donde la tecnología y la minería convergen para crear operaciones más inteligentes y sostenibles.",
+    "about.values-title": "Valores",
+    "about.values-desc": "Integridad, innovación, colaboración y compromiso con la excelencia, guiando cada proyecto que emprendemos.",
+    
+    // Testimonials
+    "testimonials.title": "Lo que dicen nuestros clientes",
+    "testimonials.description": "Historias de éxito de líderes en la industria minera.",
+    "testimonials.testimonial1": "\"DigDev Solutions transformó nuestra eficiencia operativa. Su experiencia en procesos mineros es inigualable, lo que generó ahorros significativos y una mayor productividad.\"",
+    "testimonials.testimonial2": "\"El software personalizado de DigDev ha revolucionado nuestro análisis de datos. Ahora tenemos información en tiempo real que impulsa una mejor toma de decisiones y optimiza la gestión de recursos.\"",
+    "testimonials.testimonial3": "\"Trabajar con DigDev Solutions cambió las reglas del juego. Su enfoque personalizado y su profundo conocimiento de nuestros desafíos dieron como resultado una solución que se adapta perfectamente a nuestras necesidades.\"",
+    
+    // Blog
+    "blog.title": "Nuestro Blog",
+    "blog.description": "Explorando la vanguardia tecnológica en la minería.",
+    "blog.automation-category": "Automatización",
+    "blog.automation-title": "Innovaciones en la automatización de procesos mineros",
+    "blog.automation-desc": "Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras. Exploramos casos de éxito y las últimas tendencias.",
+    "blog.logistics-category": "Logística",
+    "blog.logistics-title": "Optimización de la cadena de suministro en la industria minera",
+    "blog.logistics-desc": "Analizamos estrategias para mejorar la eficiencia y reducir costos en la cadena de suministro minera, desde la extracción hasta la entrega del producto final.",
+    "blog.innovation-category": "Innovación",
+    "blog.innovation-title": "El futuro de la minería: tecnologías emergentes y su impacto",
+    "blog.innovation-desc": "Un vistazo a las tecnologías que están redefiniendo la industria minera, incluyendo inteligencia artificial, blockchain y sensores avanzados.",
+    "blog.read-more": "Ver en detalle",
+    
+    // FAQ
+    "faq.title": "Preguntas Frecuentes",
+    "faq.description": "Encuentra respuestas a las consultas más comunes sobre nuestros servicios.",
+    "faq.question1": "¿Qué tipo de soluciones de software ofrece DigDev Solutions?",
+    "faq.answer1": "DigDev Solutions se especializa en desarrollar soluciones de software personalizadas para la industria minera. Nuestras ofertas incluyen sistemas de automatización de procesos, plataformas de análisis de datos, software de monitoreo de equipos y aplicaciones de gestión de seguridad. Aprovechamos tecnologías de vanguardia para abordar desafíos específicos y mejorar la eficiencia operativa.",
+    "faq.question2": "¿Cómo garantiza DigDev Solutions la seguridad de su software?",
+    "faq.answer2": "La seguridad es una prioridad máxima. Implementamos prácticas de codificación segura, realizamos auditorías de seguridad periódicas y utilizamos cifrado de datos robusto. Nuestras soluciones cumplen con los estándares de seguridad de la industria para proteger los datos críticos de nuestros clientes contra amenazas cibernéticas.",
+    "faq.question3": "¿Puede DigDev Solutions integrar su software con sistemas existentes?",
+    "faq.answer3": "Sí, una de nuestras fortalezas es la capacidad de integrar nuestras soluciones de software sin problemas con los sistemas y la infraestructura de TI existentes de nuestros clientes. Diseñamos nuestras aplicaciones con API flexibles para garantizar una interoperabilidad fluida y minimizar las interrupciones durante la implementación.",
+    "faq.question4": "¿Cuál es el cronograma de desarrollo típico para un proyecto de software?",
+    "faq.answer4": "El cronograma varía según la complejidad y el alcance del proyecto. Después de una consulta inicial, proporcionamos una hoja de ruta detallada del proyecto con hitos y plazos claros. Nuestro enfoque de desarrollo ágil nos permite entregar valor de manera incremental y adaptarnos a los requisitos cambiantes de manera eficiente.",
+    "faq.question5": "¿DigDev Solutions ofrece soporte y mantenimiento post-lanzamiento?",
+    "faq.answer5": "Absolutamente. Ofrecemos paquetes integrales de soporte y mantenimiento para garantizar que nuestras soluciones de software sigan funcionando de manera óptima. Nuestros servicios incluyen actualizaciones periódicas, corrección de errores, soporte técnico y mejoras de funciones para satisfacer las necesidades cambiantes de su negocio.",
+    "faq.contact-text": "¿No encuentras lo que buscas?",
+    "faq.contact-link": "Contáctanos",
+    
+    // Contact
+    "contact.title": "Ponte en Contacto",
+    "contact.description": "Estamos aquí para ayudarte. Contáctanos a través de cualquiera de los siguientes canales.",
+    "contact.phone-title": "Teléfono",
+    "contact.email-title": "Email",
+    "contact.whatsapp-title": "WhatsApp",
+    "contact.linkedin-title": "LinkedIn",
+    
+    // Footer
+    "footer.copyright": "© 2025 DigDev Solutions. Todos los derechos reservados."
+  },
+  en: {
+    // Header
+    "header.company-name": "DigDev",
+    "header.services": "Services",
+    "header.mining": "Mining",
+    "header.about": "About Us",
+    "header.clients": "Clients",
+    "header.blog": "Blog",
+    "header.faq": "FAQ",
+    "header.contact": "Contact",
+    
+    // Hero
+    "hero.title": "Driving Innovation in Mining",
+    "hero.description": "DigDev Solutions: Leaders in software development for the mining industry with over 10 years of experience. We offer customized, responsive, and multilingual solutions with support for light and dark modes.",
+    "hero.cta": "Discover Our Solutions",
+    
+    // Features
+    "features.title": "Our Key Features",
+    "features.description": "At DigDev Solutions, we focus on delivering software solutions that meet the highest standards of quality and functionality.",
+    "features.responsive-title": "Responsive Design",
+    "features.responsive-desc": "Our applications adapt to any device, ensuring an optimal user experience.",
+    "features.multilanguage-title": "Multilingual Support",
+    "features.multilanguage-desc": "We facilitate communication and access to information for users worldwide.",
+    "features.theme-title": "Light/Dark Mode",
+    "features.theme-desc": "Allows users to choose the appearance that best suits their preferences.",
+    "features.experience-title": "+10 Years of Experience",
+    "features.experience-desc": "A decade developing innovative and efficient solutions for the mining industry.",
+    
+    // Success Cases
+    "success.title": "Success Cases",
+    "success.case1-title": "Process Optimization",
+    "success.case1-desc": "15% increase in operational efficiency at a major copper mine.",
+    "success.case2-title": "Fleet Management",
+    "success.case2-desc": "20% reduction in maintenance costs and improved equipment availability.",
+    "success.case3-title": "Data Analysis",
+    "success.case3-desc": "Identification of bottlenecks and significant improvements in production.",
+    
+    // Services
+    "services.title": "Our Services",
+    "services.description": "Innovative software solutions, specialized in the mining sector to enhance efficiency and safety.",
+    "services.webdev-title": "Web Development",
+    "services.webdev-desc": "We create attractive and functional websites, optimized for the mining industry, with a focus on user experience and accessibility.",
+    "services.mobile-title": "Mobile Applications",
+    "services.mobile-desc": "We develop robust and secure mobile applications for iOS and Android, designed to improve efficiency and communication in the mining sector.",
+    "services.custom-title": "Custom Solutions",
+    "services.custom-desc": "We offer tailored software adapted to each client's needs, from management systems to data analysis tools.",
+    
+    // Mining
+    "mining.title": "Software Solutions for the Mining Industry",
+    "mining.description": "At DigDev Solutions, we transform mining operations with cutting-edge technology. From management systems to real-time monitoring, we integrate data to optimize every process.",
+    "mining.cta": "Discover Our Solutions",
+    
+    // Solutions
+    "solutions.title": "Our Key Solutions",
+    "solutions.description": "We drive efficiency and safety in mining through innovative solutions.",
+    "solutions.management-title": "Mining Management Systems",
+    "solutions.management-desc": "Optimize the planning and control of your operations with systems that adapt to your needs.",
+    "solutions.monitoring-title": "Real-Time Monitoring",
+    "solutions.monitoring-desc": "Monitor every aspect of your operation in real time, improving decision-making and safety.",
+    "solutions.integration-title": "Data Integration",
+    "solutions.integration-desc": "Unify your data to obtain a complete and actionable view of your mining business.",
+    
+    // CTA
+    "cta.title": "Let's Work Together",
+    "cta.description": "If you're looking for a technology partner with experience in the mining industry, we're ready to help you achieve your goals.",
+    "cta.button": "Contact Us",
+    
+    // About
+    "about.title": "About Us",
+    "about.description": "At DigDev Solutions, we are dedicated to transforming the mining industry through innovative and customized software solutions.",
+    "about.mission-title": "Mission",
+    "about.mission-desc": "To drive operational efficiency, improve safety, and optimize decision-making at every stage of the mining process.",
+    "about.vision-title": "Vision",
+    "about.vision-desc": "A future where technology and mining converge to create smarter and more sustainable operations.",
+    "about.values-title": "Values",
+    "about.values-desc": "Integrity, innovation, collaboration, and commitment to excellence, guiding every project we undertake.",
+    
+    // Testimonials
+    "testimonials.title": "What Our Clients Say",
+    "testimonials.description": "Success stories from leaders in the mining industry.",
+    "testimonials.testimonial1": "\"DigDev Solutions transformed our operational efficiency. Their expertise in mining processes is unmatched, resulting in significant savings and increased productivity.\"",
+    "testimonials.testimonial2": "\"DigDev's customized software has revolutionized our data analysis. We now have real-time information that drives better decision-making and optimizes resource management.\"",
+    "testimonials.testimonial3": "\"Working with DigDev Solutions changed the game. Their personalized approach and deep understanding of our challenges resulted in a solution that perfectly fits our needs.\"",
+    
+    // Blog
+    "blog.title": "Our Blog",
+    "blog.description": "Exploring the technological forefront in mining.",
+    "blog.automation-category": "Automation",
+    "blog.automation-title": "Innovations in Mining Process Automation",
+    "blog.automation-desc": "Discover how automation is transforming efficiency and safety in mining operations. We explore success cases and the latest trends.",
+    "blog.logistics-category": "Logistics",
+    "blog.logistics-title": "Supply Chain Optimization in the Mining Industry",
+    "blog.logistics-desc": "We analyze strategies to improve efficiency and reduce costs in the mining supply chain, from extraction to final product delivery.",
+    "blog.innovation-category": "Innovation",
+    "blog.innovation-title": "The Future of Mining: Emerging Technologies and Their Impact",
+    "blog.innovation-desc": "A look at the technologies redefining the mining industry, including artificial intelligence, blockchain, and advanced sensors.",
+    "blog.read-more": "Read More",
+    
+    // FAQ
+    "faq.title": "Frequently Asked Questions",
+    "faq.description": "Find answers to the most common questions about our services.",
+    "faq.question1": "What type of software solutions does DigDev Solutions offer?",
+    "faq.answer1": "DigDev Solutions specializes in developing customized software solutions for the mining industry. Our offerings include process automation systems, data analysis platforms, equipment monitoring software, and safety management applications. We leverage cutting-edge technologies to address specific challenges and improve operational efficiency.",
+    "faq.question2": "How does DigDev Solutions ensure the security of its software?",
+    "faq.answer2": "Security is a top priority. We implement secure coding practices, conduct regular security audits, and use robust data encryption. Our solutions comply with industry security standards to protect our clients' critical data against cyber threats.",
+    "faq.question3": "Can DigDev Solutions integrate its software with existing systems?",
+    "faq.answer3": "Yes, one of our strengths is the ability to seamlessly integrate our software solutions with our clients' existing systems and IT infrastructure. We design our applications with flexible APIs to ensure smooth interoperability and minimize disruptions during implementation.",
+    "faq.question4": "What is the typical development timeline for a software project?",
+    "faq.answer4": "The timeline varies depending on the complexity and scope of the project. After an initial consultation, we provide a detailed project roadmap with clear milestones and deadlines. Our agile development approach allows us to deliver value incrementally and adapt to changing requirements efficiently.",
+    "faq.question5": "Does DigDev Solutions offer post-launch support and maintenance?",
+    "faq.answer5": "Absolutely. We offer comprehensive support and maintenance packages to ensure our software solutions continue to perform optimally. Our services include regular updates, bug fixes, technical support, and feature enhancements to meet your evolving business needs.",
+    "faq.contact-text": "Can't find what you're looking for?",
+    "faq.contact-link": "Contact Us",
+    
+    // Contact
+    "contact.title": "Get in Touch",
+    "contact.description": "We're here to help. Contact us through any of the following channels.",
+    "contact.phone-title": "Phone",
+    "contact.email-title": "Email",
+    "contact.whatsapp-title": "WhatsApp",
+    "contact.linkedin-title": "LinkedIn",
+    
+    // Footer
+    "footer.copyright": "© 2025 DigDev Solutions. All rights reserved."
+  }
 };
 
-let currentLang = 'es';
-
-// Función para cambiar idioma
-function changeLanguage(lang) {
-    currentLang = lang;
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-    
-    // Actualizar botón de idioma
-    const langToggle = document.getElementById('langToggle');
-    langToggle.innerHTML = `<i class="fas fa-globe"></i>&#160;${lang.toUpperCase()}`;
-    
-    // Guardar preferencia
-    localStorage.setItem('preferredLanguage', lang);
-}
-
-// Sistema de modo claro/oscuro
-function toggleDarkMode() {
-    const body = document.body;
-    const themeToggle = document.getElementById('themeToggle');
-    
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark');
+// Blog content
+const blogContent = {
+  1: {
+    es: {
+      title: "Innovaciones en la automatización de procesos mineros",
+      content: `
+        <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg" alt="Automatización minera" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">La automatización está revolucionando la industria minera, permitiendo operaciones más eficientes, seguras y rentables. En este artículo, exploramos las últimas innovaciones en automatización de procesos mineros y cómo están transformando el sector.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Tecnologías Clave en Automatización Minera</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Sistemas de control autónomo para equipos de perforación y carga</li>
+            <li class="mb-2">Plataformas de monitoreo en tiempo real con sensores IoT</li>
+            <li class="mb-2">Algoritmos de inteligencia artificial para optimización de procesos</li>
+            <li class="mb-2">Sistemas de gestión integrada de flotas</li>
+            <li class="mb-2">Soluciones de análisis predictivo para mantenimiento</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Beneficios de la Automatización</h3>
+          <p class="mb-4">La implementación de soluciones de automatización en operaciones mineras ha demostrado:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Reducción de hasta 30% en costos operativos</li>
+            <li class="mb-2">Aumento del 25% en productividad</li>
+            <li class="mb-2">Disminución del 40% en accidentes laborales</li>
+            <li class="mb-2">Optimización del consumo energético</li>
+            <li class="mb-2">Mejora en la toma de decisiones estratégicas</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Casos de Éxito</h3>
+          <p class="mb-4">En DigDev Solutions, hemos implementado soluciones de automatización en varias minas líderes, logrando resultados significativos:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Mina de cobre en Chile: 18% de aumento en eficiencia operativa</li>
+            <li class="mb-2">Operación de oro en Perú: 22% de reducción en costos de mantenimiento</li>
+            <li class="mb-2">Mina de hierro en Brasil: 35% de mejora en seguridad operacional</li>
+          </ul>
+        </div>
+      `
+    },
+    en: {
+      title: "Innovations in Mining Process Automation",
+      content: `
+        <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg" alt="Mining automation" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">Automation is revolutionizing the mining industry, enabling more efficient, safe, and profitable operations. In this article, we explore the latest innovations in mining process automation and how they are transforming the sector.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Key Technologies in Mining Automation</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Autonomous control systems for drilling and loading equipment</li>
+            <li class="mb-2">Real-time monitoring platforms with IoT sensors</li>
+            <li class="mb-2">Artificial intelligence algorithms for process optimization</li>
+            <li class="mb-2">Integrated fleet management systems</li>
+            <li class="mb-2">Predictive analytics solutions for maintenance</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Benefits of Automation</h3>
+          <p class="mb-4">The implementation of automation solutions in mining operations has demonstrated:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Up to 30% reduction in operational costs</li>
+            <li class="mb-2">25% increase in productivity</li>
+            <li class="mb-2">40% decrease in workplace accidents</li>
+            <li class="mb-2">Optimization of energy consumption</li>
+            <li class="mb-2">Improved strategic decision-making</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Success Cases</h3>
+          <p class="mb-4">At DigDev Solutions, we have implemented automation solutions in several leading mines, achieving significant results:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Copper mine in Chile: 18% increase in operational efficiency</li>
+            <li class="mb-2">Gold operation in Peru: 22% reduction in maintenance costs</li>
+            <li class="mb-2">Iron mine in Brazil: 35% improvement in operational safety</li>
+          </ul>
+        </div>
+      `
     }
-}
-
-// Menú móvil
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.innerHTML = navLinks.classList.contains('active') ? 
-        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-});
-
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-        
-        // Actualizar clase activa
-        document.querySelectorAll('.nav-links a').forEach(item => {
-            item.classList.remove('active');
-        });
-        link.classList.add('active');
-    });
-});
-
-// Scroll suave para navegación
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Actualizar elemento activo del menú al hacer scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Event listeners para los botones de toggle
-document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
-document.getElementById('langToggle').addEventListener('click', () => {
-    changeLanguage(currentLang === 'es' ? 'en' : 'es');
-});
-
-// Funcionalidad para Blog Modals
-function initBlogModals() {
-    const blogCards = document.querySelectorAll('.blog-card');
-    const blogModals = document.querySelectorAll('.blog-modal');
-    const closeButtons = document.querySelectorAll('.blog-modal-close');
-    
-    // Abrir modal al hacer clic en tarjeta de blog
-    blogCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const blogId = card.getAttribute('data-blog');
-            const modal = document.getElementById(`blogModal${blogId}`);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-    
-    // Cerrar modal al hacer clic en botón de cerrar
-    closeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.blog-modal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    });
-    
-    // Cerrar modal al hacer clic fuera del contenido
-    blogModals.forEach(modal => {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    });
-    
-    // Cerrar modal con tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            blogModals.forEach(modal => {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        }
-    });
-}
-
-// Cargar preferencias guardadas
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    const savedLang = localStorage.getItem('preferredLanguage');
-    
-    if (savedTheme === 'dark') {
-        toggleDarkMode();
+  },
+  2: {
+    es: {
+      title: "Optimización de la cadena de suministro en la industria minera",
+      content: `
+        <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4" alt="Cadena de suministro minera" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">La cadena de suministro en la industria minera enfrenta desafíos únicos debido a la naturaleza remota de las operaciones, la volatilidad de los precios de los commodities y las complejidades logísticas. En este artículo, analizamos estrategias efectivas para optimizar la cadena de suministro minera.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Desafíos en la Cadena de Suministro Minera</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Ubicaciones remotas y acceso limitado a infraestructura</li>
+            <li class="mb-2">Gestión de inventarios en sitios múltiples</li>
+            <li class="mb-2">Volatilidad en la demanda de insumos críticos</li>
+            <li class="mb-2">Complejidades en el transporte y logística</li>
+            <li class="mb-2">Gestión de proveedores en mercados globales</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Estrategias de Optimización</h3>
+          <p class="mb-4">Implementar las siguientes estrategias puede transformar significativamente la eficiencia de la cadena de suministro:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Digitalización de procesos de aprovisionamiento</li>
+            <li class="mb-2">Implementación de sistemas de pronóstico de demanda</li>
+            <li class="mb-2">Optimización de rutas de transporte</li>
+            <li class="mb-2">Gestión colaborativa de inventarios</li>
+            <li class="mb-2">Análisis de datos en tiempo real para toma de decisiones</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Tecnologías Habilitadoras</h3>
+          <p class="mb-4">Las siguientes tecnologías están revolucionando la gestión de la cadena de suministro minera:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Plataformas de gestión de cadena de suministro en la nube</li>
+            <li class="mb-2">Sistemas de seguimiento por GPS y RFID</li>
+            <li class="mb-2">Soluciones de blockchain para trazabilidad</li>
+            <li class="mb-2">Analítica predictiva para gestión de inventarios</li>
+            <li class="mb-2">Internet de las cosas (IoT) para monitoreo de activos</li>
+          </ul>
+        </div>
+      `
+    },
+    en: {
+      title: "Supply Chain Optimization in the Mining Industry",
+      content: `
+        <div class="mb-6">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4" alt="Mining supply chain" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">The supply chain in the mining industry faces unique challenges due to the remote nature of operations, commodity price volatility, and logistical complexities. In this article, we analyze effective strategies for optimizing the mining supply chain.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Challenges in the Mining Supply Chain</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Remote locations and limited access to infrastructure</li>
+            <li class="mb-2">Inventory management across multiple sites</li>
+            <li class="mb-2">Volatility in demand for critical inputs</li>
+            <li class="mb-2">Complexities in transportation and logistics</li>
+            <li class="mb-2">Supplier management in global markets</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Optimization Strategies</h3>
+          <p class="mb-4">Implementing the following strategies can significantly transform supply chain efficiency:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Digitalization of procurement processes</li>
+            <li class="mb-2">Implementation of demand forecasting systems</li>
+            <li class="mb-2">Transportation route optimization</li>
+            <li class="mb-2">Collaborative inventory management</li>
+            <li class="mb-2">Real-time data analysis for decision-making</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Enabling Technologies</h3>
+          <p class="mb-4">The following technologies are revolutionizing mining supply chain management:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Cloud-based supply chain management platforms</li>
+            <li class="mb-2">GPS and RFID tracking systems</li>
+            <li class="mb-2">Blockchain solutions for traceability</li>
+            <li class="mb-2">Predictive analytics for inventory management</li>
+            <li class="mb-2">Internet of Things (IoT) for asset monitoring</li>
+          </ul>
+        </div>
+      `
     }
-    
-    if (savedLang) {
-        changeLanguage(savedLang);
+  },
+  3: {
+    es: {
+      title: "El futuro de la minería: tecnologías emergentes y su impacto",
+      content: `
+        <div class="mb-6">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Futuro de la minería" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">La industria minera se encuentra en la cúspide de una transformación tecnológica sin precedentes. Las tecnologías emergentes están redefiniendo cómo operan las minas, desde la exploración hasta el cierre. En este artículo, exploramos las tecnologías que darán forma al futuro de la minería.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Inteligencia Artificial y Aprendizaje Automático</h3>
+          <p class="mb-4">La IA está revolucionando la minería en múltiples frentes:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Análisis predictivo para mantenimiento de equipos</li>
+            <li class="mb-2">Optimización de procesos de extracción y procesamiento</li>
+            <li class="mb-2">Detección temprana de fallas operacionales</li>
+            <li class="mb-2">Mejora en la seguridad mediante monitoreo predictivo</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Internet de las Cosas (IoT)</h3>
+          <p class="mb-4">La conectividad de dispositivos está transformando las operaciones mineras:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Sensores inteligentes para monitoreo en tiempo real</li>
+            <li class="mb-2">Sistemas de gestión de flotas conectadas</li>
+            <li class="mb-2">Monitoreo remoto de condiciones ambientales</li>
+            <li class="mb-2">Optimización del consumo energético</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Blockchain y Trazabilidad</h3>
+          <p class="mb-4">La tecnología blockchain está introduciendo transparencia y eficiencia:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Trazabilidad completa de minerales desde la mina hasta el mercado</li>
+            <li class="mb-2">Contratos inteligentes para transacciones automatizadas</li>
+            <li class="mb-2">Verificación de cumplimiento normativo</li>
+            <li class="mb-2">Gestión transparente de la cadena de suministro</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Realidad Aumentada y Virtual</h3>
+          <p class="mb-4">Las tecnologías inmersivas están mejorando la formación y operaciones:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Entrenamiento seguro para operaciones de alto riesgo</li>
+            <li class="mb-2">Visualización de datos geológicos en 3D</li>
+            <li class="mb-2">Asistencia remota para mantenimiento de equipos</li>
+            <li class="mb-2">Simulación de escenarios operacionales</li>
+          </ul>
+        </div>
+      `
+    },
+    en: {
+      title: "The Future of Mining: Emerging Technologies and Their Impact",
+      content: `
+        <div class="mb-6">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Future of mining" class="w-full h-64 object-cover rounded-lg mb-6">
+          
+          <p class="mb-4">The mining industry is on the cusp of an unprecedented technological transformation. Emerging technologies are redefining how mines operate, from exploration to closure. In this article, we explore the technologies that will shape the future of mining.</p>
+          
+          <h3 class="text-xl font-bold mb-3">Artificial Intelligence and Machine Learning</h3>
+          <p class="mb-4">AI is revolutionizing mining on multiple fronts:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Predictive analytics for equipment maintenance</li>
+            <li class="mb-2">Optimization of extraction and processing processes</li>
+            <li class="mb-2">Early detection of operational failures</li>
+            <li class="mb-2">Safety improvement through predictive monitoring</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Internet of Things (IoT)</h3>
+          <p class="mb-4">Device connectivity is transforming mining operations:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Smart sensors for real-time monitoring</li>
+            <li class="mb-2">Connected fleet management systems</li>
+            <li class="mb-2">Remote monitoring of environmental conditions</li>
+            <li class="mb-2">Optimization of energy consumption</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Blockchain and Traceability</h3>
+          <p class="mb-4">Blockchain technology is introducing transparency and efficiency:</p>
+          <ul class="list-disc pl-6 mb-4">
+            <li class="mb-2">Complete traceability of minerals from mine to market</li>
+            <li class="mb-2">Smart contracts for automated transactions</li>
+            <li class="mb-2">Verification of regulatory compliance</li>
+            <li class="mb-2">Transparent supply chain management</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold mb-3">Augmented and Virtual Reality</h3>
+          <p class="mb-4">Immersive technologies are improving training and operations:</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Safe training for high-risk operations</li>
+            <li class="mb-2">3D visualization of geological data</li>
+            <li class="mb-2">Remote assistance for equipment maintenance</li>
+            <li class="mb-2">Simulation of operational scenarios</li>
+          </ul>
+        </div>
+      `
     }
-    
-    // Inicializar FAQ
-    initFAQ();
-    
-    // Inicializar progress bar
-    initProgressBar();
-    
-    // Inicializar botón "volver arriba"
-    initBackToTop();
-    
-    // Inicializar funcionalidad del logo
-    initLogoFunctionality();
-    
-    // Inicializar modales de blog
-    initBlogModals();
+  }
+};
+
+// DOM Elements
+const progressBar = document.getElementById('progressBar');
+const backToTop = document.getElementById('backToTop');
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const themeIconMobile = document.getElementById('themeIconMobile');
+const languageToggle = document.getElementById('languageToggle');
+const languageDropdown = document.getElementById('languageDropdown');
+const languageToggleMobile = document.getElementById('languageToggleMobile');
+const languageDropdownMobile = document.getElementById('languageDropdownMobile');
+const languageOptions = document.querySelectorAll('.language-option');
+const logoLink = document.getElementById('logoLink');
+const blogPosts = document.querySelectorAll('.blog-post, .blog-read-more');
+const blogModal = document.getElementById('blogModal');
+const blogModalTitle = document.getElementById('blogModalTitle');
+const blogModalContent = document.getElementById('blogModalContent');
+const closeBlogModal = document.getElementById('closeBlogModal');
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileNav = document.getElementById('mobileNav');
+const desktopNav = document.getElementById('desktopNav');
+
+// Current settings
+let currentLanguage = 'es';
+let currentTheme = 'dark';
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+  // Load saved settings
+  loadSettings();
+  
+  // Initialize progress bar
+  initProgressBar();
+  
+  // Initialize back to top button
+  initBackToTop();
+  
+  // Initialize theme toggle
+  initThemeToggle();
+  
+  // Initialize language selector
+  initLanguageSelector();
+  
+  // Initialize blog modals
+  initBlogModals();
+  
+  // Initialize logo scrolling
+  initLogoScrolling();
+  
+  // Initialize mobile menu
+  initMobileMenu();
 });
 
-// Funcionalidad para FAQ
-function initFAQ() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isOpen = answer.classList.contains('open');
-            
-            // Cerrar todas las respuestas
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                ans.classList.remove('open');
-            });
-            
-            // Remover clase active de todas las preguntas
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.classList.remove('active');
-            });
-            
-            // Abrir la respuesta clickeada si estaba cerrada
-            if (!isOpen) {
-                answer.classList.add('open');
-                question.classList.add('active');
-            }
-        });
-    });
+// Load saved settings from localStorage
+function loadSettings() {
+  const savedLanguage = localStorage.getItem('digdev-language');
+  const savedTheme = localStorage.getItem('digdev-theme');
+  
+  if (savedLanguage) {
+    currentLanguage = savedLanguage;
+    updateLanguageIndicator();
+  }
+  
+  if (savedTheme) {
+    currentTheme = savedTheme;
+    document.documentElement.className = currentTheme;
+    updateThemeIcon();
+  }
+  
+  // Apply current language
+  applyLanguage(currentLanguage);
 }
 
-// Progress bar al hacer scroll
+// Initialize progress bar
 function initProgressBar() {
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById('progressBar').style.width = scrolled + '%';
-    });
+  window.addEventListener('scroll', function() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPercent = (scrollTop / documentHeight) * 100;
+    
+    progressBar.style.width = scrollPercent + '%';
+  });
 }
 
-// Botón "volver arriba"
+// Initialize back to top button
 function initBackToTop() {
-    const backToTopBtn = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTop.classList.remove('opacity-0', 'invisible');
+      backToTop.classList.add('opacity-100', 'visible');
+    } else {
+      backToTop.classList.remove('opacity-100', 'visible');
+      backToTop.classList.add('opacity-0', 'invisible');
+    }
+  });
+  
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-    
-    backToTopBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+  });
 }
 
-// Funcionalidad del logo para volver arriba
-function initLogoFunctionality() {
-    const logo = document.getElementById('logo');
+// Initialize theme toggle
+function initThemeToggle() {
+  // Desktop theme toggle
+  themeToggle.addEventListener('click', function() {
+    toggleTheme();
+  });
+  
+  // Mobile theme toggle
+  themeToggleMobile.addEventListener('click', function() {
+    toggleTheme();
+  });
+}
+
+// Toggle theme function
+function toggleTheme() {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.className = currentTheme;
+  updateThemeIcon();
+  localStorage.setItem('digdev-theme', currentTheme);
+}
+
+// Update theme icon based on current theme
+function updateThemeIcon() {
+  if (currentTheme === 'dark') {
+    themeIcon.className = 'fa-solid fa-sun text-xl';
+    themeIconMobile.className = 'fa-solid fa-sun text-xl';
+  } else {
+    themeIcon.className = 'fa-solid fa-moon text-xl';
+    themeIconMobile.className = 'fa-solid fa-moon text-xl';
+  }
+}
+
+// Initialize language selector
+function initLanguageSelector() {
+  // Desktop language toggle
+  languageToggle.addEventListener('click', function() {
+    languageDropdown.classList.toggle('hidden');
+  });
+  
+  // Mobile language toggle
+  languageToggleMobile.addEventListener('click', function() {
+    languageDropdownMobile.classList.toggle('hidden');
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!languageToggle.contains(event.target) && !languageDropdown.contains(event.target)) {
+      languageDropdown.classList.add('hidden');
+    }
     
-    logo.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-        
-        // Actualizar clase activa del menú
-        document.querySelectorAll('.nav-links a').forEach(item => {
-            item.classList.remove('active');
-        });
-        document.querySelector('.nav-links a[href="#servicios"]').classList.add('active');
+    if (!languageToggleMobile.contains(event.target) && !languageDropdownMobile.contains(event.target)) {
+      languageDropdownMobile.classList.add('hidden');
+    }
+  });
+  
+  // Language selection
+  languageOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const selectedLang = this.getAttribute('data-lang');
+      currentLanguage = selectedLang;
+      applyLanguage(selectedLang);
+      updateLanguageIndicator();
+      localStorage.setItem('digdev-language', selectedLang);
+      languageDropdown.classList.add('hidden');
+      languageDropdownMobile.classList.add('hidden');
     });
+  });
+}
+
+// Update language selection indicator
+function updateLanguageIndicator() {
+  // Desktop indicators
+  document.querySelectorAll('.language-check').forEach(check => {
+    check.classList.add('hidden');
+  });
+  
+  const currentCheck = document.getElementById(`check-${currentLanguage}`);
+  if (currentCheck) {
+    currentCheck.classList.remove('hidden');
+  }
+  
+  // Mobile indicators
+  document.querySelectorAll('.language-check-mobile').forEach(check => {
+    check.classList.add('hidden');
+  });
+  
+  const currentCheckMobile = document.getElementById(`check-${currentLanguage}-mobile`);
+  if (currentCheckMobile) {
+    currentCheckMobile.classList.remove('hidden');
+  }
+}
+
+// Apply language to the page
+function applyLanguage(lang) {
+  const elements = document.querySelectorAll('[data-lang]');
+  
+  elements.forEach(element => {
+    const key = element.getAttribute('data-lang');
+    if (translations[lang] && translations[lang][key]) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.value = translations[lang][key];
+      } else {
+        element.textContent = translations[lang][key];
+      }
+    }
+  });
+}
+
+// Initialize blog modals
+function initBlogModals() {
+  blogPosts.forEach(post => {
+    post.addEventListener('click', function() {
+      const blogId = this.getAttribute('data-blog');
+      openBlogModal(blogId);
+    });
+  });
+  
+  closeBlogModal.addEventListener('click', function() {
+    blogModal.classList.add('hidden');
+  });
+  
+  // Close modal when clicking outside
+  blogModal.addEventListener('click', function(event) {
+    if (event.target === blogModal) {
+      blogModal.classList.add('hidden');
+    }
+  });
+}
+
+// Open blog modal with content
+function openBlogModal(blogId) {
+  if (blogContent[blogId] && blogContent[blogId][currentLanguage]) {
+    blogModalTitle.textContent = blogContent[blogId][currentLanguage].title;
+    blogModalContent.innerHTML = blogContent[blogId][currentLanguage].content;
+    blogModal.classList.remove('hidden');
+  }
+}
+
+// Initialize logo scrolling
+function initLogoScrolling() {
+  logoLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Initialize mobile menu
+function initMobileMenu() {
+  mobileMenuButton.addEventListener('click', function() {
+    mobileNav.classList.toggle('hidden');
+    
+    // Change icon based on menu state
+    if (mobileNav.classList.contains('hidden')) {
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+    } else {
+      mobileMenuButton.innerHTML = '<i class="fas fa-times text-xl"></i>';
+    }
+  });
+  
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileNav.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNav.classList.add('hidden');
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+    });
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenuButton.contains(event.target) && !mobileNav.contains(event.target)) {
+      mobileNav.classList.add('hidden');
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+    }
+  });
 }
