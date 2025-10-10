@@ -769,9 +769,9 @@ function initMobileMenu() {
     
     // Change icon based on menu state
     if (mobileNav.classList.contains('hidden')) {
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl pointer-events-none"></i>';
     } else {
-      mobileMenuButton.innerHTML = '<i class="fas fa-times text-xl"></i>';
+      mobileMenuButton.innerHTML = '<i class="fas fa-times text-xl pointer-events-none"></i>';
     }
   });
   
@@ -780,7 +780,7 @@ function initMobileMenu() {
   mobileLinks.forEach(link => {
     link.addEventListener('click', function() {
       mobileNav.classList.add('hidden');
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl pointer-events-none"></i>';
     });
   });
   
@@ -788,7 +788,7 @@ function initMobileMenu() {
   document.addEventListener('click', function(event) {
     if (!mobileMenuButton.contains(event.target) && !mobileNav.contains(event.target)) {
       mobileNav.classList.add('hidden');
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl pointer-events-none"></i>';
     }
   });
 }
