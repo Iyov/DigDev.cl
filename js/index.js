@@ -125,7 +125,7 @@ const translations = {
     "contact.linkedin-title": "LinkedIn",
     
     // Footer
-    "footer.copyright": "© 2025 DigDev Solutions. Todos los derechos reservados."
+    "footer.copyright": "© 2026 DigDev Solutions. Todos los derechos reservados."
   },
   en: {
     // Header
@@ -250,7 +250,7 @@ const translations = {
     "contact.linkedin-title": "LinkedIn",
     
     // Footer
-    "footer.copyright": "© 2025 DigDev Solutions. All rights reserved."
+    "footer.copyright": "© 2026 DigDev Solutions. All rights reserved."
   }
 };
 
