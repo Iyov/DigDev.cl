@@ -1,36 +1,157 @@
 {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DigDev - Digital Developers",
+    "name": "DigDev Solutions - Digital Developers",
+    "alternateName": "DigDev",
     "url": "https://digdev.cl",
-    "logo": "https://digdev.cl/img/DigDev_logo.png",
-    "description": "DigDev desarrolla sistemas innovadores para la minería con 10 años de experiencia. Somos tu partner tecnológico para impulsar tu negocio en la era digital.",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://digdev.cl/img/DigDev_logo.png",
+        "width": 400,
+        "height": 400
+    },
+    "image": "https://digdev.cl/img/DigDev_logo.png",
+    "description": "DigDev Solutions es líder en desarrollo de software para la industria minera en Chile con más de 10 años de experiencia. Especializados en sistemas de gestión, automatización de procesos y análisis de datos para operaciones mineras.",
+    "foundingDate": "2014",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Las Acacias 390",
         "addressLocality": "Villa Alemana",
+        "addressRegion": "Valparaíso",
+        "postalCode": "2520000",
         "addressCountry": "CL"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.0458,
+        "longitude": -71.3735
     },
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+56-9-99896880",
         "contactType": "customer service",
         "email": "colivares@digdev.cl",
-        "availableLanguage": ["Spanish", "English"]
+        "availableLanguage": ["Spanish", "English"],
+        "areaServed": "CL"
     },
     "sameAs": [
-        "https://www.facebook.com/digdevsolutions/",
-        "https://www.twitter.com/DigDevSolutions/",
+        "https://www.linkedin.com/in/digdevsolutions/",
         "https://www.instagram.com/digdevsolutions/",
-        "https://www.linkedin.com/in/digdevsolutions/"
+        "https://www.facebook.com/digdevsolutions/",
+        "https://www.threads.net/@digdevsolutions/",
+        "https://www.tiktok.com/@digdevsolutions/",
+        "https://www.youtube.com/@digdevsolutions/",
+        "https://x.com/DigDevSolutions/"
     ],
     "knowsAbout": [
-        "Desarrollo de Software",
-        "Análisis de Datos",
+        "Desarrollo de Software para Minería",
+        "Sistemas de Gestión Minera",
+        "Automatización de Procesos Mineros",
+        "Análisis de Datos Mineros",
         "Business Intelligence",
         "Marketing Digital",
-        "Software para la Minería",
         "Transformación Digital",
-        "Desarrollo Web"
+        "Desarrollo Web",
+        "Aplicaciones Móviles",
+        "Monitoreo en Tiempo Real",
+        "Integración de Datos"
+    ],
+    "serviceArea": {
+        "@type": "Country",
+        "name": "Chile"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Desarrollo de Software",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Desarrollo de Software para Minería",
+                    "description": "Sistemas especializados para la industria minera incluyendo gestión de operaciones, automatización de procesos y análisis de datos en tiempo real."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Desarrollo Web",
+                    "description": "Sitios web corporativos responsivos, aplicaciones web progresivas y plataformas de comercio electrónico."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Aplicaciones Móviles",
+                    "description": "Desarrollo de aplicaciones móviles nativas e híbridas para iOS y Android, especializadas en el sector minero."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sistemas de Gestión Minera",
+                    "description": "Soluciones ERP especializadas para la industria minera, incluyendo gestión de inventarios, producción y mantenimiento."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Análisis de Datos y Business Intelligence",
+                    "description": "Plataformas de análisis de datos, dashboards interactivos y sistemas de reporting para la toma de decisiones."
+                }
+            }
+        ]
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Francisca Arriagada"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "reviewBody": "DigDev Solutions transformó nuestra eficiencia operativa. Su experiencia en procesos mineros es inigualable, lo que generó ahorros significativos y una mayor productividad."
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "David González"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "reviewBody": "El software personalizado de DigDev ha revolucionado nuestro análisis de datos. Ahora tenemos información en tiempo real que impulsa una mejor toma de decisiones y optimiza la gestión de recursos."
+        },
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "Emilia Tapia"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "reviewBody": "Trabajar con DigDev Solutions cambió las reglas del juego. Su enfoque personalizado y su profundo conocimiento de nuestros desafíos dieron como resultado una solución que se adapta perfectamente a nuestras necesidades."
+        }
     ]
 }

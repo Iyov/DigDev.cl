@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DigDev Solutions - Blog de Desarrollo de Software para Minería</title>
+    <description>Últimas noticias, artículos y actualizaciones sobre desarrollo de software para la industria minera en Chile.</description>
+    <link>https://digdev.cl</link>
+    <atom:link href="https://digdev.cl/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>es-CL</language>
+    <lastBuildDate>Mon, 03 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <managingEditor>colivares@digdev.cl (DigDev Solutions)</managingEditor>
+    <webMaster>colivares@digdev.cl (DigDev Solutions)</webMaster>
+    <category>Tecnología</category>
+    <category>Minería</category>
+    <category>Desarrollo de Software</category>
+    <image>
+      <url>https://digdev.cl/img/DigDev_logo.png</url>
+      <title>DigDev Solutions</title>
+      <link>https://digdev.cl</link>
+      <width>400</width>
+      <height>400</height>
+    </image>
+    
+    <item>
+      <title>Innovaciones en la automatización de procesos mineros</title>
+      <description>Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras. Exploramos casos de éxito y las últimas tendencias.</description>
+      <link>https://digdev.cl/#Blog</link>
+      <guid>https://digdev.cl/blog/automatizacion-procesos-mineros</guid>
+      <pubDate>Mon, 03 Feb 2026 10:00:00 GMT</pubDate>
+      <category>Automatización</category>
+      <category>Minería</category>
+      <content:encoded><![CDATA[
+        <p>La automatización en la industria minera está revolucionando la forma en que las empresas operan, mejorando tanto la eficiencia como la seguridad de los trabajadores.</p>
+        <p>En DigDev Solutions, hemos sido testigos de primera mano de cómo la implementación de sistemas automatizados puede transformar completamente las operaciones mineras.</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Optimización de la cadena de suministro en la industria minera</title>
+      <description>Analizamos estrategias para mejorar la eficiencia y reducir costos en la cadena de suministro minera, desde la extracción hasta la entrega del producto final.</description>
+      <link>https://digdev.cl/#Blog</link>
+      <guid>https://digdev.cl/blog/optimizacion-cadena-suministro</guid>
+      <pubDate>Sun, 02 Feb 2026 10:00:00 GMT</pubDate>
+      <category>Logística</category>
+      <category>Optimización</category>
+      <content:encoded><![CDATA[
+        <p>La optimización de la cadena de suministro es crucial para el éxito de cualquier operación minera. Desde la planificación de la producción hasta la entrega final del producto.</p>
+        <p>Nuestros sistemas de gestión integrada permiten un control total sobre cada etapa del proceso.</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>El futuro de la minería: tecnologías emergentes y su impacto</title>
+      <description>Un vistazo a las tecnologías que están redefiniendo la industria minera, incluyendo inteligencia artificial, blockchain y sensores avanzados.</description>
+      <link>https://digdev.cl/#Blog</link>
+      <guid>https://digdev.cl/blog/futuro-mineria-tecnologias</guid>
+      <pubDate>Sat, 01 Feb 2026 10:00:00 GMT</pubDate>
+      <category>Innovación</category>
+      <category>Tecnología</category>
+      <content:encoded><![CDATA[
+        <p>El futuro de la minería está siendo moldeado por tecnologías emergentes que prometen revolucionar la industria.</p>
+        <p>La inteligencia artificial, el blockchain y los sensores IoT están creando nuevas oportunidades para mejorar la eficiencia y sostenibilidad.</p>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>

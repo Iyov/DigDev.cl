@@ -1,0 +1,43 @@
+{
+    "name": "DigDev Solutions - Desarrollo de Software para Minería",
+    "short_name": "DigDev",
+    "description": "Líderes en desarrollo de software para la industria minera en Chile. Sistemas de gestión, automatización y análisis de datos.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f6f7f8",
+    "theme_color": "#1193d4",
+    "orientation": "portrait-primary",
+    "categories": ["business", "productivity", "technology"],
+    "lang": "es-CL",
+    "icons": [
+        {
+            "src": "img/favicon.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "img/DigDev_logo_100.png",
+            "sizes": "100x100",
+            "type": "image/png"
+        },
+        {
+            "src": "img/DigDev_logo_200.png",
+            "sizes": "200x200",
+            "type": "image/png"
+        },
+        {
+            "src": "img/DigDev_logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "img/DigDev_logo.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ]
+}

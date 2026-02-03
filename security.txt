@@ -1,0 +1,7 @@
+Contact: mailto:colivares@digdev.cl
+Contact: https://digdev.cl/#Contacto
+Expires: 2026-12-31T23:59:59.000Z
+Encryption: https://digdev.cl/pgp-key.txt
+Preferred-Languages: es, en
+Canonical: https://digdev.cl/.well-known/security.txt
+Policy: https://digdev.cl/security-policy.html

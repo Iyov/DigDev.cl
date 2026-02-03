@@ -1,0 +1,126 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DigDev Solutions",
+  "alternateName": "DigDev",
+  "description": "Empresa líder en desarrollo de software para la industria minera en Chile. Especializada en sistemas de gestión, automatización de procesos y análisis de datos.",
+  "url": "https://digdev.cl",
+  "telephone": "+56-9-99896880",
+  "email": "colivares@digdev.cl",
+  "foundingDate": "2014",
+  "numberOfEmployees": "10-50",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Las Acacias 390",
+    "addressLocality": "Villa Alemana",
+    "addressRegion": "Valparaíso",
+    "postalCode": "2520000",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.0458,
+    "longitude": -71.3735
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "currenciesAccepted": "CLP, USD",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Chile"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.0458,
+      "longitude": -71.3735
+    },
+    "geoRadius": "1000000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Desarrollo de Software",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo de Software para Minería",
+          "description": "Sistemas especializados para la industria minera",
+          "provider": {
+            "@type": "Organization",
+            "name": "DigDev Solutions"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sistemas de Gestión Minera",
+          "description": "ERP y sistemas de gestión especializados",
+          "provider": {
+            "@type": "Organization",
+            "name": "DigDev Solutions"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automatización de Procesos",
+          "description": "Automatización de procesos mineros",
+          "provider": {
+            "@type": "Organization",
+            "name": "DigDev Solutions"
+          }
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/digdevsolutions/",
+    "https://www.instagram.com/digdevsolutions/",
+    "https://www.facebook.com/digdevsolutions/",
+    "https://www.threads.net/@digdevsolutions/",
+    "https://www.tiktok.com/@digdevsolutions/",
+    "https://www.youtube.com/@digdevsolutions/",
+    "https://x.com/DigDevSolutions/"
+  ],
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://digdev.cl/img/DigDev_logo.png",
+    "width": 400,
+    "height": 400
+  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "url": "https://digdev.cl/img/DigDev_logo.png",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://digdev.cl/img/DigDev_logo_200.png",
+      "width": 200,
+      "height": 200
+    }
+  ]
+}

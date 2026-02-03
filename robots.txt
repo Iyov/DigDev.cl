@@ -1,3 +1,27 @@
 User-agent: *
 Allow: /
+
+# Disallow specific files and directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /webfonts/
+Disallow: *.css$
+Disallow: *.js$
+Disallow: /webmail.html
+
+# Allow important pages
+Allow: /index.html
+Allow: /post.html
+Allow: /presentacion.html
+Allow: /Propuesta.html
+Allow: /PropuestaCEN.html
+Allow: /PropuestaES.html
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://digdev.cl/sitemap.xml
+
+# Additional sitemaps (if any)
+# Sitemap: https://digdev.cl/sitemap-images.xml

@@ -1,0 +1,42 @@
+/* TEAM */
+Developer: DigDev Solutions Team
+Contact: colivares@digdev.cl
+Twitter: @DigDevSolutions
+From: Villa Alemana, Chile
+
+/* THANKS */
+Tailwind CSS: https://tailwindcss.com
+Font Awesome: https://fontawesome.com
+Google Fonts: https://fonts.google.com
+
+/* SITE */
+Last update: 2026/02/03
+Language: Spanish / English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Tailwind CSS, Font Awesome
+Software: Git, Node.js
+
+/* COMPANY */
+Name: DigDev Solutions
+Founded: 2014
+Location: Villa Alemana, Valparaíso, Chile
+Industry: Software Development for Mining
+Specialization: Mining Software, Web Development, Mobile Apps
+Experience: 10+ years in mining industry
+Contact: +56-9-99896880
+Email: colivares@digdev.cl
+Website: https://digdev.cl
+
+/* SEO OPTIMIZATION */
+- Semantic HTML5 structure
+- Schema.org structured data
+- Open Graph and Twitter Cards
+- Optimized meta tags
+- Mobile-first responsive design
+- Fast loading times
+- Accessibility compliant
+- Multi-language support
+- Local SEO optimization
+- Technical SEO best practices
