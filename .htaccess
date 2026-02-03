@@ -49,6 +49,9 @@
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy - Allow necessary scripts with nonces
+    Header always set Content-Security-Policy "script-src 'self' 'nonce-digdev-tailwind-config' 'nonce-digdev-tailwind-cdn' 'nonce-digdev-main-script' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'"
 </IfModule>
 
 # Redirect www to non-www (canonical URL)
