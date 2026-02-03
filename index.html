@@ -242,7 +242,7 @@
 
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
   <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50" data-lang="accessibility.skip-content">
     Saltar al contenido principal
   </a>
   
@@ -250,14 +250,14 @@
   <div id="progressBar" class="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-300" role="progressbar" aria-label="Progreso de lectura"></div>
   
   <!-- Back to Top Button -->
-  <button id="backToTop" class="fixed bottom-6 right-20 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 invisible" aria-label="Volver arriba">
+  <button id="backToTop" class="fixed bottom-6 right-20 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 invisible" data-lang-aria="accessibility.back-to-top">
     <i class="fas fa-arrow-up text-xl" aria-hidden="true"></i>
   </button>
   
   <!-- WhatsApp Button -->
-  <a id="whatsappButton" href="https://wa.me/56999896880" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group" aria-label="Contactar por WhatsApp">
+  <a id="whatsappButton" href="https://wa.me/56999896880" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group" data-lang-aria="contact.whatsapp-aria">
     <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
-    <span class="whatsapp-tooltip">Comunícate con nosotros</span>
+    <span class="whatsapp-tooltip" data-lang="contact.whatsapp-tooltip">Comunícate con nosotros</span>
   </a>
 
   <div class="flex min-h-screen w-full flex-col">
@@ -272,12 +272,12 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuButton" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <button id="mobileMenuButton" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.mobile-menu" aria-expanded="false">
           <i class="fas fa-bars text-xl pointer-events-none" aria-hidden="true"></i>
         </button>
         
         <!-- Desktop Navigation -->
-        <nav id="desktopNav" class="hidden md:flex items-center gap-6" role="navigation" aria-label="Navegación principal">
+        <nav id="desktopNav" class="hidden md:flex items-center gap-6" role="navigation" data-lang-aria="header.main-navigation">
           <a href="#Servicios" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.services">Servicios</a>
           <a href="#Mineria" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.mining">Minería</a>
           <a href="#Nosotros" class="text-sm font-medium hover:text-primary transition-colors" data-lang="header.about">Nosotros</a>
@@ -290,7 +290,7 @@
         <div class="hidden md:flex items-center gap-4">
           <!-- Language Selector -->
           <div class="relative group">
-            <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Cambiar idioma" aria-expanded="false">
+            <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.language-selector" aria-expanded="false">
               <i class="fa-solid fa-globe text-xl" aria-hidden="true"></i>
             </button>
             <div id="languageDropdown" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden group-hover:block" role="menu">
@@ -306,7 +306,7 @@
           </div>
           
           <!-- Theme Toggle -->
-          <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Cambiar tema">
+          <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.theme-toggle">
             <i class="fa-solid fa-moon text-xl" id="themeIcon" aria-hidden="true"></i>
           </button>
         </div>
@@ -359,7 +359,7 @@
           <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <a href="/" class="text-gray-500 hover:text-primary transition-colors" itemprop="item">
-                <span itemprop="name">Inicio</span>
+                <span itemprop="name" data-lang="breadcrumb.home">Inicio</span>
               </a>
               <meta itemprop="position" content="1" />
             </li>
@@ -1117,6 +1117,6 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/index.js?v=2026-02-03_1"></script>
+  <script src="js/index.js?v=2026-02-03_2"></script>
 </body>
 </html>

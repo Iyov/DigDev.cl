@@ -125,7 +125,24 @@ const translations = {
     "contact.linkedin-title": "LinkedIn",
     
     // Footer
-    "footer.copyright": "© 2026 DigDev Solutions. Todos los derechos reservados."
+    "footer.copyright": "© 2026 DigDev Solutions. Todos los derechos reservados.",
+    
+    // Accessibility
+    "accessibility.skip-content": "Saltar al contenido principal",
+    "accessibility.back-to-top": "Volver arriba",
+    
+    // Header
+    "header.mobile-menu": "Abrir menú de navegación",
+    "header.main-navigation": "Navegación principal",
+    "header.language-selector": "Cambiar idioma",
+    "header.theme-toggle": "Cambiar tema",
+    
+    // Contact
+    "contact.whatsapp-aria": "Contactar por WhatsApp",
+    "contact.whatsapp-tooltip": "Comunícate con nosotros",
+    
+    // Breadcrumb
+    "breadcrumb.home": "Inicio"
   },
   en: {
     // Header
@@ -250,7 +267,24 @@ const translations = {
     "contact.linkedin-title": "LinkedIn",
     
     // Footer
-    "footer.copyright": "© 2026 DigDev Solutions. All rights reserved."
+    "footer.copyright": "© 2026 DigDev Solutions. All rights reserved.",
+    
+    // Accessibility
+    "accessibility.skip-content": "Skip to main content",
+    "accessibility.back-to-top": "Back to top",
+    
+    // Header
+    "header.mobile-menu": "Open navigation menu",
+    "header.main-navigation": "Main navigation",
+    "header.language-selector": "Change language",
+    "header.theme-toggle": "Toggle theme",
+    
+    // Contact
+    "contact.whatsapp-aria": "Contact via WhatsApp",
+    "contact.whatsapp-tooltip": "Get in touch with us",
+    
+    // Breadcrumb
+    "breadcrumb.home": "Home"
   }
 };
 
@@ -717,6 +751,16 @@ function applyLanguage(lang) {
       } else {
         element.textContent = translations[lang][key];
       }
+    }
+  });
+  
+  // Apply language to aria-label attributes
+  const ariaElements = document.querySelectorAll('[data-lang-aria]');
+  
+  ariaElements.forEach(element => {
+    const key = element.getAttribute('data-lang-aria');
+    if (translations[lang] && translations[lang][key]) {
+      element.setAttribute('aria-label', translations[lang][key]);
     }
   });
 }
