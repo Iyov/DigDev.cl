@@ -13,6 +13,34 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ---
 
+## [2026-02-08_4] - 2026-02-08
+
+### 🔧 Optimización para Producción
+
+#### Cambiado
+- 🚫 **Console.log removidos para producción**
+  - Implementado sistema de logging condicional con `DEV_MODE`
+  - Variable `DEV_MODE = false` para producción
+  - Función `devLog()` que solo ejecuta en desarrollo
+  - Todos los console.log reemplazados por devLog()
+  - console.error mantenido para errores críticos
+  - Aplicado en `js/index.js` y `sw.js`
+  - Mejora en rendimiento y seguridad
+  - Logs disponibles cambiando `DEV_MODE = true`
+
+#### Mejorado
+- 📦 **Tamaño de JavaScript**: Reducción en producción
+- 🔒 **Seguridad**: No exponer información de debug
+- ⚡ **Rendimiento**: Menos operaciones de consola
+- 🛠️ **Desarrollo**: Fácil activación de logs con flag
+
+#### Versiones Actualizadas
+- `index.html`: v2026-02-08_4
+- `js/index.js`: v2026-02-08_4
+- `sw.js`: v2026-02-08_4
+
+---
+
 ## [2026-02-08_3] - 2026-02-08
 
 ### ✅ Fase 4: Mejoras de SEO y Funcionalidad

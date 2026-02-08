@@ -1,8 +1,18 @@
 // Service Worker para DigDev Solutions PWA
 // Versión: 1.0.0
 
+// Development mode flag (set to false for production)
+const DEV_MODE = false;
+
+// Development console logger
+const devLog = (...args) => {
+  if (DEV_MODE) {
+    console.log(...args);
+  }
+};
+
 const CACHE_NAME = 'digdev-v1.0.0';
-const CACHE_VERSION = '2026-02-08_3';
+const CACHE_VERSION = '2026-02-08_4';
 
 // Recursos críticos para cachear
 const CRITICAL_ASSETS = [
@@ -33,16 +43,16 @@ const SECONDARY_ASSETS = [
 
 // Instalación del Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v' + CACHE_VERSION);
+  devLog('[SW] Instalando Service Worker v' + CACHE_VERSION);
   
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('[SW] Cacheando recursos críticos');
+        devLog('[SW] Cacheando recursos críticos');
         return cache.addAll(CRITICAL_ASSETS);
       })
       .then(() => {
-        console.log('[SW] Recursos críticos cacheados exitosamente');
+        devLog('[SW] Recursos críticos cacheados exitosamente');
         return self.skipWaiting(); // Activar inmediatamente
       })
       .catch(error => {
@@ -53,7 +63,7 @@ self.addEventListener('install', event => {
 
 // Activación del Service Worker
 self.addEventListener('activate', event => {
-  console.log('[SW] Activando Service Worker v' + CACHE_VERSION);
+  devLog('[SW] Activando Service Worker v' + CACHE_VERSION);
   
   event.waitUntil(
     caches.keys()
@@ -63,13 +73,13 @@ self.addEventListener('activate', event => {
           cacheNames
             .filter(cacheName => cacheName !== CACHE_NAME)
             .map(cacheName => {
-              console.log('[SW] Eliminando caché antiguo:', cacheName);
+              devLog('[SW] Eliminando caché antiguo:', cacheName);
               return caches.delete(cacheName);
             })
         );
       })
       .then(() => {
-        console.log('[SW] Service Worker activado');
+        devLog('[SW] Service Worker activado');
         return self.clients.claim(); // Tomar control inmediatamente
       })
   );
@@ -111,7 +121,7 @@ self.addEventListener('fetch', event => {
             return cache.match(request)
               .then(cachedResponse => {
                 if (cachedResponse) {
-                  console.log('[SW] Sirviendo desde caché:', request.url);
+                  devLog('[SW] Sirviendo desde caché:', request.url);
                   return cachedResponse;
                 }
                 
@@ -159,7 +169,7 @@ self.addEventListener('message', event => {
 
 // Sincronización en segundo plano (para futuras funcionalidades)
 self.addEventListener('sync', event => {
-  console.log('[SW] Sincronización en segundo plano:', event.tag);
+  devLog('[SW] Sincronización en segundo plano:', event.tag);
   
   if (event.tag === 'sync-data') {
     event.waitUntil(
@@ -171,7 +181,7 @@ self.addEventListener('sync', event => {
 
 // Notificaciones push (para futuras funcionalidades)
 self.addEventListener('push', event => {
-  console.log('[SW] Push recibido');
+  devLog('[SW] Push recibido');
   
   const options = {
     body: event.data ? event.data.text() : 'Nueva actualización disponible',
@@ -203,7 +213,7 @@ self.addEventListener('push', event => {
 
 // Manejo de clicks en notificaciones
 self.addEventListener('notificationclick', event => {
-  console.log('[SW] Click en notificación:', event.action);
+  devLog('[SW] Click en notificación:', event.action);
   
   event.notification.close();
   
@@ -214,4 +224,4 @@ self.addEventListener('notificationclick', event => {
   }
 });
 
-console.log('[SW] Service Worker cargado - v' + CACHE_VERSION);
+devLog('[SW] Service Worker cargado - v' + CACHE_VERSION);

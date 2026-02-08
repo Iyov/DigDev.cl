@@ -1,5 +1,15 @@
 // DigDev Solutions - JavaScript functionality
 
+// Development mode flag (set to false for production)
+const DEV_MODE = false;
+
+// Development console logger
+const devLog = (...args) => {
+  if (DEV_MODE) {
+    console.log(...args);
+  }
+};
+
 // Language data
 const translations = {
   es: {
@@ -1087,7 +1097,7 @@ function checkContrast() {
 
 // Initialize Phase 3 Enhancements
 function initPhase3Enhancements() {
-  console.log('🚀 Initializing Phase 3: UX & Accessibility Improvements');
+  devLog('🚀 Initializing Phase 3: UX & Accessibility Improvements');
   
   // Replace existing event listeners with enhanced versions
   if (mobileMenuButton) {
@@ -1156,7 +1166,7 @@ function initPhase3Enhancements() {
   // Add ARIA labels to interactive elements without them
   enhanceAriaLabels();
   
-  console.log('✅ Phase 3 enhancements initialized successfully');
+  devLog('✅ Phase 3 enhancements initialized successfully');
 }
 
 // Enhance ARIA labels for better accessibility
@@ -1225,7 +1235,7 @@ function trackEvent(eventName, eventCategory, eventLabel, eventValue = null) {
     }
     
     gtag('event', eventName, eventData);
-    console.log(`📊 GA Event: ${eventName} - ${eventCategory} - ${eventLabel}`);
+    devLog(`📊 GA Event: ${eventName} - ${eventCategory} - ${eventLabel}`);
   }
 }
 
@@ -1359,7 +1369,7 @@ function updateMetaTags(data) {
       canonical.setAttribute('href', data.url);
     }
     
-    console.log('✅ Meta tags updated:', data);
+    devLog('✅ Meta tags updated:', data);
   } catch (error) {
     console.error('Error updating meta tags:', error);
   }
@@ -1540,17 +1550,17 @@ async function handleFormSubmission(form) {
 
 // Initialize Phase 4 Enhancements
 function initPhase4Enhancements() {
-  console.log('🚀 Initializing Phase 4: SEO & Functionality Improvements');
+  devLog('🚀 Initializing Phase 4: SEO & Functionality Improvements');
   
   // Initialize Analytics tracking
   if (typeof gtag !== 'undefined') {
     initAnalyticsTracking();
-    console.log('✅ Google Analytics tracking initialized');
+    devLog('✅ Google Analytics tracking initialized');
   }
   
   // Initialize form validation
   initFormValidation();
-  console.log('✅ Form validation initialized');
+  devLog('✅ Form validation initialized');
   
   // Replace blog modal opener with meta tags version
   const blogPostElements = document.querySelectorAll('.blog-post');
@@ -1577,7 +1587,7 @@ function initPhase4Enhancements() {
     });
   });
   
-  console.log('✅ Phase 4 enhancements initialized successfully');
+  devLog('✅ Phase 4 enhancements initialized successfully');
 }
 
 // Call Phase 4 initialization after DOM is ready
