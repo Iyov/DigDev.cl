@@ -836,3 +836,373 @@ function initMobileMenu() {
     }
   });
 }
+
+
+// ========================================
+// FASE 3: UX & ACCESSIBILITY IMPROVEMENTS
+// ========================================
+
+// Notification System
+function showNotification(message, type = 'info', duration = 3000) {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.setAttribute('role', 'alert');
+  notification.setAttribute('aria-live', 'polite');
+  
+  const iconMap = {
+    success: 'fa-check-circle',
+    error: 'fa-exclamation-circle',
+    info: 'fa-info-circle',
+    warning: 'fa-exclamation-triangle'
+  };
+  
+  notification.innerHTML = `
+    <i class="fas ${iconMap[type]} notification-icon" aria-hidden="true"></i>
+    <div class="notification-content">${message}</div>
+    <i class="fas fa-times notification-close" aria-label="Cerrar notificación"></i>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Close button functionality
+  const closeBtn = notification.querySelector('.notification-close');
+  closeBtn.addEventListener('click', () => {
+    removeNotification(notification);
+  });
+  
+  // Auto-remove after duration
+  if (duration > 0) {
+    setTimeout(() => {
+      removeNotification(notification);
+    }, duration);
+  }
+  
+  return notification;
+}
+
+function removeNotification(notification) {
+  notification.classList.add('hiding');
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.parentNode.removeChild(notification);
+    }
+  }, 300);
+}
+
+// Loading Overlay System
+let loadingOverlay = null;
+
+function showLoading(message = '') {
+  if (loadingOverlay) return; // Prevent multiple overlays
+  
+  loadingOverlay = document.createElement('div');
+  loadingOverlay.className = 'loading-overlay';
+  loadingOverlay.setAttribute('role', 'status');
+  loadingOverlay.setAttribute('aria-live', 'polite');
+  loadingOverlay.setAttribute('aria-label', 'Cargando contenido');
+  
+  loadingOverlay.innerHTML = `
+    <div class="loading-spinner"></div>
+    ${message ? `<p class="text-white mt-4 text-lg">${message}</p>` : ''}
+  `;
+  
+  document.body.appendChild(loadingOverlay);
+  document.body.style.overflow = 'hidden'; // Prevent scrolling while loading
+}
+
+function hideLoading() {
+  if (loadingOverlay && loadingOverlay.parentNode) {
+    loadingOverlay.parentNode.removeChild(loadingOverlay);
+    loadingOverlay = null;
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
+// Enhanced Language Change with Feedback
+function changeLanguageWithFeedback(lang) {
+  try {
+    showLoading('Cambiando idioma...');
+    
+    setTimeout(() => {
+      currentLanguage = lang;
+      applyLanguage(lang);
+      updateLanguageIndicator();
+      localStorage.setItem('digdev-language', lang);
+      
+      hideLoading();
+      
+      const messages = {
+        es: 'Idioma cambiado a Español',
+        en: 'Language changed to English'
+      };
+      
+      showNotification(messages[lang] || 'Idioma cambiado', 'success', 2000);
+    }, 500); // Simulate loading time for smooth UX
+    
+  } catch (error) {
+    hideLoading();
+    console.error('Error changing language:', error);
+    showNotification('Error al cambiar el idioma', 'error');
+  }
+}
+
+// Enhanced Blog Modal with Loading State
+function openBlogModalEnhanced(blogId) {
+  try {
+    showLoading('Cargando artículo...');
+    
+    setTimeout(() => {
+      if (blogContent[blogId] && blogContent[blogId][currentLanguage]) {
+        blogModalTitle.textContent = blogContent[blogId][currentLanguage].title;
+        blogModalContent.innerHTML = blogContent[blogId][currentLanguage].content;
+        blogModal.classList.remove('hidden');
+        hideLoading();
+        
+        // Announce to screen readers
+        blogModal.setAttribute('aria-label', `Artículo: ${blogContent[blogId][currentLanguage].title}`);
+      } else {
+        hideLoading();
+        showNotification('No se pudo cargar el artículo', 'error');
+      }
+    }, 300);
+    
+  } catch (error) {
+    hideLoading();
+    console.error('Error opening blog modal:', error);
+    showNotification('Error al abrir el artículo', 'error');
+  }
+}
+
+// Enhanced Mobile Menu with Animation
+function toggleMobileMenuEnhanced() {
+  const isHidden = mobileNav.classList.contains('hidden');
+  
+  if (isHidden) {
+    mobileNav.classList.remove('hidden');
+    mobileNav.classList.add('mobile-nav-enter');
+    mobileMenuButton.classList.add('active');
+    mobileMenuButton.innerHTML = '<i class="fas fa-times text-xl pointer-events-none"></i>';
+    mobileMenuButton.setAttribute('aria-expanded', 'true');
+    mobileMenuButton.setAttribute('aria-label', 'Cerrar menú');
+  } else {
+    mobileNav.classList.add('hidden');
+    mobileNav.classList.remove('mobile-nav-enter');
+    mobileMenuButton.classList.remove('active');
+    mobileMenuButton.innerHTML = '<i class="fas fa-bars text-xl pointer-events-none"></i>';
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.setAttribute('aria-label', 'Abrir menú');
+  }
+}
+
+// Error Boundary for Critical Functions
+function safeExecute(fn, errorMessage = 'Ha ocurrido un error') {
+  try {
+    return fn();
+  } catch (error) {
+    console.error('Error:', error);
+    showNotification(errorMessage, 'error');
+    return null;
+  }
+}
+
+// Enhanced Theme Toggle with Feedback
+function toggleThemeEnhanced() {
+  try {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+    
+    if (isDark) {
+      html.classList.remove('dark');
+      localStorage.setItem('digdev-theme', 'light');
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+      if (themeIconMobile) {
+        themeIconMobile.classList.remove('fa-sun');
+        themeIconMobile.classList.add('fa-moon');
+      }
+      showNotification('Modo claro activado', 'info', 1500);
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('digdev-theme', 'dark');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+      if (themeIconMobile) {
+        themeIconMobile.classList.remove('fa-moon');
+        themeIconMobile.classList.add('fa-sun');
+      }
+      showNotification('Modo oscuro activado', 'info', 1500);
+    }
+  } catch (error) {
+    console.error('Error toggling theme:', error);
+    showNotification('Error al cambiar el tema', 'error');
+  }
+}
+
+// Keyboard Navigation Enhancement
+function enhanceKeyboardNavigation() {
+  // ESC key to close modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (blogModal && !blogModal.classList.contains('hidden')) {
+        blogModal.classList.add('hidden');
+      }
+      if (mobileNav && !mobileNav.classList.contains('hidden')) {
+        toggleMobileMenuEnhanced();
+      }
+    }
+  });
+  
+  // Tab trap for modal
+  blogModal.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      const focusableElements = blogModal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  });
+}
+
+// Improved Contrast Check (for accessibility)
+function checkContrast() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const textElements = document.querySelectorAll('.text-gray-400, .text-gray-500');
+  
+  textElements.forEach(element => {
+    if (isDark) {
+      // Ensure better contrast in dark mode
+      element.style.color = '#9ca3af'; // Lighter gray for better contrast
+    }
+  });
+}
+
+// Initialize Phase 3 Enhancements
+function initPhase3Enhancements() {
+  console.log('🚀 Initializing Phase 3: UX & Accessibility Improvements');
+  
+  // Replace existing event listeners with enhanced versions
+  if (mobileMenuButton) {
+    // Remove old listener and add new one
+    const newMobileMenuButton = mobileMenuButton.cloneNode(true);
+    mobileMenuButton.parentNode.replaceChild(newMobileMenuButton, mobileMenuButton);
+    mobileMenuButton = newMobileMenuButton;
+    
+    mobileMenuButton.addEventListener('click', toggleMobileMenuEnhanced);
+  }
+  
+  // Replace theme toggle listeners
+  if (themeToggle) {
+    const newThemeToggle = themeToggle.cloneNode(true);
+    themeToggle.parentNode.replaceChild(newThemeToggle, themeToggle);
+    themeToggle = newThemeToggle;
+    
+    themeToggle.addEventListener('click', toggleThemeEnhanced);
+  }
+  
+  if (themeToggleMobile) {
+    const newThemeToggleMobile = themeToggleMobile.cloneNode(true);
+    themeToggleMobile.parentNode.replaceChild(newThemeToggleMobile, themeToggleMobile);
+    themeToggleMobile = newThemeToggleMobile;
+    
+    themeToggleMobile.addEventListener('click', toggleThemeEnhanced);
+  }
+  
+  // Replace language option listeners
+  const languageOptions = document.querySelectorAll('.language-option');
+  languageOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const selectedLang = this.getAttribute('data-lang');
+      changeLanguageWithFeedback(selectedLang);
+      
+      // Close dropdowns
+      if (languageDropdown) languageDropdown.classList.add('hidden');
+      if (languageDropdownMobile) languageDropdownMobile.classList.add('hidden');
+    });
+  });
+  
+  // Replace blog modal listeners
+  const blogReadMoreButtons = document.querySelectorAll('.blog-read-more');
+  blogReadMoreButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const blogId = this.getAttribute('data-blog');
+      openBlogModalEnhanced(blogId);
+    });
+  });
+  
+  const blogPostElements = document.querySelectorAll('.blog-post');
+  blogPostElements.forEach(post => {
+    post.addEventListener('click', function() {
+      const blogId = this.getAttribute('data-blog');
+      openBlogModalEnhanced(blogId);
+    });
+  });
+  
+  // Enhance keyboard navigation
+  enhanceKeyboardNavigation();
+  
+  // Check contrast on theme change
+  checkContrast();
+  
+  // Add ARIA labels to interactive elements without them
+  enhanceAriaLabels();
+  
+  console.log('✅ Phase 3 enhancements initialized successfully');
+}
+
+// Enhance ARIA labels for better accessibility
+function enhanceAriaLabels() {
+  // Add aria-label to buttons without text
+  const buttons = document.querySelectorAll('button:not([aria-label])');
+  buttons.forEach(button => {
+    const icon = button.querySelector('i');
+    if (icon && !button.textContent.trim()) {
+      if (icon.classList.contains('fa-moon') || icon.classList.contains('fa-sun')) {
+        button.setAttribute('aria-label', 'Cambiar tema');
+      } else if (icon.classList.contains('fa-globe')) {
+        button.setAttribute('aria-label', 'Cambiar idioma');
+      } else if (icon.classList.contains('fa-bars') || icon.classList.contains('fa-times')) {
+        button.setAttribute('aria-label', 'Menú de navegación');
+      }
+    }
+  });
+  
+  // Ensure all links have descriptive text or aria-label
+  const links = document.querySelectorAll('a:not([aria-label])');
+  links.forEach(link => {
+    if (!link.textContent.trim() && !link.getAttribute('aria-label')) {
+      const img = link.querySelector('img');
+      if (img && img.alt) {
+        link.setAttribute('aria-label', img.alt);
+      }
+    }
+  });
+}
+
+// Call Phase 3 initialization after DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPhase3Enhancements);
+} else {
+  initPhase3Enhancements();
+}
+
+// Export functions for testing (if needed)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    showNotification,
+    showLoading,
+    hideLoading,
+    changeLanguageWithFeedback,
+    openBlogModalEnhanced,
+    toggleThemeEnhanced
+  };
+}

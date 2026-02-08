@@ -2,7 +2,7 @@
 // Versión: 1.0.0
 
 const CACHE_NAME = 'digdev-v1.0.0';
-const CACHE_VERSION = '2026-02-08_1';
+const CACHE_VERSION = '2026-02-08_2';
 
 // Recursos críticos para cachear
 const CRITICAL_ASSETS = [

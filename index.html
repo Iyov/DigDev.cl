@@ -72,7 +72,7 @@
     <link rel="stylesheet" href="css/font-awesome_6.5.1_all.min.css" />
 
     <!-- Custom CSS - Minified for performance -->
-    <link rel="stylesheet" href="css/index.min.css?v=2026-02-08_1" />
+    <link rel="stylesheet" href="css/index.min.css?v=2026-02-08_2" />
 
   <!-- Enhanced Schema.org markup for Google -->
   <script type="application/ld+json">
@@ -250,12 +250,12 @@
   <div id="progressBar" class="fixed top-0 left-0 h-1 bg-primary z-50 transition-all duration-300" role="progressbar" aria-label="Progreso de lectura"></div>
   
   <!-- Back to Top Button -->
-  <button id="backToTop" class="fixed bottom-6 right-20 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 invisible" data-lang-aria="accessibility.back-to-top">
+  <button id="backToTop" class="fixed bottom-6 right-20 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 invisible" aria-label="Volver arriba">
     <i class="fas fa-arrow-up text-xl" aria-hidden="true"></i>
   </button>
   
   <!-- WhatsApp Button -->
-  <a id="whatsappButton" href="https://wa.me/56999896880" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group" data-lang-aria="contact.whatsapp-aria">
+  <a id="whatsappButton" href="https://wa.me/56999896880" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 group" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
     <span class="whatsapp-tooltip" data-lang="contact.whatsapp-tooltip">Comunícate con nosotros</span>
   </a>
@@ -272,7 +272,7 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuButton" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.mobile-menu" aria-expanded="false">
+        <button id="mobileMenuButton" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNav">
           <i class="fas fa-bars text-xl pointer-events-none" aria-hidden="true"></i>
         </button>
         
@@ -290,10 +290,10 @@
         <div class="hidden md:flex items-center gap-4">
           <!-- Language Selector -->
           <div class="relative group">
-            <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.language-selector" aria-expanded="false">
+            <button id="languageToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Seleccionar idioma" aria-expanded="false" aria-haspopup="true">
               <i class="fa-solid fa-globe text-xl" aria-hidden="true"></i>
             </button>
-            <div id="languageDropdown" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden group-hover:block" role="menu">
+            <div id="languageDropdown" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden group-hover:block" role="menu" aria-label="Opciones de idioma">
               <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="es" role="menuitem">
                 <i class="fas fa-check text-primary hidden language-check" id="check-es" aria-hidden="true"></i>
                 <span>Español</span>
@@ -306,14 +306,14 @@
           </div>
           
           <!-- Theme Toggle -->
-          <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-lang-aria="header.theme-toggle">
+          <button id="themeToggle" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Cambiar tema de color">
             <i class="fa-solid fa-moon text-xl" id="themeIcon" aria-hidden="true"></i>
           </button>
         </div>
       </div>
       
       <!-- Mobile Navigation -->
-      <div id="mobileNav" class="md:hidden bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 hidden">
+      <div id="mobileNav" class="md:hidden bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 hidden" role="navigation" aria-label="Menú de navegación móvil">
         <div class="container mx-auto px-4 py-4">
           <div class="flex flex-col space-y-4">
             <a href="#Servicios" class="text-sm font-medium hover:text-primary transition-colors py-2" data-lang="header.services">Servicios</a>
@@ -327,15 +327,15 @@
             <div class="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
               <!-- Language Selector Mobile -->
               <div class="relative">
-                <button id="languageToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                <button id="languageToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Seleccionar idioma" aria-expanded="false" aria-haspopup="true">
                   <i class="fa-solid fa-globe text-xl"></i>
                 </button>
-                <div id="languageDropdownMobile" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden">
-                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="es">
+                <div id="languageDropdownMobile" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 hidden" role="menu" aria-label="Opciones de idioma">
+                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="es" role="menuitem">
                     <i class="fas fa-check text-primary hidden language-check-mobile" id="check-es-mobile"></i>
                     <span>Español</span>
                   </button>
-                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="en">
+                  <button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-2" data-lang="en" role="menuitem">
                     <i class="fas fa-check text-primary hidden language-check-mobile" id="check-en-mobile"></i>
                     <span>English</span>
                   </button>
@@ -343,7 +343,7 @@
               </div>
               
               <!-- Theme Toggle Mobile -->
-              <button id="themeToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <button id="themeToggleMobile" class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" aria-label="Cambiar tema de color">
                 <i class="fa-solid fa-moon text-xl" id="themeIconMobile"></i>
               </button>
             </div>
@@ -1100,13 +1100,13 @@
   </div>
 
   <!-- Blog Modal -->
-  <div id="blogModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div id="blogModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="blogModalTitle">
     <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
       <div class="p-6">
         <div class="flex justify-between items-center mb-4">
           <h3 id="blogModalTitle" class="text-2xl font-bold text-gray-900 dark:text-white"></h3>
-          <button id="closeBlogModal" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-            <i class="fas fa-times text-2xl"></i>
+          <button id="closeBlogModal" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" aria-label="Cerrar artículo">
+            <i class="fas fa-times text-2xl" aria-hidden="true"></i>
           </button>
         </div>
         <div id="blogModalContent" class="prose dark:prose-invert max-w-none">
@@ -1117,7 +1117,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/index.js?v=2026-02-08_1" nonce="digdev-main-script"></script>
+  <script src="js/index.js?v=2026-02-08_2" nonce="digdev-main-script"></script>
   
   <!-- Service Worker Registration -->
   <script nonce="digdev-main-script">
