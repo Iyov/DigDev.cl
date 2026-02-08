@@ -1,27 +1,19 @@
 User-agent: *
 Allow: /
 
-# Disallow specific files and directories
-Disallow: /css/
-Disallow: /js/
-Disallow: /webfonts/
-Disallow: *.css$
-Disallow: *.js$
-Disallow: /webmail.html
+# IMPORTANTE: NO bloquear CSS y JS - Google los necesita para renderizar
+Allow: /css/
+Allow: /js/
+Allow: /webfonts/
 
-# Allow important pages
-Allow: /index.html
-Allow: /post.html
-Allow: /presentacion.html
-Allow: /Propuesta.html
-Allow: /PropuestaCEN.html
-Allow: /PropuestaES.html
+# Bloquear solo archivos sensibles
+Disallow: /webmail.html
+Disallow: /*.log$
+Disallow: /.git/
+Disallow: /.vscode/
 
 # Crawl delay
 Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://digdev.cl/sitemap.xml
-
-# Additional sitemaps (if any)
-# Sitemap: https://digdev.cl/sitemap-images.xml
