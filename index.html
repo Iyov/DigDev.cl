@@ -60,10 +60,9 @@
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=container-queries" nonce="digdev-tailwind-cdn"></script>
+    <!-- Tailwind CSS - Production Build -->
+    <link rel="stylesheet" href="css/tailwind.min.css?v=2026-02-08_5" />
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,7 +71,7 @@
     <link rel="stylesheet" href="css/font-awesome_6.5.1_all.min.css" />
 
     <!-- Custom CSS - Minified for performance -->
-    <link rel="stylesheet" href="css/index.min.css?v=2026-02-08_4" />
+    <link rel="stylesheet" href="css/index.min.css?v=2026-02-08_5" />
 
   <!-- Enhanced Schema.org markup for Google -->
   <script type="application/ld+json">
@@ -213,30 +212,6 @@
     },
     "inLanguage": ["es-CL", "en-US"]
   }
-  </script>
-  
-  <script nonce="digdev-tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#1193d4",
-            "background-light": "#f6f7f8",
-            "background-dark": "#101c22",
-          },
-          fontFamily: {
-            display: ["Manrope", "sans-serif"],
-          },
-          borderRadius: {
-            DEFAULT: "0.5rem",
-            lg: "0.75rem",
-            xl: "1rem",
-            full: "9999px",
-          },
-        },
-      },
-    };
   </script>
   
   <!-- Google Analytics 4 -->
@@ -1252,7 +1227,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/index.js?v=2026-02-08_4" nonce="digdev-main-script"></script>
+  <script src="js/index.js?v=2026-02-08_5" nonce="digdev-main-script"></script>
   
   <!-- Service Worker Registration -->
   <script nonce="digdev-main-script">

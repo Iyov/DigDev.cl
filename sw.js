@@ -12,13 +12,14 @@ const devLog = (...args) => {
 };
 
 const CACHE_NAME = 'digdev-v1.0.0';
-const CACHE_VERSION = '2026-02-08_4';
+const CACHE_VERSION = '2026-02-08_5';
 
 // Recursos críticos para cachear
 const CRITICAL_ASSETS = [
   '/',
   '/index.html',
   '/css/index.min.css',
+  '/css/tailwind.min.css',
   '/css/font-awesome_6.5.1_all.min.css',
   '/js/index.js',
   '/img/DigDev_logo.png',

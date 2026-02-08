@@ -1,0 +1,20 @@
+{
+  "name": "digdev-solutions",
+  "version": "2026-02-08_4",
+  "description": "DigDev Solutions - Sitio web optimizado para la industria minera",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --watch"
+  },
+  "keywords": [
+    "mining",
+    "software",
+    "solutions"
+  ],
+  "author": "DigDev Solutions",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "tailwindcss": "^3.4.19"
+  }
+}
