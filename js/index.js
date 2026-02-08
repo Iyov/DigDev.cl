@@ -1206,3 +1206,394 @@ if (typeof module !== 'undefined' && module.exports) {
     toggleThemeEnhanced
   };
 }
+
+
+// ========================================
+// FASE 4: SEO & FUNCTIONALITY IMPROVEMENTS
+// ========================================
+
+// Google Analytics Event Tracking
+function trackEvent(eventName, eventCategory, eventLabel, eventValue = null) {
+  if (typeof gtag !== 'undefined') {
+    const eventData = {
+      'event_category': eventCategory,
+      'event_label': eventLabel
+    };
+    
+    if (eventValue !== null) {
+      eventData.value = eventValue;
+    }
+    
+    gtag('event', eventName, eventData);
+    console.log(`📊 GA Event: ${eventName} - ${eventCategory} - ${eventLabel}`);
+  }
+}
+
+// Track specific user interactions
+function initAnalyticsTracking() {
+  // Track WhatsApp clicks
+  const whatsappButton = document.getElementById('whatsappButton');
+  if (whatsappButton) {
+    whatsappButton.addEventListener('click', () => {
+      trackEvent('contact', 'engagement', 'whatsapp_click');
+    });
+  }
+  
+  // Track language changes
+  const originalChangeLanguage = changeLanguageWithFeedback;
+  window.changeLanguageWithFeedback = function(lang) {
+    trackEvent('language_change', 'engagement', lang);
+    return originalChangeLanguage(lang);
+  };
+  
+  // Track theme changes
+  const originalToggleTheme = toggleThemeEnhanced;
+  window.toggleThemeEnhanced = function() {
+    const isDark = document.documentElement.classList.contains('dark');
+    trackEvent('theme_change', 'engagement', isDark ? 'light' : 'dark');
+    return originalToggleTheme();
+  };
+  
+  // Track blog post views
+  const blogReadMoreButtons = document.querySelectorAll('.blog-read-more');
+  blogReadMoreButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const blogId = this.getAttribute('data-blog');
+      trackEvent('blog_view', 'content', `blog_post_${blogId}`);
+    });
+  });
+  
+  // Track navigation clicks
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const section = this.getAttribute('href');
+      if (section && section.startsWith('#')) {
+        trackEvent('navigation', 'engagement', section.substring(1));
+      }
+    });
+  });
+  
+  // Track scroll depth
+  let scrollDepth = 0;
+  const scrollMilestones = [25, 50, 75, 100];
+  
+  window.addEventListener('scroll', () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+    
+    scrollMilestones.forEach(milestone => {
+      if (scrollPercent >= milestone && scrollDepth < milestone) {
+        scrollDepth = milestone;
+        trackEvent('scroll_depth', 'engagement', `${milestone}%`, milestone);
+      }
+    });
+  });
+  
+  // Track time on page
+  let timeOnPage = 0;
+  const timeInterval = setInterval(() => {
+    timeOnPage += 30;
+    if (timeOnPage % 60 === 0) { // Every minute
+      trackEvent('time_on_page', 'engagement', `${timeOnPage / 60}_minutes`, timeOnPage);
+    }
+  }, 30000); // Every 30 seconds
+  
+  // Clear interval on page unload
+  window.addEventListener('beforeunload', () => {
+    clearInterval(timeInterval);
+    trackEvent('page_exit', 'engagement', 'user_leaving', timeOnPage);
+  });
+}
+
+// Dynamic Meta Tags Update
+function updateMetaTags(data) {
+  try {
+    // Update Open Graph tags
+    const ogTags = {
+      'og:title': data.title || document.title,
+      'og:description': data.description || '',
+      'og:image': data.image || 'https://digdev.cl/img/DigDev_logo.png',
+      'og:url': data.url || window.location.href,
+      'og:type': data.type || 'website'
+    };
+    
+    Object.keys(ogTags).forEach(property => {
+      let metaTag = document.querySelector(`meta[property="${property}"]`);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', ogTags[property]);
+    });
+    
+    // Update Twitter Card tags
+    const twitterTags = {
+      'twitter:title': data.title || document.title,
+      'twitter:description': data.description || '',
+      'twitter:image': data.image || 'https://digdev.cl/img/DigDev_logo.png',
+      'twitter:card': 'summary_large_image'
+    };
+    
+    Object.keys(twitterTags).forEach(name => {
+      let metaTag = document.querySelector(`meta[name="${name}"]`);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('name', name);
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', twitterTags[name]);
+    });
+    
+    // Update page title
+    if (data.title) {
+      document.title = data.title;
+    }
+    
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical && data.url) {
+      canonical.setAttribute('href', data.url);
+    }
+    
+    console.log('✅ Meta tags updated:', data);
+  } catch (error) {
+    console.error('Error updating meta tags:', error);
+  }
+}
+
+// Update meta tags when opening blog posts
+function openBlogModalWithMetaTags(blogId) {
+  try {
+    if (blogContent[blogId] && blogContent[blogId][currentLanguage]) {
+      const post = blogContent[blogId][currentLanguage];
+      
+      // Update meta tags for sharing
+      updateMetaTags({
+        title: `${post.title} | DigDev Solutions`,
+        description: post.content.substring(0, 160).replace(/<[^>]*>/g, ''),
+        url: `https://digdev.cl/#blog-${blogId}`,
+        type: 'article',
+        image: getBlogImage(blogId)
+      });
+      
+      // Open modal with loading state
+      openBlogModalEnhanced(blogId);
+      
+      // Track event
+      trackEvent('blog_open', 'content', `blog_${blogId}`);
+    }
+  } catch (error) {
+    console.error('Error opening blog with meta tags:', error);
+    showNotification('Error al abrir el artículo', 'error');
+  }
+}
+
+// Get blog image URL by ID
+function getBlogImage(blogId) {
+  const images = {
+    '1': 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg',
+    '2': 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4',
+    '3': 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  };
+  return images[blogId] || 'https://digdev.cl/img/DigDev_logo.png';
+}
+
+// Form Validation System
+function validateForm(form) {
+  let isValid = true;
+  const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+  
+  inputs.forEach(input => {
+    const errorSpan = document.getElementById(input.id + 'Error') || createErrorSpan(input);
+    
+    // Clear previous errors
+    errorSpan.textContent = '';
+    input.classList.remove('border-red-500');
+    
+    // Validate
+    if (!input.validity.valid) {
+      isValid = false;
+      const errorMessage = getValidationErrorMessage(input);
+      errorSpan.textContent = errorMessage;
+      input.classList.add('border-red-500');
+      input.setAttribute('aria-invalid', 'true');
+    } else {
+      input.setAttribute('aria-invalid', 'false');
+    }
+  });
+  
+  return isValid;
+}
+
+function createErrorSpan(input) {
+  const errorSpan = document.createElement('span');
+  errorSpan.id = input.id + 'Error';
+  errorSpan.className = 'text-red-500 text-sm mt-1 block';
+  errorSpan.setAttribute('role', 'alert');
+  input.parentNode.appendChild(errorSpan);
+  return errorSpan;
+}
+
+function getValidationErrorMessage(input) {
+  if (input.validity.valueMissing) {
+    return 'Este campo es obligatorio';
+  }
+  if (input.validity.typeMismatch) {
+    if (input.type === 'email') {
+      return 'Por favor ingrese un email válido';
+    }
+    if (input.type === 'url') {
+      return 'Por favor ingrese una URL válida';
+    }
+    return 'Por favor ingrese un formato válido';
+  }
+  if (input.validity.tooShort) {
+    return `Mínimo ${input.minLength} caracteres`;
+  }
+  if (input.validity.tooLong) {
+    return `Máximo ${input.maxLength} caracteres`;
+  }
+  if (input.validity.patternMismatch) {
+    return input.getAttribute('data-error-message') || 'Formato inválido';
+  }
+  if (input.validity.rangeUnderflow) {
+    return `El valor mínimo es ${input.min}`;
+  }
+  if (input.validity.rangeOverflow) {
+    return `El valor máximo es ${input.max}`;
+  }
+  return 'Error de validación';
+}
+
+// Real-time validation
+function initFormValidation() {
+  const forms = document.querySelectorAll('form');
+  
+  forms.forEach(form => {
+    // Validate on submit
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (validateForm(form)) {
+        // Form is valid, proceed with submission
+        handleFormSubmission(form);
+      } else {
+        showNotification('Por favor corrija los errores en el formulario', 'error');
+        
+        // Focus on first invalid input
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
+      }
+    });
+    
+    // Real-time validation on blur
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        if (this.value) {
+          validateForm(form);
+        }
+      });
+      
+      // Clear error on input
+      input.addEventListener('input', function() {
+        const errorSpan = document.getElementById(this.id + 'Error');
+        if (errorSpan) {
+          errorSpan.textContent = '';
+          this.classList.remove('border-red-500');
+          this.setAttribute('aria-invalid', 'false');
+        }
+      });
+    });
+  });
+}
+
+async function handleFormSubmission(form) {
+  showLoading('Enviando formulario...');
+  
+  try {
+    const formData = new FormData(form);
+    
+    // Simulate API call (replace with actual endpoint)
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Track form submission
+    trackEvent('form_submit', 'conversion', form.id || 'contact_form');
+    
+    hideLoading();
+    showNotification('Formulario enviado correctamente', 'success');
+    form.reset();
+    
+  } catch (error) {
+    hideLoading();
+    console.error('Error submitting form:', error);
+    showNotification('Error al enviar el formulario. Por favor intente nuevamente.', 'error');
+    trackEvent('form_error', 'error', form.id || 'contact_form');
+  }
+}
+
+// Initialize Phase 4 Enhancements
+function initPhase4Enhancements() {
+  console.log('🚀 Initializing Phase 4: SEO & Functionality Improvements');
+  
+  // Initialize Analytics tracking
+  if (typeof gtag !== 'undefined') {
+    initAnalyticsTracking();
+    console.log('✅ Google Analytics tracking initialized');
+  }
+  
+  // Initialize form validation
+  initFormValidation();
+  console.log('✅ Form validation initialized');
+  
+  // Replace blog modal opener with meta tags version
+  const blogPostElements = document.querySelectorAll('.blog-post');
+  blogPostElements.forEach(post => {
+    // Remove old listeners by cloning
+    const newPost = post.cloneNode(true);
+    post.parentNode.replaceChild(newPost, post);
+    
+    newPost.addEventListener('click', function() {
+      const blogId = this.getAttribute('data-blog');
+      openBlogModalWithMetaTags(blogId);
+    });
+  });
+  
+  const blogReadMoreButtons = document.querySelectorAll('.blog-read-more');
+  blogReadMoreButtons.forEach(button => {
+    const newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+    
+    newButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const blogId = this.getAttribute('data-blog');
+      openBlogModalWithMetaTags(blogId);
+    });
+  });
+  
+  console.log('✅ Phase 4 enhancements initialized successfully');
+}
+
+// Call Phase 4 initialization after DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPhase4Enhancements);
+} else {
+  initPhase4Enhancements();
+}
+
+// Export functions for testing (if needed)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    ...module.exports,
+    trackEvent,
+    updateMetaTags,
+    validateForm,
+    openBlogModalWithMetaTags
+  };
+}
