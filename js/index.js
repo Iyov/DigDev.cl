@@ -555,9 +555,9 @@ const blogContent = {
 // DOM Elements
 const progressBar = document.getElementById('progressBar');
 const backToTop = document.getElementById('backToTop');
-const themeToggle = document.getElementById('themeToggle');
+let themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
-const themeToggleMobile = document.getElementById('themeToggleMobile');
+let themeToggleMobile = document.getElementById('themeToggleMobile');
 const themeIconMobile = document.getElementById('themeIconMobile');
 const languageToggle = document.getElementById('languageToggle');
 const languageDropdown = document.getElementById('languageDropdown');
@@ -570,7 +570,7 @@ const blogModal = document.getElementById('blogModal');
 const blogModalTitle = document.getElementById('blogModalTitle');
 const blogModalContent = document.getElementById('blogModalContent');
 const closeBlogModal = document.getElementById('closeBlogModal');
-const mobileMenuButton = document.getElementById('mobileMenuButton');
+let mobileMenuButton = document.getElementById('mobileMenuButton');
 const mobileNav = document.getElementById('mobileNav');
 const desktopNav = document.getElementById('desktopNav');
 

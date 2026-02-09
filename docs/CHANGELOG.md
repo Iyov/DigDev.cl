@@ -21,6 +21,11 @@ Todos los cambios importantes del proyecto.
 - Redirección de webmail más eficiente (301 en servidor)
 - SEO local mejorado con LocalBusiness schema
 
+### Corregido
+- Error "Assignment to constant variable" en index.js
+- Versiones de preload actualizadas (v2026-02-08_5)
+- Agregado preload para tailwind.min.css
+
 ### Removido
 - 14 archivos de documentación redundantes
 - Consolidado en: README.md, CONTRIBUTING.md, SECURITY.md, CHANGELOG.md
