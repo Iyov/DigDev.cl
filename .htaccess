@@ -99,6 +99,12 @@
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-digdev-main-script' 'nonce-digdev-analytics' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
+# Webmail redirect
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^webmail/?$ http://201.148.104.122/webmail/ [R=302,L]
+</IfModule>
+
 # Redirect www to non-www (canonical URL)
 <IfModule mod_rewrite.c>
     RewriteEngine On
