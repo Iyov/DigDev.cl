@@ -113,6 +113,13 @@
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
+# Webmail Redirect
+<IfModule mod_alias.c>
+    # Redirect webmail to external server
+    Redirect 301 /webmail.html http://201.148.104.122/webmail/
+    Redirect 301 /webmail http://201.148.104.122/webmail/
+</IfModule>
+
 # Custom 404 page
 ErrorDocument 404 /404.html
 

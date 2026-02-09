@@ -10,16 +10,21 @@ Todos los cambios importantes del proyecto.
 - Configuración separada dev/prod
 - .gitignore completo
 - Documentación consolidada (3 archivos principales)
+- Redirección de webmail en .htaccess
+- Referencia a business-info.json en index.html para SEO local
 
 ### Mejorado
 - CSS optimizado: 200 KB → 17.7 KB (-91%)
 - Seguridad: CSP sin dependencias externas
 - Sin logs en producción
 - Documentación simplificada y clara
+- Redirección de webmail más eficiente (301 en servidor)
+- SEO local mejorado con LocalBusiness schema
 
 ### Removido
 - 14 archivos de documentación redundantes
 - Consolidado en: README.md, CONTRIBUTING.md, SECURITY.md, CHANGELOG.md
+- webmail.html (reemplazado por redirección en .htaccess)
 
 ## [2026-02-08_4] - 2026-02-08
 
