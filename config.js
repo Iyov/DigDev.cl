@@ -30,7 +30,7 @@ const CONFIG = {
   
   // Cache Settings
   cache: {
-    version: '2026-02-08_5',
+    version: '2026-02-17_1',
     name: 'digdev-v1.0.0'
   },
   
