@@ -22,6 +22,7 @@ const CRITICAL_ASSETS = [
   '/css/tailwind.min.css',
   '/css/font-awesome_6.5.1_all.min.css',
   '/js/index.min.js',
+  '/js/gtm-loader.min.js',
   '/img/DigDev_logo.png',
   '/img/DigDev_logo_200.png',
   '/img/DigDev_logo_100.png',

@@ -1222,21 +1222,31 @@ if (typeof module !== 'undefined' && module.exports) {
 // FASE 4: SEO & FUNCTIONALITY IMPROVEMENTS
 // ========================================
 
-// Google Analytics Event Tracking
+// Google Analytics / GTM Event Tracking (gtag OR dataLayer fallback)
 function trackEvent(eventName, eventCategory, eventLabel, eventValue = null) {
-  if (typeof gtag !== 'undefined') {
-    const eventData = {
-      'event_category': eventCategory,
-      'event_label': eventLabel
-    };
-    
-    if (eventValue !== null) {
-      eventData.value = eventValue;
-    }
-    
-    gtag('event', eventName, eventData);
-    devLog(`📊 GA Event: ${eventName} - ${eventCategory} - ${eventLabel}`);
+  const eventData = {
+    event_category: eventCategory,
+    event_label: eventLabel
+  };
+
+  if (eventValue !== null) {
+    eventData.value = eventValue;
   }
+
+  if (typeof gtag !== 'undefined') {
+    gtag('event', eventName, eventData);
+    devLog(`📊 gtag event: ${eventName} - ${eventCategory} - ${eventLabel}`);
+    return;
+  }
+
+  // Fallback to dataLayer (works with GTM)
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(Object.assign({ event: eventName }, eventData));
+    devLog(`📊 dataLayer push: ${eventName} - ${eventCategory} - ${eventLabel}`);
+    return;
+  }
+
+  devLog('⚠️ Analytics unavailable — event dropped:', eventName, eventData);
 }
 
 // Track specific user interactions
@@ -1552,12 +1562,21 @@ async function handleFormSubmission(form) {
 function initPhase4Enhancements() {
   devLog('🚀 Initializing Phase 4: SEO & Functionality Improvements');
   
-  // Initialize Analytics tracking
-  if (typeof gtag !== 'undefined') {
-    initAnalyticsTracking();
-    devLog('✅ Google Analytics tracking initialized');
+  // Initialize GTM/GA (external loader) if available, then wire analytics handlers
+  if (typeof window.initGTM === 'function') {
+    try {
+      const gaId = (window.CONFIG && window.CONFIG.gaId) || 'G-XXXXXXX';
+      window.initGTM({ gtmId: 'GTM-5B3B68K7', gaId });
+      devLog('✅ initGTM called');
+    } catch (err) {
+      devLog('⚠️ initGTM error', err);
+    }
   }
-  
+
+  // Wire up analytics event tracking (uses gtag() or dataLayer fallback)
+  initAnalyticsTracking();
+  devLog('✅ Analytics tracking initialized (gtag/dataLayer)');
+
   // Initialize form validation
   initFormValidation();
   devLog('✅ Form validation initialized');

@@ -6,9 +6,9 @@
     "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --minify",
     "watch:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --watch",
     "minify:css": "cleancss -o css/index.min.css css/index.css",
-    "minify:js": "terser js/index.js -c -m -o js/index.min.js",
+    "minify:js": "terser js/index.js -c -m -o js/index.min.js && terser js/gtm-loader.js -c -m -o js/gtm-loader.min.js",
     "minify": "npm run minify:css && npm run minify:js",
-    "watch:assets": "onchange \"css/index.css\" \"js/index.js\" -- npm run minify",
+    "watch:assets": "onchange \"css/index.css\" \"js/index.js\" \"js/gtm-loader.js\" -- npm run minify",
     "dev": "npm run watch:assets",
     "prepare": "npm run minify"
   },

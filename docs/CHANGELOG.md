@@ -7,8 +7,12 @@ Todos los cambios importantes del proyecto.
 ### Cambiado
 - Redirección de `webmail` actualizada a `http://201.148.104.213/webmail/` (reemplaza `201.148.104.122`) — efectivo 2026-02-17 18:00
 
+### Mejorado
+- Google Tag Manager externalizado: creado `js/gtm-loader.js` (exposición de `initGTM()` y `dataLayerPush()`), removidos snippets inline y centralizado el cargador externo.
+- Google Analytics (GA4) inicializado desde el loader usando `CONFIG.gaId` o atributo `data-ga-id`.
+
 ### Archivos modificados
-- `.htaccess`, `webmail.html`, `README.md`
+- `.htaccess`, `webmail.html`, `README.md`, `js/gtm-loader.js`, `js/gtm-loader.min.js`, `package.json`, `sw.js`, `index.html`, `post.html`, `presentacion.html`, `Propuesta*.html`, `old.html`, `404.html`
 
 
 

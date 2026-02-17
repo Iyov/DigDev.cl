@@ -5,8 +5,9 @@ const CONFIG = {
   // Environment
   isDevelopment: false, // Set to true for development
   
-  // Google Analytics
+  // Google Analytics & GTM
   gaId: 'G-XXXXXXX', // Replace with your actual GA4 Measurement ID (set here)
+  gtmId: 'GTM-5B3B68K7', // Google Tag Manager container (set here)
   
   // API Configuration (if needed)
   api: {
