@@ -2,6 +2,16 @@
 
 Todos los cambios importantes del proyecto.
 
+## [2026-02-17_1] - 2026-02-17
+
+### Cambiado
+- Redirección de `webmail` actualizada a `http://201.148.104.213/webmail/` (reemplaza `201.148.104.122`) — efectivo 2026-02-17 18:00
+
+### Archivos modificados
+- `.htaccess`, `webmail.html`, `README.md`
+
+
+
 ## [2026-02-08_5] - 2026-02-08
 
 ### Agregado

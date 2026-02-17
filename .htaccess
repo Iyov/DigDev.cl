@@ -103,7 +103,8 @@
 # Webmail redirect
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^webmail/?$ http://201.148.104.122/webmail/ [R=302,L]
+    # Updated to 201.148.104.213 — effective 2026-02-17 18:00
+    RewriteRule ^webmail/?$ http://201.148.104.213/webmail/ [R=302,L]
 </IfModule>
 
 # Redirect www to non-www (canonical URL)
@@ -123,8 +124,9 @@
 # Webmail Redirect
 <IfModule mod_alias.c>
     # Redirect webmail to external server
-    Redirect 301 /webmail.html http://201.148.104.122/webmail/
-    Redirect 301 /webmail http://201.148.104.122/webmail/
+    # Updated to 201.148.104.213 — effective 2026-02-17 18:00
+    Redirect 301 /webmail.html http://201.148.104.213/webmail/
+    Redirect 301 /webmail http://201.148.104.213/webmail/
 </IfModule>
 
 # Custom 404 page
