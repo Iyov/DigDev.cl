@@ -6,7 +6,7 @@ const CONFIG = {
   isDevelopment: false, // Set to true for development
   
   // Google Analytics
-  gaId: 'G-XXXXXXXXXX', // Replace with your actual GA4 Measurement ID
+  gaId: 'G-XXXXXXX', // Replace with your actual GA4 Measurement ID (set here)
   
   // API Configuration (if needed)
   api: {
