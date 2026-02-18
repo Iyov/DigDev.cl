@@ -53,29 +53,84 @@
     <meta name="twitter:description" content="Líderes en desarrollo de software para la industria minera en Chile. 10+ años de experiencia en sistemas de gestión, automatización y análisis de datos mineros." />
     <meta name="twitter:image" content="https://digdev.cl/img/DigDev_logo.png" />
     <meta name="twitter:image:alt" content="DigDev Solutions - Desarrollo de Software para Minería" />
-
+    
+    <!-- Performance & Core Web Vitals -->
+    <meta name="theme-color" content="#1193d4" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
+    
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/index.min.css?v=2026-02-17_2" as="style" />
     <link rel="preload" href="css/tailwind.min.css?v=2026-02-17_2" as="style" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" as="style" />
     <link rel="preload" href="css/font-awesome_6.5.1_all.min.css" as="style" />
     
-    <!-- DNS Prefetch -->
+    <!-- Preload Hero Image for LCP -->
+    <link rel="preload" href="img/optimized/hero-bg-1920.webp" as="image" type="image/webp" fetchpriority="high" />
+    
+    <!-- DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//lh3.googleusercontent.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+
+    <!-- Critical CSS Inline for Fast Initial Render -->
+    <style>
+      *,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Manrope,sans-serif;scroll-behavior:smooth}
+      body{margin:0;line-height:inherit}
+      html.dark{--tw-bg-opacity:1;background-color:rgb(16 28 34/var(--tw-bg-opacity));color-scheme:dark}
+      .dark{color-scheme:dark}
+      .bg-background-light{--tw-bg-opacity:1;background-color:rgb(246 247 248/var(--tw-bg-opacity))}
+      .dark .bg-background-dark{--tw-bg-opacity:1;background-color:rgb(16 28 34/var(--tw-bg-opacity))}
+      .font-display{font-family:Manrope,sans-serif}
+      .text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}
+      .dark .text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235/var(--tw-text-opacity))}
+      header{position:sticky;top:0;z-index:50;backdrop-filter:blur(4px)}
+      .bg-hero{background-image:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),url("img/optimized/hero-bg-1920.webp");background-size:cover;background-position:center}
+      #progressBar{position:fixed;top:0;left:0;height:4px;z-index:50;transition:width .3s}
+      .bg-primary{--tw-bg-opacity:1;background-color:rgb(17 147 212/var(--tw-bg-opacity))}
+      .text-primary{--tw-text-opacity:1;color:rgb(17 147 212/var(--tw-text-opacity))}
+      .container{width:100%;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}
+      .flex{display:flex}
+      .min-h-screen{min-height:100vh}
+      .w-full{width:100%}
+      .flex-col{flex-direction:column}
+      .items-center{align-items:center}
+      .justify-between{justify-content:space-between}
+      .gap-3{gap:.75rem}
+      .py-3{padding-top:.75rem;padding-bottom:.75rem}
+      .text-2xl{font-size:1.5rem;line-height:2rem}
+      .font-bold{font-weight:700}
+      .text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity))}
+      .dark .text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}
+      .border-b{border-bottom-width:1px}
+      .border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235/var(--tw-border-opacity))}
+      .dark .border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55/var(--tw-border-opacity))}
+      .hidden{display:none}
+      @media (min-width:768px){.md\:flex{display:flex}}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+      #whatsappButton{position:fixed;bottom:24px;right:24px;z-index:40;background-color:#25D366;color:#fff;padding:16px;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:all .3s}
+      #backToTop{position:fixed;bottom:24px;right:80px;z-index:40;transition:opacity .3s,visibility .3s}
+    </style>
 
     <!-- Tailwind CSS - Production Build -->
     <link rel="stylesheet" href="css/tailwind.min.css?v=2026-02-17_2" />
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" />
-    <link rel="stylesheet" href="css/font-awesome_6.5.1_all.min.css" />
+    <!-- Fonts & Icons - with font-display:swap for performance -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" /></noscript>
+    <link rel="stylesheet" href="css/font-awesome_6.5.1_all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="css/font-awesome_6.5.1_all.min.css" /></noscript>
 
     <!-- Custom CSS - Minified for performance -->
     <link rel="stylesheet" href="css/index.min.css?v=2026-02-17_2" />
-
+    
   <!-- Enhanced Schema.org markup for Google -->
   <script type="application/ld+json">
   {
@@ -426,8 +481,10 @@
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Success Case 1 -->
             <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div class="w-full h-48 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBG5qDj-GZO-1QagEbMrrNyQLccemxOFuuDNnlHofWef4at2HS8xIF2l8XWiA2wdOWZfQcfdY1udwmEKX--Qk_kMcWwqjfvdxLMKhc1WqyJJHGyPbwcNj8WgQi8abxn9Ztw0cEGrPmD_UEcql432rcHkWo_0etRM9dgqqV9jZhWTpVOSySreXRnFXzpDftcLoyAK2eGWYimC82DzKNs-VUEqK509XWDbGhuWGhSARyYD_wA3IOYixvC0Hp4ZjhzTHiQ9uI7_iohT1w");'>
-              </div>
+              <picture class="block w-full h-48">
+                <source srcset="img/optimized/caso-exito-1-800.webp 800w, img/optimized/caso-exito-1-600.webp 600w, img/optimized/caso-exito-1-400.webp 400w" type="image/webp" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="img/optimized/caso-exito-1-800.jpg" alt="Optimización de Procesos Mineros" class="w-full h-48 object-cover" loading="lazy" width="800" height="400" decoding="async">
+              </picture>
               <div class="p-6">
                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case1-title">Optimización de Procesos</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case1-desc">
@@ -435,11 +492,13 @@
                 </p>
               </div>
             </div>
-            
+
             <!-- Success Case 2 -->
             <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div class="w-full h-48 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvZCEyWIf8omJL7CBv6yuR6pVFxMh1EXsvLgXLkHu2IWPFGx2tOhdawEUiw3CVMh8jNvTuhSGodfXT0m3ap4mbUOWLUy3XDSeVe96DWBix5clBp5spKLsil2bH1wIwYDT_YwPtGnMkFAWWicKxnpzNofvMntIBUr53H61QKaEpUGAt6RliObX-D3wiSvU6JwCR-0rWuo1jjNvu0xOJlbQzFNww_UDs07wfxhFixfVtP17shKQiJsUqFEe3B6OCugbf3qfUVw1NDdE");'>
-              </div>
+              <picture class="block w-full h-48">
+                <source srcset="img/optimized/caso-exito-2-800.webp 800w, img/optimized/caso-exito-2-600.webp 600w, img/optimized/caso-exito-2-400.webp 400w" type="image/webp" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="img/optimized/caso-exito-2-800.jpg" alt="Gestión de Flota" class="w-full h-48 object-cover" loading="lazy" width="800" height="400" decoding="async">
+              </picture>
               <div class="p-6">
                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case2-title">Gestión de Flota</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case2-desc">
@@ -447,11 +506,13 @@
                 </p>
               </div>
             </div>
-            
+
             <!-- Success Case 3 -->
             <div class="bg-background-light dark:bg-background-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div class="w-full h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-              </div>
+              <picture class="block w-full h-48">
+                <source srcset="img/optimized/caso-exito-3-800.webp 800w, img/optimized/caso-exito-3-600.webp 600w, img/optimized/caso-exito-3-400.webp 400w" type="image/webp" sizes="(max-width: 768px) 100vw, 33vw">
+                <img src="img/optimized/caso-exito-3-800.jpg" alt="Análisis de Datos" class="w-full h-48 object-cover" loading="lazy" width="800" height="400" decoding="async">
+              </picture>
               <div class="p-6">
                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-lang="success.case3-title">Análisis de Datos</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" data-lang="success.case3-desc">
@@ -657,7 +718,10 @@
             <!-- Testimonial 1 -->
             <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
               <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
-                <img alt="Francisca Arriagada" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" loading="lazy" width="96" height="96" />
+                <picture>
+                  <source srcset="img/optimized/testimonial-francisca-200.webp 200w, img/optimized/testimonial-francisca-100.webp 100w" type="image/webp" sizes="96px">
+                  <img alt="Francisca Arriagada" class="w-full h-full object-cover" src="img/optimized/testimonial-francisca-200.jpg" loading="lazy" width="96" height="96" decoding="async">
+                </picture>
               </div>
               <div class="flex text-primary mb-2">
                 <i class="fas fa-star"></i>
@@ -667,7 +731,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <p class="text-gray-600 dark:text-gray-300 mb-4 text-base leading-relaxed" data-lang="testimonials.testimonial1">
-                "DigDev Solutions transformó nuestra eficiencia operativa. 
+                "DigDev Solutions transformó nuestra eficiencia operativa.
                 Su experiencia en procesos mineros es inigualable, lo que generó ahorros significativos y una mayor productividad."
               </p>
               <div class="mt-auto">
@@ -675,11 +739,14 @@
                 <p class="text-sm text-gray-500 dark:text-gray-400">Jefa en MiningTech</p>
               </div>
             </div>
-            
+
             <!-- Testimonial 2 -->
             <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
               <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
-                <img alt="David González" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" loading="lazy" width="96" height="96" />
+                <picture>
+                  <source srcset="img/optimized/testimonial-david-200.webp 200w, img/optimized/testimonial-david-100.webp 100w" type="image/webp" sizes="96px">
+                  <img alt="David González" class="w-full h-full object-cover" src="img/optimized/testimonial-david-200.jpg" loading="lazy" width="96" height="96" decoding="async">
+                </picture>
               </div>
               <div class="flex text-primary mb-2">
                 <i class="fas fa-star"></i>
@@ -689,7 +756,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <p class="text-gray-600 dark:text-gray-300 mb-4 text-base leading-relaxed" data-lang="testimonials.testimonial2">
-                "El software personalizado de DigDev ha revolucionado nuestro análisis de datos. 
+                "El software personalizado de DigDev ha revolucionado nuestro análisis de datos.
                 Ahora tenemos información en tiempo real que impulsa una mejor toma de decisiones y optimiza la gestión de recursos."
               </p>
               <div class="mt-auto">
@@ -697,11 +764,14 @@
                 <p class="text-sm text-gray-500 dark:text-gray-400">Operaciones en GeoMine Inc.</p>
               </div>
             </div>
-            
+
             <!-- Testimonial 3 -->
             <div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-md dark:shadow-primary/10 flex flex-col items-center text-center">
               <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
-                <img alt="Emilia Tapia" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwbRdkyb8tZy9wLl4wDsORaryNu-jSUmlC2v1VgjT8EgImMqFJu9P8XsqirCKgzd4W_HzBdcXnUSdDI9xAwo51ekOQQF_oDjh8t4bjie-vqjY0R0aheKpK4-oT7idBgTqdFHA5QI7QXLPNRMVUHJiIO2wMo9vm3elltN2zIoSmR-3F1pjBmRPbMvgAhWVo9x_7ix8Rs_vqcxaHQLS-8qUqWuzRASH11OEER38GV7eEj6qKdwnIGZRvJhpJBP8QN12YI-HcYjw6dNs" loading="lazy" width="96" height="96" />
+                <picture>
+                  <source srcset="img/optimized/testimonial-emilia-200.webp 200w, img/optimized/testimonial-emilia-100.webp 100w" type="image/webp" sizes="96px">
+                  <img alt="Emilia Tapia" class="w-full h-full object-cover" src="img/optimized/testimonial-emilia-200.jpg" loading="lazy" width="96" height="96" decoding="async">
+                </picture>
               </div>
               <div class="flex text-primary mb-2">
                 <i class="fas fa-star"></i>
@@ -740,7 +810,10 @@
               <meta itemprop="author" content="DigDev Solutions" />
               <meta itemprop="publisher" content="DigDev Solutions" />
               <div class="flex-shrink-0">
-                <img alt="Innovaciones en automatización minera" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg" loading="lazy" width="800" height="192" itemprop="image" />
+                <picture>
+                  <source srcset="img/optimized/blog-automatizacion-800.webp 800w, img/optimized/blog-automatizacion-600.webp 600w, img/optimized/blog-automatizacion-400.webp 400w" type="image/webp" sizes="(max-width: 1024px) 100vw, 33vw">
+                  <img alt="Innovaciones en automatización minera" class="h-48 w-full object-cover" src="img/optimized/blog-automatizacion-800.jpg" loading="lazy" width="800" height="192" itemprop="image" decoding="async">
+                </picture>
               </div>
               <div class="flex-1 p-6 flex flex-col justify-between">
                 <div class="flex-1">
@@ -754,7 +827,7 @@
                       Innovaciones en la automatización de procesos mineros
                     </h3>
                     <p class="mt-3 text-base text-gray-500 dark:text-gray-400" data-lang="blog.automation-desc" itemprop="description">
-                      Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras. 
+                      Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras.
                       Exploramos casos de éxito y las últimas tendencias.
                     </p>
                   </a>
@@ -766,7 +839,7 @@
                 </div>
               </div>
             </article>
-            
+
             <!-- Blog Post 2 -->
             <article class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800/20 cursor-pointer blog-post" data-blog="2" itemscope itemtype="https://schema.org/BlogPosting">
               <meta itemprop="datePublished" content="2026-02-08" />
@@ -774,7 +847,10 @@
               <meta itemprop="author" content="DigDev Solutions" />
               <meta itemprop="publisher" content="DigDev Solutions" />
               <div class="flex-shrink-0">
-                <img alt="Optimización de la cadena de suministro" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4" loading="lazy" width="800" height="192" itemprop="image" />
+                <picture>
+                  <source srcset="img/optimized/blog-logistica-800.webp 800w, img/optimized/blog-logistica-600.webp 600w, img/optimized/blog-logistica-400.webp 400w" type="image/webp" sizes="(max-width: 1024px) 100vw, 33vw">
+                  <img alt="Optimización de la cadena de suministro" class="h-48 w-full object-cover" src="img/optimized/blog-logistica-800.jpg" loading="lazy" width="800" height="192" itemprop="image" decoding="async">
+                </picture>
               </div>
               <div class="flex-1 p-6 flex flex-col justify-between">
                 <div class="flex-1">
@@ -808,7 +884,10 @@
               <meta itemprop="author" content="DigDev Solutions" />
               <meta itemprop="publisher" content="DigDev Solutions" />
               <div class="flex-shrink-0">
-                <img alt="Futuro de la minería" class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" loading="lazy" width="800" height="192" itemprop="image" />
+                <picture>
+                  <source srcset="img/optimized/blog-futuro-800.webp 800w, img/optimized/blog-futuro-600.webp 600w, img/optimized/blog-futuro-400.webp 400w" type="image/webp" sizes="(max-width: 1024px) 100vw, 33vw">
+                  <img alt="Futuro de la minería" class="h-48 w-full object-cover" src="img/optimized/blog-futuro-800.jpg" loading="lazy" width="800" height="192" itemprop="image" decoding="async">
+                </picture>
               </div>
               <div class="flex-1 p-6 flex flex-col justify-between">
                 <div class="flex-1">
@@ -822,7 +901,7 @@
                       El futuro de la minería: tecnologías emergentes y su impacto
                     </h3>
                     <p class="mt-3 text-base text-gray-500 dark:text-gray-400" data-lang="blog.innovation-desc" itemprop="description">
-                      Un vistazo a las tecnologías que están redefiniendo la industria minera, 
+                      Un vistazo a las tecnologías que están redefiniendo la industria minera,
                       incluyendo inteligencia artificial, blockchain y sensores avanzados.
                     </p>
                   </a>
@@ -859,7 +938,7 @@
             "@type": "BlogPosting",
             "headline": "Innovaciones en la automatización de procesos mineros",
             "description": "Descubre cómo la automatización está transformando la eficiencia y seguridad en las operaciones mineras. Exploramos casos de éxito y las últimas tendencias.",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA7mBjxV8-hcr_OS0iSS1P8ydxJ_hzzID68RD6qA4Dk66v4to6MCsYEQZ0kTw3BDaJShlV6N04P0QziXLhyPq76dR6TtaFgqImz-EcnRk_3TpSqZMUfaP3VTfNFsXejpPpXc4wK0b30l7ngl3gwISTI20kXYXZl8Vu0P7JRnbTndJmDfsYR9rxHIdwV2h-pEjSNOEE7etdaeOzS2G496b5hnIVb833I_avDbK5eonqOlVM75RBkb1TGGDyihJkL6TvZ6VvguoWmJpg",
+            "image": "https://digdev.cl/img/optimized/blog-automatizacion-800.jpg",
             "author": {
               "@type": "Organization",
               "name": "DigDev Solutions"
@@ -885,7 +964,7 @@
             "@type": "BlogPosting",
             "headline": "Optimización de la cadena de suministro en la industria minera",
             "description": "Analizamos estrategias para mejorar la eficiencia y reducir costos en la cadena de suministro minera, desde la extracción hasta la entrega del producto final.",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAUg1bLquqhkYXAH62ZZDa14GtaPfZNO37nQbkA5ShDz-FfizblJtAt99qwO7qSobJvX0N01qKZcV8uEza1Y_zElat6pgVaxaQ83i1Mu6GHgxOQR5f_BzC52f6aIlPt_9fWScdDRt7eVXBUKzgoyhs5aTRp6B113rhz8BKWoteUi_4lHNROix1-YUVQB5AGI5GJiKlF-wfNimfk4s08AMFICTxW-lkrhBSLKXFC1PJ1cewl6hYv_6bzORO-XSea2eSNHcVGBBgibP4",
+            "image": "https://digdev.cl/img/optimized/blog-logistica-800.jpg",
             "author": {
               "@type": "Organization",
               "name": "DigDev Solutions"
@@ -911,7 +990,7 @@
             "@type": "BlogPosting",
             "headline": "El futuro de la minería: tecnologías emergentes y su impacto",
             "description": "Un vistazo a las tecnologías que están redefiniendo la industria minera, incluyendo inteligencia artificial, blockchain y sensores avanzados.",
-            "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "image": "https://digdev.cl/img/optimized/blog-futuro-800.jpg",
             "author": {
               "@type": "Organization",
               "name": "DigDev Solutions"
@@ -1214,50 +1293,9 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/index.min.js?v=2026-02-17_1" nonce="digdev-main-script"></script>
+  <script src="js/index.min.js?v=2026-02-18_1" nonce="digdev-main-script"></script>
   
   <!-- Service Worker Registration -->
-  <script nonce="digdev-main-script">
-    // Registrar Service Worker para PWA
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('✅ Service Worker registrado:', registration.scope);
-            
-            // Verificar actualizaciones cada hora
-            setInterval(() => {
-              registration.update();
-            }, 3600000);
-            
-            // Manejar actualizaciones del SW
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // Hay una nueva versión disponible
-                  if (confirm('Nueva versión disponible. ¿Actualizar ahora?')) {
-                    newWorker.postMessage({ type: 'SKIP_WAITING' });
-                    window.location.reload();
-                  }
-                }
-              });
-            });
-          })
-          .catch(error => {
-            console.log('❌ Error al registrar Service Worker:', error);
-          });
-      });
-      
-      // Recargar cuando el SW tome control
-      let refreshing = false;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing) {
-          refreshing = true;
-          window.location.reload();
-        }
-      });
-    }
-  </script>
+  <script src="js/sw-register.min.js?v=2026-02-18_1" defer nonce="digdev-main-script"></script>
 </body>
 </html>

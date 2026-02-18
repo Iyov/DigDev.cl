@@ -1,14 +1,14 @@
 {
   "name": "digdev-solutions",
-  "version": "2026-02-08_4",
+  "version": "2026-02-18_1",
   "description": "DigDev Solutions - Sitio web optimizado para la industria minera",
   "scripts": {
     "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --minify",
     "watch:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --watch",
     "minify:css": "cleancss -o css/index.min.css css/index.css",
-    "minify:js": "terser js/index.js -c -m -o js/index.min.js && terser js/google-tracking.js -c -m -o js/google-tracking.min.js",
+    "minify:js": "terser js/index.js -c -m -o js/index.min.js && terser js/google-tracking.js -c -m -o js/google-tracking.min.js && terser js/sw-register.js -c -m -o js/sw-register.min.js",
     "minify": "npm run minify:css && npm run minify:js",
-    "watch:assets": "onchange \"css/index.css\" \"js/index.js\" \"js/google-tracking.js\" -- npm run minify",
+    "watch:assets": "onchange \"css/index.css\" \"js/index.js\" \"js/google-tracking.js\" \"js/sw-register.js\" -- npm run minify",
     "dev": "npm run watch:assets",
     "prepare": "npm run minify"
   },
@@ -21,9 +21,10 @@
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
-    "tailwindcss": "^3.4.19",
-    "terser": "^5.17.0",
     "clean-css-cli": "^5.3.0",
-    "onchange": "^7.1.0"
+    "onchange": "^7.1.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.19",
+    "terser": "^5.17.0"
   }
 }

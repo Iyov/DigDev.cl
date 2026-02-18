@@ -1,152 +1,273 @@
 // Service Worker para DigDev Solutions PWA
-// Versión: 1.0.0
+// Version: 2.0.0 - Enhanced Performance
 
-// Development mode flag (set to false for production)
 const DEV_MODE = false;
 
-// Development console logger
 const devLog = (...args) => {
   if (DEV_MODE) {
     console.log(...args);
   }
 };
 
-const CACHE_NAME = 'digdev-v1.0.0';
-const CACHE_VERSION = '2026-02-17_1';
+const CACHE_VERSION = '2026-02-18_1';
+const STATIC_CACHE = `digdev-static-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `digdev-dynamic-${CACHE_VERSION}`;
+const IMAGE_CACHE = `digdev-images-${CACHE_VERSION}`;
 
-// Recursos críticos para cachear
-const CRITICAL_ASSETS = [
+const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/css/index.min.css',
   '/css/tailwind.min.css',
   '/css/font-awesome_6.5.1_all.min.css',
   '/js/index.min.js',
-  '/js/gtm-loader.min.js',
+  '/js/google-tracking.min.js',
+  '/js/sw-register.min.js',
   '/img/DigDev_logo.png',
   '/img/DigDev_logo_200.png',
   '/img/DigDev_logo_100.png',
   '/img/favicon.png',
-  '/manifest.json'
+  '/img/optimized/hero-bg-1920.webp',
+  '/img/optimized/caso-exito-1-800.webp',
+  '/img/optimized/caso-exito-2-800.webp',
+  '/img/optimized/caso-exito-3-800.webp',
+  '/img/optimized/blog-automatizacion-800.webp',
+  '/img/optimized/blog-logistica-800.webp',
+  '/img/optimized/blog-futuro-800.webp',
+  '/img/optimized/testimonial-francisca-200.webp',
+  '/img/optimized/testimonial-david-200.webp',
+  '/img/optimized/testimonial-emilia-200.webp',
+  '/manifest.json',
+  '/offline.html'
 ];
 
-// Recursos secundarios (se cachean bajo demanda)
-const SECONDARY_ASSETS = [
-  '/post.html',
-  '/presentacion.html',
-  '/Propuesta.html',
-  '/css/post.css',
-  '/css/presentacion.css',
-  '/css/propuesta.css',
-  '/js/post.js',
-  '/js/presentacion.js',
-  '/js/propuesta.js'
+const CACHE_STRATEGIES = {
+  CACHE_FIRST: 'cache-first',
+  NETWORK_FIRST: 'network-first',
+  STALE_WHILE_REVALIDATE: 'stale-while-revalidate'
+};
+
+const ROUTE_CONFIGS = [
+  {
+    match: /\.(?:css|js|woff2?|ttf|eot)$/,
+    strategy: CACHE_STRATEGIES.CACHE_FIRST,
+    cacheName: STATIC_CACHE,
+    maxAge: 365 * 24 * 60 * 60 * 1000
+  },
+  {
+    match: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/,
+    strategy: CACHE_STRATEGIES.CACHE_FIRST,
+    cacheName: IMAGE_CACHE,
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    maxEntries: 100
+  },
+  {
+    match: /\.html$/,
+    strategy: CACHE_STRATEGIES.NETWORK_FIRST,
+    cacheName: DYNAMIC_CACHE,
+    maxAge: 1 * 60 * 60 * 1000
+  },
+  {
+    match: /\/(?:api|data)\//,
+    strategy: CACHE_STRATEGIES.STALE_WHILE_REVALIDATE,
+    cacheName: DYNAMIC_CACHE,
+    maxAge: 5 * 60 * 1000
+  }
 ];
 
-// Instalación del Service Worker
 self.addEventListener('install', event => {
-  devLog('[SW] Instalando Service Worker v' + CACHE_VERSION);
+  devLog('[SW] Installing Service Worker v' + CACHE_VERSION);
   
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE)
       .then(cache => {
-        devLog('[SW] Cacheando recursos críticos');
-        return cache.addAll(CRITICAL_ASSETS);
+        devLog('[SW] Caching static assets');
+        return cache.addAll(STATIC_ASSETS.map(url => new Request(url, { cache: 'reload' })));
       })
-      .then(() => {
-        devLog('[SW] Recursos críticos cacheados exitosamente');
-        return self.skipWaiting(); // Activar inmediatamente
-      })
-      .catch(error => {
-        console.error('[SW] Error al cachear recursos:', error);
-      })
+      .then(() => self.skipWaiting())
+      .catch(error => console.error('[SW] Install failed:', error))
   );
 });
 
-// Activación del Service Worker
 self.addEventListener('activate', event => {
-  devLog('[SW] Activando Service Worker v' + CACHE_VERSION);
+  devLog('[SW] Activating Service Worker v' + CACHE_VERSION);
   
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        // Eliminar cachés antiguos
         return Promise.all(
           cacheNames
-            .filter(cacheName => cacheName !== CACHE_NAME)
+            .filter(cacheName => {
+              return !cacheName.includes(CACHE_VERSION) && 
+                     !cacheName.includes('digdev-static-') &&
+                     !cacheName.includes('digdev-dynamic-') &&
+                     !cacheName.includes('digdev-images-');
+            })
             .map(cacheName => {
-              devLog('[SW] Eliminando caché antiguo:', cacheName);
+              devLog('[SW] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             })
         );
       })
       .then(() => {
-        devLog('[SW] Service Worker activado');
-        return self.clients.claim(); // Tomar control inmediatamente
+        devLog('[SW] Service Worker activated');
+        return self.clients.claim();
       })
   );
 });
 
-// Estrategia de caché: Network First con fallback a Cache
+async function cacheFirst(request, cacheName, maxAge) {
+  const cachedResponse = await caches.match(request);
+  
+  if (cachedResponse) {
+    const cacheDate = cachedResponse.headers.get('sw-cache-date');
+    if (cacheDate && maxAge) {
+      const age = Date.now() - parseInt(cacheDate);
+      if (age < maxAge) {
+        return cachedResponse;
+      }
+    } else {
+      return cachedResponse;
+    }
+  }
+  
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(cacheName);
+      const headers = new Headers(networkResponse.headers);
+      headers.set('sw-cache-date', Date.now().toString());
+      const cachedResponse = new Response(await networkResponse.clone().arrayBuffer(), {
+        status: networkResponse.status,
+        statusText: networkResponse.statusText,
+        headers
+      });
+      cache.put(request, cachedResponse);
+    }
+    return networkResponse;
+  } catch (error) {
+    return cachedResponse || new Response('Offline', { status: 503 });
+  }
+}
+
+async function networkFirst(request, cacheName, maxAge) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(cacheName);
+      const headers = new Headers(networkResponse.headers);
+      headers.set('sw-cache-date', Date.now().toString());
+      const cachedResponse = new Response(await networkResponse.clone().arrayBuffer(), {
+        status: networkResponse.status,
+        statusText: networkResponse.statusText,
+        headers
+      });
+      cache.put(request, cachedResponse);
+    }
+    return networkResponse;
+  } catch (error) {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    if (request.mode === 'navigate') {
+      return caches.match('/index.html');
+    }
+    
+    return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+  }
+}
+
+async function staleWhileRevalidate(request, cacheName, maxAge) {
+  const cache = await caches.open(cacheName);
+  const cachedResponse = await cache.match(request);
+  
+  const fetchPromise = fetch(request).then(networkResponse => {
+    if (networkResponse.ok) {
+      const headers = new Headers(networkResponse.headers);
+      headers.set('sw-cache-date', Date.now().toString());
+      const cachedResponse = new Response(networkResponse.clone().body, {
+        status: networkResponse.status,
+        statusText: networkResponse.statusText,
+        headers
+      });
+      cache.put(request, cachedResponse);
+    }
+    return networkResponse;
+  }).catch(() => cachedResponse);
+  
+  return cachedResponse || fetchPromise;
+}
+
+async function cleanupCache(cacheName, maxEntries) {
+  if (!maxEntries) return;
+  
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  
+  if (keys.length > maxEntries) {
+    const deleteCount = keys.length - maxEntries;
+    for (let i = 0; i < deleteCount; i++) {
+      await cache.delete(keys[i]);
+    }
+    devLog(`[SW] Cleaned up ${deleteCount} entries from ${cacheName}`);
+  }
+}
+
 self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
   
-  // Solo cachear requests del mismo origen
+  if (request.method !== 'GET') return;
+  
   if (url.origin !== location.origin) {
-    // Para recursos externos (CDN, Google Fonts, etc.)
+    if (url.hostname === 'fonts.googleapis.com' || 
+        url.hostname === 'fonts.gstatic.com') {
+      event.respondWith(
+        cacheFirst(request, STATIC_CACHE, 365 * 24 * 60 * 60 * 1000)
+      );
+      return;
+    }
+    
+    if (url.hostname === 'lh3.googleusercontent.com' ||
+        url.hostname === 'images.unsplash.com') {
+      event.respondWith(
+        cacheFirst(request, IMAGE_CACHE, 30 * 24 * 60 * 60 * 1000)
+          .then(response => {
+            cleanupCache(IMAGE_CACHE, 100);
+            return response;
+          })
+      );
+      return;
+    }
+    
     event.respondWith(
-      fetch(request)
-        .catch(() => {
-          // Si falla, intentar desde caché
-          return caches.match(request);
-        })
+      fetch(request).catch(() => caches.match(request))
     );
     return;
   }
   
-  // Estrategia para recursos locales
-  event.respondWith(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        // Intentar obtener desde la red primero
-        return fetch(request)
-          .then(response => {
-            // Si la respuesta es válida, cachearla
-            if (response && response.status === 200) {
-              cache.put(request, response.clone());
-            }
-            return response;
-          })
-          .catch(() => {
-            // Si falla la red, usar caché
-            return cache.match(request)
-              .then(cachedResponse => {
-                if (cachedResponse) {
-                  devLog('[SW] Sirviendo desde caché:', request.url);
-                  return cachedResponse;
-                }
-                
-                // Si no está en caché y es una navegación, mostrar página offline
-                if (request.mode === 'navigate') {
-                  return cache.match('/index.html');
-                }
-                
-                // Para otros recursos, retornar error
-                return new Response('Recurso no disponible offline', {
-                  status: 503,
-                  statusText: 'Service Unavailable',
-                  headers: new Headers({
-                    'Content-Type': 'text/plain'
-                  })
-                });
-              });
-          });
-      })
-  );
+  for (const config of ROUTE_CONFIGS) {
+    if (config.match.test(url.pathname)) {
+      switch (config.strategy) {
+        case CACHE_STRATEGIES.CACHE_FIRST:
+          event.respondWith(cacheFirst(request, config.cacheName, config.maxAge));
+          break;
+        case CACHE_STRATEGIES.NETWORK_FIRST:
+          event.respondWith(networkFirst(request, config.cacheName, config.maxAge));
+          break;
+        case CACHE_STRATEGIES.STALE_WHILE_REVALIDATE:
+          event.respondWith(staleWhileRevalidate(request, config.cacheName, config.maxAge));
+          break;
+      }
+      return;
+    }
+  }
+  
+  event.respondWith(networkFirst(request, DYNAMIC_CACHE, 1 * 60 * 60 * 1000));
 });
 
-// Manejo de mensajes desde el cliente
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
@@ -154,7 +275,7 @@ self.addEventListener('message', event => {
   
   if (event.data && event.data.type === 'CACHE_URLS') {
     event.waitUntil(
-      caches.open(CACHE_NAME)
+      caches.open(DYNAMIC_CACHE)
         .then(cache => cache.addAll(event.data.urls))
     );
   }
@@ -167,26 +288,37 @@ self.addEventListener('message', event => {
         ))
     );
   }
-});
-
-// Sincronización en segundo plano (para futuras funcionalidades)
-self.addEventListener('sync', event => {
-  devLog('[SW] Sincronización en segundo plano:', event.tag);
   
-  if (event.tag === 'sync-data') {
+  if (event.data && event.data.type === 'GET_CACHE_STATS') {
     event.waitUntil(
-      // Aquí se pueden agregar tareas de sincronización
-      Promise.resolve()
+      Promise.all([
+        caches.open(STATIC_CACHE).then(c => c.keys()),
+        caches.open(DYNAMIC_CACHE).then(c => c.keys()),
+        caches.open(IMAGE_CACHE).then(c => c.keys())
+      ]).then(([staticKeys, dynamicKeys, imageKeys]) => {
+        event.ports[0].postMessage({
+          static: staticKeys.length,
+          dynamic: dynamicKeys.length,
+          images: imageKeys.length
+        });
+      })
     );
   }
 });
 
-// Notificaciones push (para futuras funcionalidades)
+self.addEventListener('sync', event => {
+  devLog('[SW] Background sync:', event.tag);
+  
+  if (event.tag === 'sync-data') {
+    event.waitUntil(Promise.resolve());
+  }
+});
+
 self.addEventListener('push', event => {
-  devLog('[SW] Push recibido');
+  devLog('[SW] Push received');
   
   const options = {
-    body: event.data ? event.data.text() : 'Nueva actualización disponible',
+    body: event.data ? event.data.text() : 'Nueva actualizacion disponible',
     icon: '/img/DigDev_logo_200.png',
     badge: '/img/DigDev_logo_100.png',
     vibrate: [200, 100, 200],
@@ -195,16 +327,8 @@ self.addEventListener('push', event => {
       primaryKey: 1
     },
     actions: [
-      {
-        action: 'explore',
-        title: 'Ver más',
-        icon: '/img/DigDev_logo_100.png'
-      },
-      {
-        action: 'close',
-        title: 'Cerrar',
-        icon: '/img/DigDev_logo_100.png'
-      }
+      { action: 'explore', title: 'Ver mas', icon: '/img/DigDev_logo_100.png' },
+      { action: 'close', title: 'Cerrar', icon: '/img/DigDev_logo_100.png' }
     ]
   };
   
@@ -213,17 +337,14 @@ self.addEventListener('push', event => {
   );
 });
 
-// Manejo de clicks en notificaciones
 self.addEventListener('notificationclick', event => {
-  devLog('[SW] Click en notificación:', event.action);
+  devLog('[SW] Notification click:', event.action);
   
   event.notification.close();
   
   if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
+    event.waitUntil(clients.openWindow('/'));
   }
 });
 
-devLog('[SW] Service Worker cargado - v' + CACHE_VERSION);
+devLog('[SW] Service Worker loaded - v' + CACHE_VERSION);

@@ -1,7 +1,7 @@
 # DigDev Solutions - SEO and Performance Optimization
-# Updated: 2026-02-09
+# Updated: 2026-02-18
 
-# Enable compression
+# Enable compression with optimized settings
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -14,6 +14,13 @@
     AddOutputFilterByType DEFLATE application/x-javascript
     AddOutputFilterByType DEFLATE application/json
     AddOutputFilterByType DEFLATE image/svg+xml
+    
+    # Compression level (1-9, 6 is recommended)
+    DeflateCompressionLevel 6
+    
+    # Don't compress images and other binary files
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 </IfModule>
 
 # Leverage Browser Caching - Optimizado
