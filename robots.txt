@@ -8,6 +8,12 @@ Allow: /webfonts/
 
 # Bloquear solo archivos sensibles
 Disallow: /webmail.html
+Disallow: /old.html
+Disallow: /presentacion.html
+Disallow: /Propuesta.html
+Disallow: /PropuestaES.html
+Disallow: /PropuestaCEN.html
+Disallow: /google-site-verification.html
 Disallow: /*.log$
 Disallow: /.git/
 Disallow: /.vscode/

@@ -3,7 +3,7 @@
   "@type": "LocalBusiness",
   "name": "DigDev Solutions",
   "alternateName": "DigDev",
-  "description": "Empresa líder en desarrollo de software para la industria minera en Chile. Especializada en sistemas de gestión, automatización de procesos y análisis de datos.",
+  "description": "Empresa lider en desarrollo de software para la industria minera en Chile. Especializada en sistemas de gestion, automatizacion de procesos y analisis de datos.",
   "url": "https://digdev.cl",
   "telephone": "+56-9-99896880",
   "email": "colivares@digdev.cl",
@@ -13,7 +13,7 @@
     "@type": "PostalAddress",
     "streetAddress": "Las Acacias 390",
     "addressLocality": "Villa Alemana",
-    "addressRegion": "Valparaíso",
+    "addressRegion": "Valparaiso",
     "postalCode": "2520000",
     "addressCountry": "CL"
   },
@@ -60,7 +60,7 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Desarrollo de Software para Minería",
+          "name": "Desarrollo de Software para Mineria",
           "description": "Sistemas especializados para la industria minera",
           "provider": {
             "@type": "Organization",
@@ -72,8 +72,8 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Sistemas de Gestión Minera",
-          "description": "ERP y sistemas de gestión especializados",
+          "name": "Sistemas de Gestion Minera",
+          "description": "ERP y sistemas de gestion especializados",
           "provider": {
             "@type": "Organization",
             "name": "DigDev Solutions"
@@ -84,8 +84,8 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Automatización de Procesos",
-          "description": "Automatización de procesos mineros",
+          "name": "Automatizacion de Procesos",
+          "description": "Automatizacion de procesos mineros",
           "provider": {
             "@type": "Organization",
             "name": "DigDev Solutions"
@@ -122,5 +122,9 @@
       "width": 200,
       "height": 200
     }
-  ]
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://digdev.cl/"
+  }
 }

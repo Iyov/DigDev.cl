@@ -27,7 +27,9 @@
     
     const anonymizeIp = typeof options.anonymizeIp !== 'undefined' ? options.anonymizeIp : true;
     const sendPageView = typeof options.sendPageView !== 'undefined' ? options.sendPageView : true;
+    const preferGtm = typeof options.preferGtm !== 'undefined' ? options.preferGtm : true;
     const pageContext = getPageContext();
+    const shouldUseGtmOnly = Boolean(gtmId) && preferGtm;
 
     // Ensure dataLayer exists
     window.dataLayer = window.dataLayer || [];
@@ -38,6 +40,14 @@
     if (gtmId) {
       // Standard GTM boot push
       window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      window.dataLayer.push({
+        event: 'digdev_tracking_config',
+        ga_measurement_id: gaId || '',
+        anonymize_ip: anonymizeIp,
+        page_title: pageContext.page_title,
+        page_location: pageContext.page_location,
+        page_path: pageContext.page_path
+      });
 
       // Insert GTM script
       const gtmScriptId = 'google-tracking-gtm-' + gtmId.replace(/[^a-z0-9_-]/gi, '');
@@ -54,7 +64,7 @@
     // ========================================
     // Google Analytics 4 (GA4) Implementation
     // ========================================
-    if (gaId) {
+    if (gaId && !shouldUseGtmOnly) {
       // Load gtag.js
       const gtagScriptId = 'google-tracking-gtag-' + gaId.replace(/[^a-z0-9_-]/gi, '');
       if (!document.getElementById(gtagScriptId)) {
@@ -84,6 +94,8 @@
       if (sendPageView) {
         window.gtag('event', 'page_view', pageContext);
       }
+    } else if (shouldUseGtmOnly && sendPageView) {
+      window.dataLayer.push(Object.assign({ event: 'page_view' }, pageContext));
     }
 
     // ========================================
@@ -104,6 +116,7 @@
       gaId: gaId,
       anonymizeIp: anonymizeIp,
       sendPageView: sendPageView,
+      preferGtm: preferGtm,
       pageContext: pageContext
     };
     return true;

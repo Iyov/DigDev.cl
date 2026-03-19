@@ -103,8 +103,16 @@
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     
-    # Content Security Policy - Mejorado sin unsafe-inline + Google Analytics / GTM
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-digdev-main-script' 'nonce-digdev-analytics' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; frame-src 'self' https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    # CSP pragmatico para no romper renderizado, GTM, JSON-LD ni estilos inline existentes
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'self' https://www.googletagmanager.com; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+    <FilesMatch "^(old|presentacion|Propuesta|PropuestaES|PropuestaCEN|google-site-verification)\.html$">
+        Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    </FilesMatch>
+
+    <FilesMatch "^webmail\.html$">
+        Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    </FilesMatch>
 </IfModule>
 
 # Webmail redirect
