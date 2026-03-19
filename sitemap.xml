@@ -39,4 +39,37 @@
       <image:caption>Propuesta de servicios TI de DigDev Solutions</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://digdev.cl/PropuestaES.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://digdev.cl/img/DigDev_logo_200.png</image:loc>
+      <image:title>Propuesta de Trabajo</image:title>
+      <image:caption>Propuesta comercial de DigDev Solutions</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://digdev.cl/PropuestaCEN.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://digdev.cl/img/DigDev_logo_200.png</image:loc>
+      <image:title>Propuesta para Minera Centinela</image:title>
+      <image:caption>Propuesta de servicios TI para Minera Centinela</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://digdev.cl/presentacion.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://digdev.cl/img/DigDev_logo.png</image:loc>
+      <image:title>Presentación DigDev Solutions</image:title>
+      <image:caption>Presentación corporativa de DigDev Solutions</image:caption>
+    </image:image>
+  </url>
 </urlset>

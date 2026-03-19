@@ -1563,13 +1563,13 @@ function initPhase4Enhancements() {
   devLog('🚀 Initializing Phase 4: SEO & Functionality Improvements');
   
   // Initialize GTM/GA (external loader) if available, then wire analytics handlers
-  if (typeof window.initGTM === 'function') {
+  if (typeof window.initGoogleTracking === 'function') {
     try {
-      const gaId = (window.CONFIG && window.CONFIG.gaId) || 'G-XXXXXXX';
-      window.initGTM({ gtmId: 'GTM-5B3B68K7', gaId });
-      devLog('✅ initGTM called');
+      const gaId = (window.CONFIG && window.CONFIG.gaId) || 'G-227Z6EMS7R';
+      window.initGoogleTracking({ gtmId: 'GTM-5B3B68K7', gaId });
+      devLog('✅ initGoogleTracking called');
     } catch (err) {
-      devLog('⚠️ initGTM error', err);
+      devLog('⚠️ initGoogleTracking error', err);
     }
   }
 

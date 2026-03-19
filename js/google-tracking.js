@@ -4,6 +4,14 @@
 (function () {
   'use strict';
 
+  function getPageContext() {
+    return {
+      page_title: document.title || '',
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search
+    };
+  }
+
   // Idempotent initializer
   function initGoogleTracking(options = {}) {
     if (window.__GOOGLE_TRACKING_INITIALIZED__) return;
@@ -19,6 +27,7 @@
     
     const anonymizeIp = typeof options.anonymizeIp !== 'undefined' ? options.anonymizeIp : true;
     const sendPageView = typeof options.sendPageView !== 'undefined' ? options.sendPageView : true;
+    const pageContext = getPageContext();
 
     // Ensure dataLayer exists
     window.dataLayer = window.dataLayer || [];
@@ -66,8 +75,15 @@
       window.gtag('config', gaId, {
         anonymize_ip: anonymizeIp,
         allow_ad_personalization_signals: false,
-        send_page_view: sendPageView
+        send_page_view: false,
+        page_title: pageContext.page_title,
+        page_location: pageContext.page_location,
+        page_path: pageContext.page_path
       });
+
+      if (sendPageView) {
+        window.gtag('event', 'page_view', pageContext);
+      }
     }
 
     // ========================================
@@ -83,11 +99,19 @@
     };
 
     window.__GOOGLE_TRACKING_INITIALIZED__ = true;
+    window.__GOOGLE_TRACKING_CONFIG__ = {
+      gtmId: gtmId,
+      gaId: gaId,
+      anonymizeIp: anonymizeIp,
+      sendPageView: sendPageView,
+      pageContext: pageContext
+    };
     return true;
   }
 
   // Expose initialization function
   window.initGoogleTracking = initGoogleTracking;
+  window.initGTM = window.initGTM || initGoogleTracking;
 
   // Auto-init when script tag provides data attributes
   try {
